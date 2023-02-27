@@ -8,29 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		AD00901529A490D100FDB1D3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901429A490D100FDB1D3 /* Deal.swift */; };
-		AD00901B29A58C6100FDB1D3 /* UpcomingFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901A29A58C6100FDB1D3 /* UpcomingFeedView.swift */; };
-		AD00901D29A58C8300FDB1D3 /* DailyFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* DailyFeedView.swift */; };
+		AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* FeedView.swift */; };
 		AD00901F29A58C8D00FDB1D3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901E29A58C8D00FDB1D3 /* WelcomeView.swift */; };
-		AD00902129A58CC600FDB1D3 /* DailyFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* DailyFeedViewModel.swift */; };
-		AD00902329A58CDB00FDB1D3 /* UpcomingFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902229A58CDB00FDB1D3 /* UpcomingFeedViewModel.swift */; };
-		AD80720829A8855C007E263D /* Deal_ioMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioMain.swift */; };
+		AD00902129A58CC600FDB1D3 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* FeedViewModel.swift */; };
+		AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioApp.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
 		ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D492299807E700B7BD24 /* Persistence.swift */; };
 		ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */; };
+		ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */; };
+		ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */; };
+		ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */; };
+		ADF0BBF429AAEDC200FF24F6 /* HourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBF329AAEDC200FF24F6 /* HourView.swift */; };
+		ADF0BC4F29AB332600FF24F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADF0BC4E29AB332600FF24F6 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD00901429A490D100FDB1D3 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
-		AD00901A29A58C6100FDB1D3 /* UpcomingFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFeedView.swift; sourceTree = "<group>"; };
-		AD00901C29A58C8300FDB1D3 /* DailyFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFeedView.swift; sourceTree = "<group>"; };
+		AD00901C29A58C8300FDB1D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD00901E29A58C8D00FDB1D3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		AD00902029A58CC600FDB1D3 /* DailyFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFeedViewModel.swift; sourceTree = "<group>"; };
-		AD00902229A58CDB00FDB1D3 /* UpcomingFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFeedViewModel.swift; sourceTree = "<group>"; };
-		AD80720729A8855C007E263D /* Deal_ioMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioMain.swift; sourceTree = "<group>"; };
+		AD00902029A58CC600FDB1D3 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		AD80720729A8855C007E263D /* Deal_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioApp.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC4D48D299807E700B7BD24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC4D492299807E700B7BD24 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ADC4D495299807E700B7BD24 /* deal_io_customer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deal_io_customer.xcdatamodel; sourceTree = "<group>"; };
+		ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
+		ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDealView.swift; sourceTree = "<group>"; };
+		ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal-ioColor.swift"; sourceTree = "<group>"; };
+		ADF0BBF329AAEDC200FF24F6 /* HourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourView.swift; sourceTree = "<group>"; };
+		ADF0BC4E29AB332600FF24F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +61,12 @@
 		AD00901229A4901600FDB1D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AD00901A29A58C6100FDB1D3 /* UpcomingFeedView.swift */,
-				AD00901C29A58C8300FDB1D3 /* DailyFeedView.swift */,
+				AD00901C29A58C8300FDB1D3 /* FeedView.swift */,
 				AD00901E29A58C8D00FDB1D3 /* WelcomeView.swift */,
+				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
+				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
+				ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */,
+				ADF0BBF329AAEDC200FF24F6 /* HourView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -65,8 +74,7 @@
 		AD00901329A4902600FDB1D3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AD00902029A58CC600FDB1D3 /* DailyFeedViewModel.swift */,
-				AD00902229A58CDB00FDB1D3 /* UpcomingFeedViewModel.swift */,
+				AD00902029A58CC600FDB1D3 /* FeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				ADF0BC4D29AB2C3900FF24F6 /* Fonts */,
 				AD80720629A884F3007E263D /* Preview Content */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
 				AD00901229A4901600FDB1D3 /* Views */,
@@ -104,9 +113,17 @@
 				ADC4D48D299807E700B7BD24 /* Assets.xcassets */,
 				ADC4D492299807E700B7BD24 /* Persistence.swift */,
 				ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */,
-				AD80720729A8855C007E263D /* Deal_ioMain.swift */,
+				AD80720729A8855C007E263D /* Deal_ioApp.swift */,
+				ADF0BC4E29AB332600FF24F6 /* Info.plist */,
 			);
 			path = deal.io_user;
+			sourceTree = "<group>";
+		};
+		ADF0BC4D29AB2C3900FF24F6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF0BC4F29AB332600FF24F6 /* Info.plist in Resources */,
 				ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +197,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
-				AD00901B29A58C6100FDB1D3 /* UpcomingFeedView.swift in Sources */,
-				AD80720829A8855C007E263D /* Deal_ioMain.swift in Sources */,
+				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
+				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				AD00901F29A58C8D00FDB1D3 /* WelcomeView.swift in Sources */,
-				AD00901D29A58C8300FDB1D3 /* DailyFeedView.swift in Sources */,
-				AD00902129A58CC600FDB1D3 /* DailyFeedViewModel.swift in Sources */,
+				AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */,
+				AD00902129A58CC600FDB1D3 /* FeedViewModel.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
-				AD00902329A58CDB00FDB1D3 /* UpcomingFeedViewModel.swift in Sources */,
+				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,
+				ADF0BBF429AAEDC200FF24F6 /* HourView.swift in Sources */,
 				ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */,
+				ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
