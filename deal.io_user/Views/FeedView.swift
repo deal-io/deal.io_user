@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct DailyFeedView: View {
+    @ObservedObject var feedVM = FeedViewModel()
+    
     var body: some View {
-        Text("butts")
+        ForEach(feedVM.allDeals, id: \.self) { deal in
+            DealView(deal)
+        }
     }
 }
 
