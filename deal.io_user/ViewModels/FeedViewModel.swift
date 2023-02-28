@@ -8,13 +8,11 @@
 import Foundation
 
 class FeedViewModel: ObservableObject {
-    
-    
     // created synthetic data to figure our view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
-    @Published var allDeals : [DealResponse] = [
-        DealResponse(
+    @Published var allDeals : [Deal] = [
+        Deal(
             dealID: "912ec803b2ce49e4a541068d495ab570",
             restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
             enterDate: "February 23, 2023 at 09:29:31AM UTC-7",
@@ -28,7 +26,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "6677f82a2a18d3a29a3414655d877c50",
             restaurantID: "57bfd3f70b066a6b7c8e59b67393ceb6",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -42,7 +40,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "63a69226faa7bfcc41a75a47e1d89f4b",
             restaurantID: "fa3996112edddfe72acf59b6595625d9",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -56,7 +54,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "63a69226faa7bfcc41a75a47e1d89f4b",
             restaurantID: "fa3996112edddfe72acf59b6595625d9",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -70,7 +68,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "63a69226faa7bfcc41a75a47e1d89f4b",
             restaurantID: "fa3996112edddfe72acf59b6595625d9",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -84,7 +82,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "63a69226faa7bfcc41a75a47e1d89f4b",
             restaurantID: "fa3996112edddfe72acf59b6595625d9",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -98,7 +96,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "912ec803b2ce49e4a541068d495ab570",
             restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -112,7 +110,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "912ec803b2ce49e4a541068d495ab570",
             restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -126,7 +124,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "912ec803b2ce49e4a541068d495ab570",
             restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -140,7 +138,7 @@ class FeedViewModel: ObservableObject {
                 recurring: true
             )
         ),
-        DealResponse(
+        Deal(
             dealID: "912ec803b2ce49e4a541068d495ab570",
             restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
             enterDate: "February 27, 2023 at 12:00:00AM UTC-7",
@@ -156,9 +154,35 @@ class FeedViewModel: ObservableObject {
         )
     ]
     
+    // definitely not how I'm supposed to do this
+    // but I made some of the expected JSON response
+    // and turned them into ViewModels with the below
+    // function
+    @Published var allDealViewModels = [DealViewModel]()
+    
+    func populateAllDealViewModels() {
+        
+        for initDeal in self.allDeals {
+            allDealViewModels.append(DealViewModel(deal: initDeal))
+        }
+    }
+    
+    // below to be uncommented when integrating frontend with backend
+    /*
     init() {
         
+       fetchDeals()
+        
     }
+    
+    func fetchDeals() {
+        DealService().getAllDeals() { deals in
+            if let deals = deals {
+                self.allDeals = deals.map(DealViewModel.init)
+            }
+        }
+    }
+     */
 }
 
 extension FeedViewModel {
@@ -168,10 +192,50 @@ extension FeedViewModel {
         FirestoreDateFormatter.dateFormat = "M D, Y' at ' HH:mm:ss"
     }
     
-    func addDeal(dealResponse: DealResponse) {
+    func addDeal(deal: Deal) {
         
-        self.allDeals.append(dealResponse)
+        self.allDeals.append(deal)
         
+    }
+    
+}
+    
+class DealViewModel {
+    
+    let id = UUID()
+    
+    var deal: Deal
+    
+    init(deal: Deal) {
+        self.deal = deal
+    }
+    
+    var dealName: String {
+        return self.deal.dealAttributes.dealName
+    }
+    
+    var restaurantName: String {
+        return self.deal.dealAttributes.restaurantName
+    }
+    
+    var description: String {
+        return self.deal.dealAttributes.description
+    }
+    
+    var daysActive: [Bool] {
+        return self.deal.dealAttributes.daysActive
+    }
+    
+    var startDate: String {
+        return self.deal.dealAttributes.startDate
+    }
+    
+    var endDate: String {
+        return self.deal.dealAttributes.endDate
+    }
+    
+    var recurring: Bool {
+        return self.deal.dealAttributes.recurring
     }
     
 }

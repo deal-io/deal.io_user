@@ -8,7 +8,7 @@
 import Foundation
 
 // Codable so that it can be JSON encoded and decoded for API calls
-struct DealResponse: Codable, Hashable {
+struct Deal: Codable, Hashable {
     
     // initialized values from database
     var dealID: String
@@ -26,7 +26,7 @@ struct DealResponse: Codable, Hashable {
     }
 }
 
-extension DealResponse {
+extension Deal {
     
     var hash: Int {
         return (dealID+restaurantID+enterDate).hashValue
@@ -38,7 +38,7 @@ extension DealResponse {
         hasher.combine(enterDate)
     }
     
-    static func == (lhs: DealResponse, rhs: DealResponse) -> Bool {
+    static func == (lhs: Deal, rhs: Deal) -> Bool {
         lhs.dealID == rhs.dealID && lhs.restaurantID == rhs.restaurantID && lhs.enterDate == rhs.enterDate
     }
 }

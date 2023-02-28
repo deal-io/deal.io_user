@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+// The below class is to be connected to the main API when backend is set up and call can be made
+class DealService {
+    
+    // make the API call to grab all deals from the database
+    func getAllDeals() {
+        
+        
+    }
+}
