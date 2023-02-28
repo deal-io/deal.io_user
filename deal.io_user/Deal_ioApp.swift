@@ -12,9 +12,11 @@ import SwiftUI
 struct Deal_io: App {
     let persistenceController = PersistenceController.shared
     
+    @ObservedObject private var feedVM = FeedViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            DailyFeedView()
+            DailyFeedView(deals: self.feedVM.allDealViewModels)
         }
     }
 }
