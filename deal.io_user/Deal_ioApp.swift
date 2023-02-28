@@ -12,11 +12,17 @@ import SwiftUI
 struct Deal_io: App {
     let persistenceController = PersistenceController.shared
     
-    @ObservedObject private var feedVM = FeedViewModel()
-    
     var body: some Scene {
         WindowGroup {
-            DailyFeedView(deals: self.feedVM.allDealViewModels)
+            DailyFeedView(deals: [
+                BasicDealViewModel(basicDeal: BasicDeal(
+                    dealName: "25% Off Specialty Burgers",
+                    restaurantName: "Buffalo Rose",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                    hoursToEnd: 6,
+                    hoursToStart: 2
+                ))
+            ])
         }
     }
 }
