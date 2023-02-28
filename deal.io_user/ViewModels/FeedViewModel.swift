@@ -8,7 +8,7 @@
 import Foundation
 
 class FeedViewModel: ObservableObject {
-    // created synthetic data to figure our view functionality
+    // created synthetic data to figure out view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
     @Published var allDeals : [Deal] = [
@@ -154,19 +154,83 @@ class FeedViewModel: ObservableObject {
         )
     ]
     
+    @Published var allBasicDeals : [BasicDeal] = [
+        BasicDeal(
+            dealName: "25% Off Specialty Burgers",
+            restaurantName: "Buffalo Rose",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+            hoursToEnd: 6,
+            hoursToStart: 2
+        ),
+        BasicDeal(
+            dealName: "25% Off Specialty Burgers",
+            restaurantName: "Buffalo Rose",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+            hoursToEnd: 6,
+            hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        ),
+        BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+        )
+    ]
+    
     // definitely not how I'm supposed to do this
     // but I made some of the expected JSON response
     // and turned them into ViewModels with the below
     // function
-    @Published var allDealViewModels = [DealViewModel]()
-    
-    func populateAllDealViewModels() {
-        
-        for initDeal in self.allDeals {
-            allDealViewModels.append(DealViewModel(deal: initDeal))
-        }
-    }
-    
     // below to be uncommented when integrating frontend with backend
     /*
     init() {
@@ -185,25 +249,10 @@ class FeedViewModel: ObservableObject {
      */
 }
 
-extension FeedViewModel {
-    
-    func createFirestoreDateFormatter() {
-        let FirestoreDateFormatter = DateFormatter()
-        FirestoreDateFormatter.dateFormat = "M D, Y' at ' HH:mm:ss"
-    }
-    
-    func addDeal(deal: Deal) {
-        
-        self.allDeals.append(deal)
-        
-    }
-    
-}
-    
 class DealViewModel {
     
     let id = UUID()
-    
+        
     var deal: Deal
     
     init(deal: Deal) {
@@ -226,16 +275,83 @@ class DealViewModel {
         return self.deal.dealAttributes.daysActive
     }
     
-    var startDate: String {
-        return self.deal.dealAttributes.startDate
+    // this is just for setting up views, the actual implementation would use the FirebaseFirestoreSwift library
+    // to encode/decode Firestore Timestamp objects
+    var startDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy 'at' hh:mm:ssa"
+        return dateFormatter.date(from: deal.dealAttributes.startDate)!
     }
     
-    var endDate: String {
-        return self.deal.dealAttributes.endDate
+    // this is just for setting up views, the actual implementation would use the FirebaseFirestoreSwift library
+    // to encode/decode Firestore Timestamp objects
+    var endDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy 'at' hh:mm:ssa"
+        return dateFormatter.date(from: deal.dealAttributes.endDate)!
     }
     
     var recurring: Bool {
         return self.deal.dealAttributes.recurring
     }
     
+    var hoursToStart: Int {
+        let diffComponents = Calendar.current.dateComponents([.hour], from: Date(), to: startDate)
+        let hours = diffComponents.hour
+        return hours!
+    }
+    
+    var hoursToEnd: Int {
+        let diffComponents = Calendar.current.dateComponents([.hour], from: Date(), to: endDate)
+        let hours = diffComponents.hour
+        return hours!
+    }
+    
+    var hourAtStart: String {
+        return "\(Calendar.current.component(.hour, from: self.startDate))"
+    }
+    
+    var active: Bool {
+        if (self.hoursToStart <= 0 && self.hoursToEnd > 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+}
+
+class BasicDealViewModel {
+    let id = UUID()
+    
+    var basicDeal : BasicDeal
+    
+    init(basicDeal: BasicDeal) {
+        self.basicDeal = basicDeal
+    }
+    var dealName: String {
+        return self.basicDeal.dealName
+    }
+    var restaurantName: String {
+        return self.basicDeal.restaurantName
+    }
+    var description: String {
+        return self.basicDeal.description
+    }
+    var hoursToEnd: Int {
+        return self.basicDeal.hoursToEnd
+    }
+    var hoursToStart: Int {
+        return self.basicDeal.hoursToStart
+    }
+    var upcoming: Bool {
+        return (hoursToStart > 0 && hoursToEnd < 0)
+    }
+    var active: Bool {
+        if (self.hoursToStart <= 0 && self.hoursToEnd > 0) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
