@@ -49,6 +49,8 @@
 		ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6879F29AED67600E86022 /* WelcomeView.swift */; };
 		ADF687A229AEDB5600E86022 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A129AEDB5600E86022 /* User.swift */; };
 		ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */; };
+		ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A529AEEA0F00E86022 /* DailyView.swift */; };
+		ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A729AEEA1B00E86022 /* UpcomingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		ADF6879F29AED67600E86022 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		ADF687A129AEDB5600E86022 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		ADF687A529AEEA0F00E86022 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
+		ADF687A729AEEA1B00E86022 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
 				ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */,
 				ADF6879F29AED67600E86022 /* WelcomeView.swift */,
+				ADF687A529AEEA0F00E86022 /* DailyView.swift */,
+				ADF687A729AEEA1B00E86022 /* UpcomingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,12 +304,14 @@
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
+				ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* FeedViewModel.swift in Sources */,
 				ADF6879729AE7F8100E86022 /* BasicDeal.swift in Sources */,
+				ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */,
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,

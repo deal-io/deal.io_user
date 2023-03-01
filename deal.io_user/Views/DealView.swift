@@ -24,7 +24,8 @@ struct DealView: View {
                 Text("0.5 mi")
                 Spacer()
                 Text(basicDealVM.restaurantName)
-                .padding(3)
+                    .font(.title3)
+                    .padding(3)
                 Spacer()
                 if (basicDealVM.active) {
                     Text("\(basicDealVM.hoursToEnd)")

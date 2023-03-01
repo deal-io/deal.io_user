@@ -9,9 +9,9 @@ import SwiftUI
 
 struct FeedView: View {
     
-    let deals: [BasicDealViewModel]
-    
-    @State var isDaily = true
+    @ObservedObject var feedVM: FeedViewModel
+    let dailyDeals: [BasicDealViewModel]
+    let upcomingDeals: [BasicDealViewModel]
     
     var body: some View {
         VStack {
@@ -21,30 +21,28 @@ struct FeedView: View {
             HStack {
                 Spacer()
                 Button {
-                    isDaily = true
+                    feedVM.currentFeed = .daily
                 } label: {
                     Text("Daily")
                         .padding(5)
+                        .font(.title3)
                 }
                 Spacer()
                 Button {
-                    isDaily = false
+                    feedVM.currentFeed = .upcoming
                 } label: {
                     Text("Upcoming")
                         .padding(5)
+                        .font(.title3)
                 }
                 .contentShape(Rectangle())
                 Spacer()
             }
-            ScrollView{
-                LazyVStack{
-                    ForEach(self.deals, id:\.id) { deal in
-                        DealView(basicDealVM: deal)
-                    }
-                }
+            if (feedVM.currentFeed == .upcoming) {
+                UpcomingView(deals: upcomingDeals)
+            } else {
+                DailyView(deals: dailyDeals)
             }
-            .background(Deal_ioColor.background)
-            .listRowSeparator(.hidden)
         }
         .background(Deal_ioColor.background)
     }
@@ -53,7 +51,36 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(deals: [
+        FeedView(feedVM: FeedViewModel(), dailyDeals: [
+            BasicDealViewModel(basicDeal: BasicDeal(
+                dealName: "30% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+            )),
+            BasicDealViewModel(basicDeal: BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+            )),
+            BasicDealViewModel(basicDeal: BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+            )),
+            BasicDealViewModel(basicDeal: BasicDeal(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                hoursToEnd: 6,
+                hoursToStart: 2
+            )),
+        ], upcomingDeals: [
             BasicDealViewModel(basicDeal: BasicDeal(
                 dealName: "25% Off Specialty Burgers",
                 restaurantName: "Buffalo Rose",

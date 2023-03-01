@@ -14,7 +14,15 @@ struct Deal_io: App {
     
     var body: some Scene {
         WindowGroup {
-            FeedView(deals: [
+            FeedView(feedVM: FeedViewModel(), dailyDeals: [
+                BasicDealViewModel(basicDeal: BasicDeal(
+                    dealName: "25% Off Specialty Burgers",
+                    restaurantName: "Buffalo Rose",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                    hoursToEnd: 6,
+                    hoursToStart: 2
+                ))
+            ], upcomingDeals: [
                 BasicDealViewModel(basicDeal: BasicDeal(
                     dealName: "25% Off Specialty Burgers",
                     restaurantName: "Buffalo Rose",

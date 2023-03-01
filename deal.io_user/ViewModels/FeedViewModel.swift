@@ -11,7 +11,8 @@ class FeedViewModel: ObservableObject {
     // created synthetic data to figure out view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
-    
+    @Published var currentFeed: FeedType = .daily
+
     /*
     init() {
         
@@ -27,6 +28,11 @@ class FeedViewModel: ObservableObject {
         }
     }
      */
+}
+
+enum FeedType {
+    case daily
+    case upcoming
 }
 
 class DealViewModel {
