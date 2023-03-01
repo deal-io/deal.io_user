@@ -8,45 +8,23 @@
 import SwiftUI
 
 struct DealView: View {
-    let basicDealVM: BasicDealViewModel
+    @ObservedObject var basicDealVM: BasicDealViewModel
+    @State private var expanded = false
+
     
     var body: some View {
-        VStack{
-                Spacer()
-            Text(basicDealVM.dealName)
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .background(Deal_ioColor.background)
-            
-            HStack {
-                Spacer()
-                Text("0.5 mi")
-                Spacer()
-                Text(basicDealVM.restaurantName)
-                .padding(3)
-                Spacer()
-                if (basicDealVM.active) {
-                    Text("\(basicDealVM.hoursToEnd)")
-                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                        .background(Color.gray)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                .padding(3)
+            VStack {
+                if expanded {
+                    ExpandedDealView(basicDealVM: basicDealVM)
                 } else {
-                    Text("\(basicDealVM.hoursToStart) hrs")
-                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                        .background(Deal_ioColor.oneHourColor)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                .padding(3)
+                    ContractedDealView(basicDealVM: basicDealVM)
                 }
-                Spacer()
             }
-                Spacer()
+            .onTapGesture {
+                withAnimation {
+                    expanded.toggle()
+            }
         }
-        .background(Deal_ioColor.background)
-        .foregroundColor(.white)
-        
     }
 }
 
