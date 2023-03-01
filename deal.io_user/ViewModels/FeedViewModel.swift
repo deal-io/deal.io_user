@@ -79,6 +79,13 @@ class DealViewModel: ObservableObject{
         return Date(timeIntervalSinceReferenceDate: timeInterval)
     }
     
+    var startCalendarDateComponents: DateComponents {
+        return Calendar.current.dateComponents([.day, .year, .month], from: self.startDate)
+    }
+    var endCalendarDateComponents: DateComponents {
+        return Calendar.current.dateComponents([.day, .year, .month], from: self.endDate)
+    }
+    
     var recurring: Bool {
         return self.deal.dealAttributes.recurring
     }
@@ -143,3 +150,14 @@ class BasicDealViewModel: ObservableObject{
         }
     }
 }
+
+extension Date {
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
+}
+
