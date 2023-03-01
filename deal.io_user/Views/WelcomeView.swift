@@ -16,7 +16,7 @@ struct WelcomeView: View {
             Image("dealio_white_on_bg")
                 .resizable()
                 .frame(width: 500, height: 300)
-            Text("Please input your @mines.edu email below: ")
+            Text("*Please input your @mines.edu email below: ")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
             EmailTextField(email: welcomeVM.emailBinding)
@@ -24,12 +24,12 @@ struct WelcomeView: View {
                 welcomeVM.saveUser()
             }
             Spacer()
-            Text("Your email is only required to verify that you are a student.\n\nYou will not recieve any marketing or promotional materials at this email address.")
+            Spacer()
+            Text("*Your email is only required to verify that you are a student.\n\nYou will not recieve any marketing or promotional materials at this email address.")
                 .foregroundColor(.white)
-                .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.center)
                 .padding(16)
                 .font(.caption)
-            Spacer()
         }.background(Deal_ioColor.background)
     }
 }
