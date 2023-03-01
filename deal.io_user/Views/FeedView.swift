@@ -7,14 +7,35 @@
 
 import SwiftUI
 
-struct DailyFeedView: View {
+struct FeedView: View {
     
     let deals: [BasicDealViewModel]
     
-    @State var isOn = true
+    @State var isDaily = true
     
     var body: some View {
         VStack {
+            Text("deal.io")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+            HStack {
+                Spacer()
+                Button {
+                    isDaily = true
+                } label: {
+                    Text("Daily")
+                        .padding(5)
+                }
+                Spacer()
+                Button {
+                    isDaily = false
+                } label: {
+                    Text("Upcoming")
+                        .padding(5)
+                }
+                .contentShape(Rectangle())
+                Spacer()
+            }
             ScrollView{
                 LazyVStack{
                     ForEach(self.deals, id:\.id) { deal in
@@ -25,13 +46,14 @@ struct DailyFeedView: View {
             .background(Deal_ioColor.background)
             .listRowSeparator(.hidden)
         }
+        .background(Deal_ioColor.background)
     }
 }
 
 
-struct DailyFeedView_Previews: PreviewProvider {
+struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyFeedView(deals: [
+        FeedView(deals: [
             BasicDealViewModel(basicDeal: BasicDeal(
                 dealName: "25% Off Specialty Burgers",
                 restaurantName: "Buffalo Rose",

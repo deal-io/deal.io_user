@@ -14,9 +14,10 @@ struct DealView: View {
         VStack{
                 Spacer()
             Text(basicDealVM.dealName)
-                .font(.largeTitle)
+                .font(.title)
                 .foregroundColor(.white)
-                .background(Deal_ioColor.background)
+                .padding(.horizontal, 4.5)
+                .multilineTextAlignment(.center)
             
             HStack {
                 Spacer()

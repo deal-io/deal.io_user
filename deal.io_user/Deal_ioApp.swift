@@ -14,7 +14,7 @@ struct Deal_io: App {
     
     var body: some Scene {
         WindowGroup {
-            DailyFeedView(deals: [
+            FeedView(deals: [
                 BasicDealViewModel(basicDeal: BasicDeal(
                     dealName: "25% Off Specialty Burgers",
                     restaurantName: "Buffalo Rose",
