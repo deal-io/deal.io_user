@@ -61,8 +61,6 @@ class DealViewModel: ObservableObject{
         return self.deal.dealAttributes.daysActive
     }
     
-    // this is just for setting up views, the actual implementation would use the FirebaseFirestoreSwift library
-    // to encode/decode Firestore Timestamp objects
     var startDate: Date {
         let seconds = self.deal.dealAttributes.startDate.seconds
         let nanoseconds = self.deal.dealAttributes.startDate.nanoseconds
@@ -70,8 +68,6 @@ class DealViewModel: ObservableObject{
         return Date(timeIntervalSinceReferenceDate: timeInterval)
     }
     
-    // this is just for setting up views, the actual implementation would use the FirebaseFirestoreSwift library
-    // to encode/decode Firestore Timestamp objects
     var endDate: Date {
         let seconds = self.deal.dealAttributes.startDate.seconds
         let nanoseconds = self.deal.dealAttributes.startDate.nanoseconds
