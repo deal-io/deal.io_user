@@ -47,6 +47,7 @@
 		ADF6879329AE63E600E86022 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ADF6879229AE63E600E86022 /* FirebaseStorage */; };
 		ADF6879529AE63E600E86022 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = ADF6879429AE63E600E86022 /* FirebaseStorageCombine-Community */; };
 		ADF6879729AE7F8100E86022 /* BasicDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6879629AE7F8100E86022 /* BasicDeal.swift */; };
+		FB4C335F29AEECDC00C19E7A /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = FB4C335E29AEECDC00C19E7A /* Preview Content */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal-ioColor.swift"; sourceTree = "<group>"; };
 		ADF0BBF329AAEDC200FF24F6 /* HourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourView.swift; sourceTree = "<group>"; };
 		ADF6879629AE7F8100E86022 /* BasicDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDeal.swift; sourceTree = "<group>"; };
+		FB4C335E29AEECDC00C19E7A /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,13 +135,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		AD80720629A884F3007E263D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		AD8F1DBA29AD939B001DBAC1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +162,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				FB4C335E29AEECDC00C19E7A /* Preview Content */,
 				AD00901229A4901600FDB1D3 /* Views */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
 				AD00901129A4879300FDB1D3 /* Models */,
@@ -174,7 +170,6 @@
 				ADC4D492299807E700B7BD24 /* Persistence.swift */,
 				ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */,
 				AD80720729A8855C007E263D /* Deal_ioApp.swift */,
-				AD80720629A884F3007E263D /* Preview Content */,
 				ADF0BC4D29AB2C3900FF24F6 /* Fonts */,
 				AD8F1DBA29AD939B001DBAC1 /* Services */,
 			);
@@ -278,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4C335F29AEECDC00C19E7A /* Preview Content in Resources */,
 				ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
