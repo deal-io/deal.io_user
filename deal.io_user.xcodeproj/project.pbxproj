@@ -51,6 +51,7 @@
 		ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */; };
 		ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A529AEEA0F00E86022 /* DailyView.swift */; };
 		ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A729AEEA1B00E86022 /* UpcomingView.swift */; };
+		ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A929AEF31900E86022 /* ContractedDealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		ADF687A529AEEA0F00E86022 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
 		ADF687A729AEEA1B00E86022 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
+		ADF687A929AEF31900E86022 /* ContractedDealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractedDealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				ADF6879F29AED67600E86022 /* WelcomeView.swift */,
 				ADF687A529AEEA0F00E86022 /* DailyView.swift */,
 				ADF687A729AEEA1B00E86022 /* UpcomingView.swift */,
+				ADF687A929AEF31900E86022 /* ContractedDealView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				ADF6879729AE7F8100E86022 /* BasicDeal.swift in Sources */,
 				ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */,
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,
+				ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,
 				ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */,

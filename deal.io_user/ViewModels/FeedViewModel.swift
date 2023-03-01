@@ -35,7 +35,7 @@ enum FeedType {
     case upcoming
 }
 
-class DealViewModel {
+class DealViewModel: ObservableObject{
     
     let id = UUID()
         
@@ -109,7 +109,7 @@ class DealViewModel {
     
 }
 
-class BasicDealViewModel {
+class BasicDealViewModel: ObservableObject{
     let id = UUID()
     
     var basicDeal : BasicDeal
