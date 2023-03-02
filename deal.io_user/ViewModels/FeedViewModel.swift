@@ -112,41 +112,6 @@ class DealViewModel: ObservableObject{
     
 }
 
-class BasicDealViewModel: ObservableObject{
-    let id = UUID()
-    
-    var basicDeal : BasicDeal
-    
-    init(basicDeal: BasicDeal) {
-        self.basicDeal = basicDeal
-    }
-    var dealName: String {
-        return self.basicDeal.dealName
-    }
-    var restaurantName: String {
-        return self.basicDeal.restaurantName
-    }
-    var description: String {
-        return self.basicDeal.description
-    }
-    var hoursToEnd: Int {
-        return self.basicDeal.hoursToEnd
-    }
-    var hoursToStart: Int {
-        return self.basicDeal.hoursToStart
-    }
-    var upcoming: Bool {
-        return (hoursToStart > 0 && hoursToEnd < 0)
-    }
-    var active: Bool {
-        if (self.hoursToStart <= 0 && self.hoursToEnd > 0) {
-            return true
-        } else {
-            return false
-        }
-    }
-}
-
 extension Date {
     func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
         return calendar.dateComponents(Set(components), from: self)
