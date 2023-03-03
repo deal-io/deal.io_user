@@ -20,16 +20,30 @@ struct WelcomeView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
             EmailTextField(email: welcomeVM.emailBinding)
-            Button("Enter") {
-                welcomeVM.saveUser()
+            // below code allows for change of view from WelcomeView
+            // to FeedView after a valid email is passed in
+            // the else block needs to be updated
+            // can't pass in code without API calls because it would bloat
+            // tf out of this file
+            /*
+            Button(action: {
+                if welcomeVM.validateEmail() {
+                    welcomeVM.saveUser()
+                    UIApplication.shared.windows.first?.rootViewController = UIHostingController(rootView: FeedView(feedVM: FeedViewModel(), dailyDeals: , upcomingDeals: <#T##[BasicDealViewModel]#>))
+                } else {
+                    welcomeVM.showError = true
+                }
+            }) {
+                Text("Submit")
             }
+            */
             Spacer()
             Spacer()
             Text("*Your email is only required to verify that you are a student.\n\nYou will not recieve any marketing or promotional materials at this email address.")
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(16)
-                .font(.caption)
+                .font(.footnote)
         }.background(Deal_ioColor.background)
     }
 }
@@ -46,6 +60,18 @@ struct EmailTextField: View {
             .multilineTextAlignment(.center)
             .background()
             .padding(12)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .shadow(color: Deal_ioColor.darkShadow, radius: 1, x: 2, y: 2)
+            .shadow(color: Deal_ioColor.lightShadow, radius: 1, x: -2, y: -2)
+        /*
+            .onChange(of: email) { value in
+                isEmailValid = isValidEmail(email)
+            }
+         */
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        return email.hasSuffix("@mines.edu")
     }
 }
 

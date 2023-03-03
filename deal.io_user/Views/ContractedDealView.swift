@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContractedDealView: View {
-    @ObservedObject var basicDealVM: BasicDealViewModel
+    @ObservedObject var dealVM: DealViewModel
 
     var body: some View {
         VStack{
                 Spacer()
-            Text(basicDealVM.dealName)
+            Text(dealVM.dealName)
                 .font(.title)
                 .foregroundColor(.white)
                 .padding(.horizontal, 4.5)
@@ -23,19 +23,19 @@ struct ContractedDealView: View {
                 Spacer()
                 Text("0.5 mi")
                 Spacer()
-                Text(basicDealVM.restaurantName)
+                Text(dealVM.restaurantName)
                     .font(.title3)
                     .padding(3)
                 Spacer()
-                if (basicDealVM.active) {
-                    Text("\(basicDealVM.hoursToEnd)")
+                if (dealVM.active) {
+                    Text("\(dealVM.hoursToEnd)")
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                         .background(Color.gray)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                 .padding(3)
                 } else {
-                    Text("\(basicDealVM.hoursToStart) hrs")
+                    Text("\(dealVM.hoursToStart) hrs")
                         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                         .background(Deal_ioColor.oneHourColor)
                         .foregroundColor(Color.white)
@@ -53,12 +53,19 @@ struct ContractedDealView: View {
 
 struct ContractedDealView_Previews: PreviewProvider {
     static var previews: some View {
-        ContractedDealView(basicDealVM: BasicDealViewModel(basicDeal: BasicDeal(
-            dealName: "25% Off Specialty Burgers",
-            restaurantName: "Buffalo Rose",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-            hoursToEnd: 6,
-            hoursToStart: 2
+        ContractedDealView(dealVM: DealViewModel(deal: Deal(
+            dealID: "912ec803b2ce49e4a541068d495ab570",
+            restaurantID: "81dc9bdb52d04dc20036dbd8313ed055",
+            enterDate: BackendDate(seconds: 1, nanoseconds: 1),
+            dealAttributes: DealAttributes(
+                dealName: "25% Off Specialty Burgers",
+                restaurantName: "Buffalo Rose",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+                daysActive: [false, true, false, false, false, false, false],
+                startDate: BackendDate(seconds: 1, nanoseconds: 1),
+                endDate: BackendDate(seconds: 1, nanoseconds: 1),
+                recurring: true
+            )
         )
         ))
     }
