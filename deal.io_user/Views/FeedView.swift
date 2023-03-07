@@ -17,7 +17,7 @@ struct FeedView: View {
         VStack {
             Image("dealio_white_on_bg")
                 .resizable()
-                .frame(width: 200, height: 150)
+                .frame(width: 200, height: 90)
             HStack {
                 Spacer()
                 Button {
@@ -61,7 +61,7 @@ struct FeedView_Previews: PreviewProvider {
                     restaurantName: "Miner's Saloon",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu augue rutrum, pellentesque enim at, congue ipsum. Pellentesque fermentum iaculis vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
                     daysActive: [false, true, false, false, false, false, false],
-                    startDate: BackendDate(seconds: 1, nanoseconds: 1),
+                    startDate: BackendDate(seconds: 100000, nanoseconds: 1),
                     endDate: BackendDate(seconds: 1, nanoseconds: 1),
                     recurring: true
                 )
