@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct DailyView: View {
-    let deals: [DealViewModel]
+struct DailyView(feedViewModel: FeedViewModel): View {
+    let deals = feedViewModel.getDailyDeals()
     var body: some View {
         ScrollView{
             LazyVStack{

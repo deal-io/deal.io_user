@@ -21,7 +21,7 @@ struct FeedView: View {
             HStack {
                 Spacer()
                 Button {
-                    feedVM.currentFeed = .daily
+                    feedVM.currentFeed = .DAILY
                 } label: {
                     Text("Daily")
                         .padding(5)
@@ -29,7 +29,7 @@ struct FeedView: View {
                 }
                 Spacer()
                 Button {
-                    feedVM.currentFeed = .upcoming
+                    feedVM.currentFeed = .UPCOMING
                 } label: {
                     Text("Upcoming")
                         .padding(5)
@@ -38,7 +38,7 @@ struct FeedView: View {
                 .contentShape(Rectangle())
                 Spacer()
             }
-            if (feedVM.currentFeed == .upcoming) {
+            if (feedVM.currentFeed == .UPCOMING) {
                 UpcomingView(deals: upcomingDeals)
             } else {
                 DailyView(deals: dailyDeals)
