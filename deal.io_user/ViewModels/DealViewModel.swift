@@ -15,12 +15,19 @@ class DealViewModel: ObservableObject{
         self.deal = deal
     }
     
+    var id = UUID()
+    
     var dealName: String {
         return self.deal.dealAttributes.dealName
     }
+   
+    // TODO: figure out this shit
+//    var restaurantName: String {
+//        return self.deal.dealAttributes.restaurantName
+//    }
     
     var restaurantName: String {
-        return self.deal.dealAttributes.restaurantName
+        return "Buffalo Rose"
     }
     
     var description: String {

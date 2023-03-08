@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct DailyView: View {
-    @ObservedObject var feedViewModel: FeedViewModel
     let deals: [Deal]
-    
-    init(feedViewModel: FeedViewModel) {
-        self.feedViewModel = feedViewModel
-        self.deals = feedViewModel.getDailyDeals()!
-    }
     
     var body: some View {
         ScrollView{
@@ -29,8 +23,3 @@ struct DailyView: View {
     }
 }
 
-struct DailyView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyView(feedViewModel: FeedViewModel())
-    }
-}

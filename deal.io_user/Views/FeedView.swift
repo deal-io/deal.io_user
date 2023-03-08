@@ -15,8 +15,8 @@ struct FeedView: View {
     
     init(feedVM: FeedViewModel) {
         self.feedVM = feedVM
-        self.dailyDeals = feedVM.getDailyDeals()
-        self.upcomingDeals = feedVM.getUpcomingDeals()
+        self.dailyDeals = feedVM.getDailyDeals()!
+        self.upcomingDeals = feedVM.getUpcomingDeals()!
     }
     
     var body: some View {
@@ -45,9 +45,9 @@ struct FeedView: View {
                 Spacer()
             }
             if (feedVM.currentFeed == .UPCOMING) {
-                UpcomingView(deals: upcomingDeals)
+                UpcomingView(deals: self.upcomingDeals)
             } else {
-                DailyView(deals: dailyDeals)
+                DailyView(deals: self.dailyDeals)
             }
         }
         .background(Deal_ioColor.background)
