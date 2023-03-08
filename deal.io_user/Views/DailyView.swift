@@ -13,7 +13,7 @@ struct DailyView: View {
     
     init(feedViewModel: FeedViewModel) {
         self.feedViewModel = feedViewModel
-        self.deals = feedViewModel.getDailyDeals()
+        self.deals = feedViewModel.getDailyDeals()!
     }
     
     var body: some View {
