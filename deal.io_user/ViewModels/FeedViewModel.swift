@@ -16,6 +16,10 @@ class FeedViewModel: ObservableObject {
     
     private let mDealService = DealService();
     
+    init() {
+        getAllActiveDeals()
+    }
+    
     func getAllActiveDeals() {
         mDealService.fetchDeals { result in
             switch result {
