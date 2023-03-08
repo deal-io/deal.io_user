@@ -14,18 +14,16 @@ class FeedViewModel: ObservableObject {
     @Published var currentFeed: FeedType = .daily
     @Published var deals = [FeedViewModel]()
     
-   /*
     init() {
         fetchDeals()
     }
     func fetchDeals() {
-        DealService().getAllActiveDeals() { deals in
+        DealService().getAllActiveDeals(completion: { (deals: [Deal]?) in
             if let deals = deals {
                 self.deals = deals.map(DealViewModel.init)
             }
-        }
+        })
     }
-    */
 }
 
 enum FeedType {

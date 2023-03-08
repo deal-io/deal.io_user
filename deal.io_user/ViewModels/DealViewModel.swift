@@ -9,8 +9,6 @@ import Foundation
 
 class DealViewModel: ObservableObject{
     
-    let id = UUID()
-        
     var deal: Deal
     
     init(deal: Deal) {
