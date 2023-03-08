@@ -18,6 +18,7 @@
 		ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */; };
 		ADA633CF29B7CA8F0032EF44 /* DealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633CE29B7CA8F0032EF44 /* DealViewModel.swift */; };
 		ADA633D129B7FED30032EF44 /* UpcomingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* UpcomingDayView.swift */; };
+		ADA633D729B930240032EF44 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D629B930240032EF44 /* DateUtil.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
 		ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D492299807E700B7BD24 /* Persistence.swift */; };
 		ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */; };
@@ -73,6 +74,7 @@
 		ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealResponse.swift; sourceTree = "<group>"; };
 		ADA633CE29B7CA8F0032EF44 /* DealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewModel.swift; sourceTree = "<group>"; };
 		ADA633D029B7FED30032EF44 /* UpcomingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDayView.swift; sourceTree = "<group>"; };
+		ADA633D629B930240032EF44 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC4D48D299807E700B7BD24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC4D492299807E700B7BD24 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		ADA633D529B930150032EF44 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ADA633D629B930240032EF44 /* DateUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		ADC4D47D299807E500B7BD24 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				ADA633D529B930150032EF44 /* Utils */,
 				AD00901229A4901600FDB1D3 /* Views */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
 				AD00901129A4879300FDB1D3 /* Models */,
@@ -347,6 +358,7 @@
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,
+				ADA633D729B930240032EF44 /* DateUtil.swift in Sources */,
 				ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */,
 				ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */,
 			);

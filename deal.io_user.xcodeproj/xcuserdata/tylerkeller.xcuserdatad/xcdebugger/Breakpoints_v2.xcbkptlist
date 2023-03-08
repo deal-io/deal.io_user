@@ -3,4 +3,114 @@
    uuid = "9B097414-1FC1-4ABF-AFE3-AF3F4AB2A947"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Views/FeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "FeedView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 8a9a2c39b5f17636"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of deal_io_user.FeedView.feedVM : deal_io_user.FeedViewModel"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 2ad6ebdabfb1449a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedView.feedVM.getter : deal_io_user.FeedViewModel"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 8e77ee098b2c14e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedView.feedVM.setter : deal_io_user.FeedViewModel"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 2feb32bec081f084"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedView.feedVM.modify : deal_io_user.FeedViewModel"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 9e243fd5a4750df1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedView.feedVM.modify : deal_io_user.FeedViewModel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - e3432ef60156a678"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedView.$feedVM.getter : SwiftUI.ObservedObject&lt;deal_io_user.FeedViewModel&gt;.Wrapper"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

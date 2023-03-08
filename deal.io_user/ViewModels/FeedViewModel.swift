@@ -34,28 +34,33 @@ class FeedViewModel: ObservableObject {
     }
     
     func getDailyDeals() -> [Deal]?{
-        //TODO
-        return nil;
+        var dailyDeals: [Deal] = []
+        
+        for deal in deals {
+            if deal.dealAttributes.daysActive[0] {
+                dailyDeals.append(deal)
+            }
+        }
+        
+        return dailyDeals
+        
     }
     
     func getUpcomingDeals() -> [Deal]?{
-        //TODO
-        return nil;
+        var upcomingDeals: [Deal] = []
+        
+        for deal in deals {
+            if (deal.dealAttributes.daysActive[1...6].contains(true)) {
+                upcomingDeals.append(deal)
+            }
+        }
+        
+        return upcomingDeals
     }
 }
 
 enum FeedType {
     case DAILY
     case UPCOMING
-}
-
-extension Date {
-    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
-        return calendar.dateComponents(Set(components), from: self)
-    }
-
-    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
-        return calendar.component(component, from: self)
-    }
 }
 

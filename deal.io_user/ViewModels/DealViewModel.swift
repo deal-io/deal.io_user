@@ -39,24 +39,18 @@ class DealViewModel: ObservableObject{
     }
     
     var startDate: Date {
-        let seconds = self.deal.dealAttributes.startDate.seconds
-        let nanoseconds = self.deal.dealAttributes.startDate.nanoseconds
-        let timeInterval = TimeInterval(seconds + (nanoseconds / 1_000_000_000))
-        return Date(timeIntervalSinceReferenceDate: timeInterval)
+        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.startDate.seconds, nanoseconds: self.deal.dealAttributes.startDate.nanoseconds)
     }
     
     var endDate: Date {
-        let seconds = self.deal.dealAttributes.startDate.seconds
-        let nanoseconds = self.deal.dealAttributes.startDate.nanoseconds
-        let timeInterval = TimeInterval(seconds + (nanoseconds / 1_000_000_000))
-        return Date(timeIntervalSinceReferenceDate: timeInterval)
+        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.endDate.seconds, nanoseconds: self.deal.dealAttributes.endDate.nanoseconds)
     }
     
     var startCalendarDateComponents: DateComponents {
-        return Calendar.current.dateComponents([.day, .year, .month], from: self.startDate)
+        return DateUtil().dateToCalendarComponents(date: self.startDate)
     }
     var endCalendarDateComponents: DateComponents {
-        return Calendar.current.dateComponents([.day, .year, .month], from: self.endDate)
+        return DateUtil().dateToCalendarComponents(date: self.endDate)
     }
     
     var recurring: Bool {
@@ -64,24 +58,15 @@ class DealViewModel: ObservableObject{
     }
     
     var hoursToStart: Int {
-        let diffComponents = Calendar.current.dateComponents([.hour], from: Date(), to: startDate)
-        let hours = diffComponents.hour
-        return hours!
+        return DateUtil().diffCurrentDateToInputDate(date: startDate)
     }
     
     var hoursToEnd: Int {
-        let diffComponents = Calendar.current.dateComponents([.hour], from: Date(), to: endDate)
-        let hours = diffComponents.hour
-        return hours!
+        return DateUtil().diffCurrentDateToInputDate(date: endDate)
     }
     
     var hourAtStart: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "h a"
-        formatter.amSymbol = "AM"
-        formatter.pmSymbol = "PM"
-        return formatter.string(from: self.startDate)
+        return DateUtil().formattedHourComponentFromDate(date: startDate)
     }
     
     var active: Bool {
