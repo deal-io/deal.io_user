@@ -28,7 +28,7 @@ class DateUtil {
         return Calendar.current.dateComponents([.day, .year, .month], from: date)
     }
     
-    func diffCurrentDateToInputDate(date: Date) -> Int8 {
+    func diffCurrentDateToInputDate(date: Date) -> Int {
         let diffComponents = Calendar.current.dateComponents([.hour], from: Date(), to: date)
         let hours = diffComponents.hour
         return hours!
