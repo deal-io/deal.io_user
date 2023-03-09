@@ -7,109 +7,465 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5"
+            uuid = "04AA1B94-3166-44AE-B44A-EE12D67AEFED"
             shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/ViewModels/FeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getAllActiveDeals()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "04AA1B94-3166-44AE-B44A-EE12D67AEFED - 3ad4a9d5b91a6846"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.FeedViewModel.getAllActiveDeals() -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/ViewModels/FeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "04AA1B94-3166-44AE-B44A-EE12D67AEFED - a12a7467f5a46fd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; () in deal_io_user.FeedViewModel.getAllActiveDeals() -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/ViewModels/FeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32DF0569-FCFD-42CF-AA37-34067A1D9C4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "DealService"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "219AE684-8356-4C0D-98D1-2E11032FBA5D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99240BD2-5479-4DD3-91B1-25A80F5FFFDB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42206483-2B76-4FC6-AA45-CA680FF8BB41"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BD5483D-672E-49BD-9C31-4A8CEB54DE37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BBC94ED-6C39-42C3-AFA8-89D54AE3D94A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A905F67-1A42-4993-8B1C-44629B5B6C02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE5A27FB-6927-4EFC-88EC-DD4E57284B32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE5A27FB-6927-4EFC-88EC-DD4E57284B32 - c113fa88baf22fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1892">
+               </Location>
+               <Location
+                  uuid = "DE5A27FB-6927-4EFC-88EC-DD4E57284B32 - c113fa88baf22fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "2768">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CEB33E0-935A-4300-9A5D-3686CEB7A74D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B12378C-46DB-4D01-BBDE-FA5FFB4910FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1B12378C-46DB-4D01-BBDE-FA5FFB4910FE - 32c431dd9e2163af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "1B12378C-46DB-4D01-BBDE-FA5FFB4910FE - c113fa88baf227f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "deal.io_user"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1952">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4382FD9-1CB5-4196-BAF6-13D610E386E6"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "deal.io_user/Views/FeedView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "FeedView"
-            landmarkType = "14">
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(feedVM:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B198D7DA-F9ED-42CE-8B74-32B005E86439"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Views/FeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(feedVM:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFFC928A-40B1-4259-9255-4D04CF89BD92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/ViewModels/FeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getDailyDeals()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63725660-60F1-48BA-A2D1-E6E3C59157EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BA63C28-A1F4-4C11-934A-EBBB112DF933"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D1D10FE-24D6-496B-9E86-3B35B3D3959F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52B91FEB-38A9-40EE-A993-01EEE1FA39BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A6BD2CF-55AD-40B5-A3F1-7E6DCE703AA2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5522999-B226-4F83-A750-4B72ACF58E9C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 8a9a2c39b5f17636"
+                  uuid = "F5522999-B226-4F83-A750-4B72ACF58E9C - 32c431dd9e216675"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of deal_io_user.FeedView.feedVM : deal_io_user.FeedViewModel"
+                  symbolName = "deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "deal.io_user"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "508">
                </Location>
                <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 2ad6ebdabfb1449a"
+                  uuid = "F5522999-B226-4F83-A750-4B72ACF58E9C - c113fa88baf2746"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "deal_io_user.FeedView.feedVM.getter : deal_io_user.FeedViewModel"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in deal_io_user.DealService.fetchDeals(completion: (Swift.Result&lt;Swift.Array&lt;deal_io_user.Deal&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "deal.io_user"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
+                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Services/DealService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 8e77ee098b2c14e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "deal_io_user.FeedView.feedVM.setter : deal_io_user.FeedViewModel"
-                  moduleName = "deal.io_user"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 2feb32bec081f084"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "deal_io_user.FeedView.feedVM.modify : deal_io_user.FeedViewModel"
-                  moduleName = "deal.io_user"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - 9e243fd5a4750df1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "deal_io_user.FeedView.feedVM.modify : deal_io_user.FeedViewModel with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "deal.io_user"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "F00EB47B-3FD1-4BC5-89A6-096D1ACCF2B5 - e3432ef60156a678"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "deal_io_user.FeedView.$feedVM.getter : SwiftUI.ObservedObject&lt;deal_io_user.FeedViewModel&gt;.Wrapper"
-                  moduleName = "deal.io_user"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerkeller/personalCode/deal.io_user/deal.io_user/Views/FeedView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "232">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC293C2C-6B83-44B5-9374-F2D62B03DE67"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "deal.io_user/Services/DealService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fetchDeals(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -39,11 +39,11 @@ class DealViewModel: ObservableObject{
     }
     
     var startDate: Date {
-        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.startDate.seconds, nanoseconds: self.deal.dealAttributes.startDate.nanoseconds)
+        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.startDate._seconds, nanoseconds: self.deal.dealAttributes.startDate._nanoseconds)
     }
     
     var endDate: Date {
-        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.endDate.seconds, nanoseconds: self.deal.dealAttributes.endDate.nanoseconds)
+        return DateUtil().secondsToDate(seconds: self.deal.dealAttributes.endDate._seconds, nanoseconds: self.deal.dealAttributes.endDate._nanoseconds)
     }
     
     var startCalendarDateComponents: DateComponents {

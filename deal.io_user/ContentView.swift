@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = FeedViewModel()
+    @ObservedObject private var feedViewModel = FeedViewModel()
     
-    
-    //TODO drill view model down for use in the views
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        FeedView(feedVM: feedViewModel)
     }
 }
 

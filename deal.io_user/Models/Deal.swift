@@ -81,8 +81,8 @@ struct Deal: Codable {
 }
 
 struct DateVal: Codable {
-    let seconds: Int64
-    let nanoseconds: Int64
+    let _seconds: Int64
+    let _nanoseconds: Int64
 }
 
 struct DealAttributes: Codable {

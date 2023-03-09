@@ -38,6 +38,7 @@ class DealService {
     private let apiUrl = "https://dealio-backend-production.web.app/deal/active"
     
     func fetchDeals(completion: @escaping (Result<[Deal], Error>) -> Void) {
+        print("Entering fetchDeals")
         guard let url = URL(string: apiUrl) else {
             completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -60,10 +61,14 @@ class DealService {
             }
             
             do {
+                let jsonString = String(data: data, encoding: .utf8)
+                print(jsonString)
                 let deals = try JSONDecoder().decode([Deal].self, from: data)
+                print("hitting this")
                 completion(.success(deals))
             } catch {
                 completion(.failure(error))
+                print("hitting that")
             }
         }.resume()
     }
