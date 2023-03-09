@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct HourView: View {
+struct DailyHourView: View {
     var dealVM: DealViewModel
     
     var body: some View {
         VStack {
-            if dealVM.active {
+            if dealVM.daily {
                 if dealVM.hoursToEnd <= 1 {
                     Text("<\(dealVM.hoursToEnd) hr")
                         .padding(8)

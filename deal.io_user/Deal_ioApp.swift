@@ -14,7 +14,7 @@ struct Deal_io: App {
     
     var body: some Scene {
         WindowGroup {
-            Text("")
+            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
