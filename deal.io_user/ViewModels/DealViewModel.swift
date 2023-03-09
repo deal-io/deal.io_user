@@ -69,11 +69,16 @@ class DealViewModel: ObservableObject{
         return DateUtil().formattedHourComponentFromDate(date: startDate)
     }
     
-    var active: Bool {
-        if (self.hoursToStart <= 0 && self.hoursToEnd > 0) {
-            return true
+    var daily: Bool {
+        return deal.dealAttributes.daysActive[0]
+    }
+    
+    var nextDayUpcoming: String {
+        let dailyDict = DateUtil().todaysDict
+        if let nextDayUpcoming = dailyDict[deal.dealAttributes.daysActive[1...6].firstIndex(of: true)!] {
+            return nextDayUpcoming
         } else {
-            return false
+            return "Not upcoming"
         }
     }
     

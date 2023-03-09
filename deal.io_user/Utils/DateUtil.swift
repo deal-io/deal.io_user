@@ -43,4 +43,23 @@ class DateUtil {
         return formatter.string(from: date)
     }
     
+    var todaysDict: Dictionary<Int, String> {
+        let calendar = Calendar.current
+        let today = Date()
+        let weekday = calendar.component(.weekday, from: today)
+
+        let weekdays = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]
+
+        var dayOfWeekDict = [Int: String]()
+
+        for i in 0...6 {
+            let offset = i - (weekday - 1)
+            let date = calendar.date(byAdding: .day, value: offset, to: today)!
+            let dayOfWeekString = weekdays[(calendar.component(.weekday, from: date) - 1) % 7]
+            dayOfWeekDict[i] = dayOfWeekString
+        }
+        
+        return dayOfWeekDict
+    }
+    
 }

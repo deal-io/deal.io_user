@@ -61,14 +61,10 @@ class DealService {
             }
             
             do {
-                let jsonString = String(data: data, encoding: .utf8)
-                print(jsonString)
                 let deals = try JSONDecoder().decode([Deal].self, from: data)
-                print("hitting this")
                 completion(.success(deals))
             } catch {
                 completion(.failure(error))
-                print("hitting that")
             }
         }.resume()
     }

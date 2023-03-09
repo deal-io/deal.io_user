@@ -28,8 +28,13 @@ struct ExpandedDealView: View {
                         .font(.title3)
                         .padding(.leading, 35)
                     Spacer()
-                    HourView(dealVM: dealVM)
-                        .padding(.trailing, 35)
+                    if (dealVM.daily == false) {
+                        UpcomingDayHourView(dealVM: dealVM)
+                            .padding(.trailing, 35)
+                    } else {
+                        DailyHourView(dealVM: dealVM)
+                            .padding(.trailing, 35)
+                    }
                 }
                 Spacer()
             }

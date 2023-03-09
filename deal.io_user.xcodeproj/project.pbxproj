@@ -14,10 +14,10 @@
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
 		ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C029B2F4000032EF44 /* DailyButton.swift */; };
 		ADA633C329B2F40C0032EF44 /* UpcomingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */; };
-		ADA633C529B2F5610032EF44 /* HourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C429B2F5610032EF44 /* HourView.swift */; };
+		ADA633C529B2F5610032EF44 /* DailyHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C429B2F5610032EF44 /* DailyHourView.swift */; };
 		ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */; };
 		ADA633CF29B7CA8F0032EF44 /* DealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633CE29B7CA8F0032EF44 /* DealViewModel.swift */; };
-		ADA633D129B7FED30032EF44 /* UpcomingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* UpcomingDayView.swift */; };
+		ADA633D129B7FED30032EF44 /* UpcomingDayHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* UpcomingDayHourView.swift */; };
 		ADA633D729B930240032EF44 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D629B930240032EF44 /* DateUtil.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
 		ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D492299807E700B7BD24 /* Persistence.swift */; };
@@ -70,10 +70,10 @@
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
 		ADA633C029B2F4000032EF44 /* DailyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButton.swift; sourceTree = "<group>"; };
 		ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingButton.swift; sourceTree = "<group>"; };
-		ADA633C429B2F5610032EF44 /* HourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourView.swift; sourceTree = "<group>"; };
+		ADA633C429B2F5610032EF44 /* DailyHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHourView.swift; sourceTree = "<group>"; };
 		ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealResponse.swift; sourceTree = "<group>"; };
 		ADA633CE29B7CA8F0032EF44 /* DealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewModel.swift; sourceTree = "<group>"; };
-		ADA633D029B7FED30032EF44 /* UpcomingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDayView.swift; sourceTree = "<group>"; };
+		ADA633D029B7FED30032EF44 /* UpcomingDayHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDayHourView.swift; sourceTree = "<group>"; };
 		ADA633D629B930240032EF44 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC4D48D299807E700B7BD24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
 				ADF687A929AEF31900E86022 /* ContractedDealView.swift */,
 				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
-				ADA633C429B2F5610032EF44 /* HourView.swift */,
-				ADA633D029B7FED30032EF44 /* UpcomingDayView.swift */,
+				ADA633C429B2F5610032EF44 /* DailyHourView.swift */,
+				ADA633D029B7FED30032EF44 /* UpcomingDayHourView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,14 +216,14 @@
 				AD00901229A4901600FDB1D3 /* Views */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
 				AD00901129A4879300FDB1D3 /* Models */,
-				ADC4D48D299807E700B7BD24 /* Assets.xcassets */,
+				AD8F1DBA29AD939B001DBAC1 /* Services */,
 				ADC4D492299807E700B7BD24 /* Persistence.swift */,
+				ADC4D48D299807E700B7BD24 /* Assets.xcassets */,
 				ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */,
 				ADF687FA29B001C800E86022 /* ContentView.swift */,
 				AD80720729A8855C007E263D /* Deal_ioApp.swift */,
 				AD80720629A884F3007E263D /* Preview Content */,
 				ADF0BC4D29AB2C3900FF24F6 /* Fonts */,
-				AD8F1DBA29AD939B001DBAC1 /* Services */,
 			);
 			path = deal.io_user;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
-				ADA633D129B7FED30032EF44 /* UpcomingDayView.swift in Sources */,
+				ADA633D129B7FED30032EF44 /* UpcomingDayHourView.swift in Sources */,
 				ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
@@ -354,7 +354,7 @@
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,
 				ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */,
 				ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */,
-				ADA633C529B2F5610032EF44 /* HourView.swift in Sources */,
+				ADA633C529B2F5610032EF44 /* DailyHourView.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,

@@ -50,7 +50,7 @@ class FeedViewModel: ObservableObject {
         var upcomingDeals: [Deal] = []
         
         for deal in deals {
-            if (deal.dealAttributes.daysActive[1...6].contains(true)) {
+            if (deal.dealAttributes.daysActive[1...6].contains(true) && !(deal.dealAttributes.daysActive[0])) {
                 upcomingDeals.append(deal)
             }
         }
