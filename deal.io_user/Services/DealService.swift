@@ -35,7 +35,7 @@ import Foundation
 //}
 
 class DealService {
-    private let apiUrl = "https://dealio-backend-production.web.app/deal/active"
+    private let apiUrl = "https://dealio-backend-production.web.app/deal/active/?timezone=-7"
     
     func fetchDeals(completion: @escaping (Result<[Deal], Error>) -> Void) {
         guard let url = URL(string: apiUrl) else {
