@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var viewModel = UserViewModel()
     
+    init(viewModel: UserViewModel = UserViewModel()) {
+        self.viewModel = viewModel
+    }
+    
     /*
      TODO: build in a persistent boolean flag and string email
      send them to FeedView if flag is true and they've sent in an email

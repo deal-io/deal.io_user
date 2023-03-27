@@ -10,9 +10,11 @@
 		AD00901529A490D100FDB1D3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901429A490D100FDB1D3 /* Deal.swift */; };
 		AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* FeedView.swift */; };
 		AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* UserViewModel.swift */; };
+		AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
 		AD76782B29D204C9008728BB /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782A29D204C9008728BB /* RefreshButton.swift */; };
+		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
 		AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioApp.swift */; };
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
 		ADA633C129B2F4010032EF44 /* DailyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C029B2F4000032EF44 /* DailyButtonView.swift */; };
@@ -67,9 +69,11 @@
 		AD00901429A490D100FDB1D3 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		AD00901C29A58C8300FDB1D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD00902029A58CC600FDB1D3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubbleView.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonView.swift; sourceTree = "<group>"; };
 		AD76782A29D204C9008728BB /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
+		AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubbleView.swift; sourceTree = "<group>"; };
 		AD80720729A8855C007E263D /* Deal_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioApp.swift; sourceTree = "<group>"; };
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
 		ADA633C029B2F4000032EF44 /* DailyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButtonView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
 				AD76782429D141DE008728BB /* SubmitButtonView.swift */,
 				AD76782A29D204C9008728BB /* RefreshButton.swift */,
+				AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */,
+				AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -364,11 +370,13 @@
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				ADA633C329B2F40C0032EF44 /* UpcomingButtonView.swift in Sources */,
+				AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
 				ADA633C129B2F4010032EF44 /* DailyButtonView.swift in Sources */,
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */,
 				AD76782B29D204C9008728BB /* RefreshButton.swift in Sources */,
+				AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
 				ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */,

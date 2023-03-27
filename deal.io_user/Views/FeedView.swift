@@ -36,7 +36,7 @@ struct FeedView: View {
                 ZStack {
                     Image("dealio_white_on_bg")
                         .resizable()
-                        .frame(width: 200, height: 90)
+                        .frame(width: 200, height: 80)
                     Button(action: {
                         action()
                         viewModel.clear()

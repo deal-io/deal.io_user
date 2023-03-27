@@ -83,7 +83,20 @@ class UserViewModel: ObservableObject {
                 dailyDeals.append(deal)
             }
         }
-        return dailyDeals
+        
+        // below sorts
+        var sortedDailyDeals: [Deal] = []
+        for deal in dailyDeals {
+            if DateUtil().getHourDifference(inputHour: deal.dealAttributes.endTime) > 0 {
+                sortedDailyDeals.append(deal)
+            }
+        }
+        for deal in dailyDeals {
+            if !sortedDailyDeals.contains(where: { $0.id == deal.id }) {
+                sortedDailyDeals.append(deal)
+            }
+        }
+        return sortedDailyDeals
     }
     
     /*
@@ -96,7 +109,17 @@ class UserViewModel: ObservableObject {
                 upcomingDeals.append(deal)
             }
         }
-        return upcomingDeals
+        
+        var sortedUpcomingDeals: [Deal] = []
+        for i in 0...6 {
+            for deal in upcomingDeals {
+                if deal.dealAttributes.daysActive[i] && !sortedUpcomingDeals.contains(where: { $0.id == deal.id }) {
+                    sortedUpcomingDeals.append(deal)
+                }
+            }
+        }
+        
+        return sortedUpcomingDeals
     }
 }
 

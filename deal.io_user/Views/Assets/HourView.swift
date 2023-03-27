@@ -43,7 +43,7 @@ struct HourView: View {
                         .cornerRadius(10)
                 } else {
                     if endHourDifference < 0 {
-                        Text("EXPIRED")
+                        Text("Ended")
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor)
                             .foregroundColor(Color.white)

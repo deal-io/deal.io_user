@@ -64,14 +64,19 @@ class DateUtil {
     
     func getHourDifference(inputHour: String) -> Double {
         let LOG = "GHD: "
+        print("\(LOG)inputHour: \(inputHour)")
         let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
         
         let currentHour = formatter.string(from: Date())
         print("\(LOG)currentHour: \(currentHour)")
         
+        formatter.setlocalizeddateformatfromtemplate("hh:mm a")
+        if let inputHourDate = formatter.date(from: inputHour) {
+        } else {
+            formatter.setLocalizedDateFormatFromTemplate("hh:mm")
+            return formatter.date(from: inputHour)
+        }
         let currentHourDate = formatter.date(from: currentHour)
-        let inputHourDate = formatter.date(from: inputHour)
         print("\(LOG)currentHourDate: \(String(describing: currentHourDate))")
         print("\(LOG)inputHourDate: \(String(describing: inputHourDate))")
         
@@ -96,4 +101,15 @@ class DateUtil {
         return nil
     }
     
+    func getAllActiveWeekdays(daysActive: [Bool]) -> [String] {
+        var weekdays: [String] = []
+        
+        for index in 0...6 {
+            if daysActive[index] {
+                weekdays.append(self.todaysDict[index]!)
+            }
+        }
+        
+        return weekdays
+    }
 }
