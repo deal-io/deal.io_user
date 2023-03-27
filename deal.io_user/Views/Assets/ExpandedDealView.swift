@@ -28,6 +28,7 @@ struct ExpandedDealView: View {
             Text(viewModel.locationMap[deal.restaurantID] ?? "Nil location")
                 .padding(10)
                 .multilineTextAlignment(.center)
+            OpenMapsView(viewModel: viewModel, deal: deal)
                 HStack {
                     Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
                         .font(.title3)

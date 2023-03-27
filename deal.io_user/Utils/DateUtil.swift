@@ -66,16 +66,12 @@ class DateUtil {
         let LOG = "GHD: "
         print("\(LOG)inputHour: \(inputHour)")
         let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
         
         let currentHour = formatter.string(from: Date())
         print("\(LOG)currentHour: \(currentHour)")
         
-        formatter.setlocalizeddateformatfromtemplate("hh:mm a")
-        if let inputHourDate = formatter.date(from: inputHour) {
-        } else {
-            formatter.setLocalizedDateFormatFromTemplate("hh:mm")
-            return formatter.date(from: inputHour)
-        }
+        let inputHourDate = formatter.date(from: inputHour)
         let currentHourDate = formatter.date(from: currentHour)
         print("\(LOG)currentHourDate: \(String(describing: currentHourDate))")
         print("\(LOG)inputHourDate: \(String(describing: inputHourDate))")
