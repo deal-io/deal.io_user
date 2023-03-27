@@ -13,8 +13,3 @@ struct DailyButton: View {
     }
 }
 
-struct DailyButton_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyButton()
-    }
-}

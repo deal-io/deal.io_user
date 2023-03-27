@@ -20,9 +20,3 @@ struct UpcomingDayHourView: View {
         }
     }
 }
-
-struct DayView_Previews: PreviewProvider {
-    static var previews: some View {
-        UpcomingDayHourView(dealVM: DealViewModel(deal: Deal(id: "", restaurantID: "", enterDate: DateVal(_seconds: 1, _nanoseconds: 1), dealAttributes: DealAttributes(daysActive: [false, false, true, false, false, false, false], dealName: "bruh", description: "bruh bruh", startDate: DateVal(_seconds: 1, _nanoseconds: 1), endDate: DateVal(_seconds: 1, _nanoseconds: 1), recurring: true))))
-    }
-}
