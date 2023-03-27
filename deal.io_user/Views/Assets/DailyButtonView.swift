@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct DailyButton: View {
+    @State var fillColor: Color
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .fill(Deal_ioColor.accent)
+                .fill(fillColor)
                 .frame(width: 140, height: 40)
             Text("Daily")
                 .font(.title)
