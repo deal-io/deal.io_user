@@ -73,6 +73,9 @@ class UserViewModel: ObservableObject {
         }
     }
     
+    /*
+     daily requires that daysActive[0] is true, that's all
+     */
     func getDailyDeals() -> [Deal]?{
         var dailyDeals: [Deal] = []
         for deal in deals {
@@ -83,10 +86,13 @@ class UserViewModel: ObservableObject {
         return dailyDeals
     }
     
+    /*
+     upcoming requires that any of the daysActive are true or if daysActive[0] is true, then CurrentTime - StartTime is positive
+     */
     func getUpcomingDeals() -> [Deal]?{
         var upcomingDeals: [Deal] = []
         for deal in deals {
-            if (deal.dealAttributes.daysActive[1...6].contains(true) && !(deal.dealAttributes.daysActive[0])) {
+            if ((deal.dealAttributes.daysActive[1...6].contains(true) && !deal.dealAttributes.daysActive[0]) || (deal.dealAttributes.daysActive[0] && (DateUtil().getHourDifference(inputHour: deal.dealAttributes.startTime) > 0))) {
                 upcomingDeals.append(deal)
             }
         }
