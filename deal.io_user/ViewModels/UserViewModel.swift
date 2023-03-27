@@ -14,14 +14,26 @@ class UserViewModel: ObservableObject {
     @Published var currentFeed: FeedType = .DAILY
     @Published var deals: [Deal] = []
     @Published var restaurants: [Restaurant] = []
+    @Published var nameMap = [String: String]()
+    @Published var locationMap = [String: String]()
     
     private let mDealService = DealService();
     
     init() {
-        getAllActiveDeals()
+        getAllActiveDeals(completion: { [weak self] in
+            guard let self = self else { return }
+            self.getAllRestaurants(completion: { [weak self] in
+                guard let self = self else { return }
+                for restaurant in self.restaurants {
+                    self.nameMap[restaurant.id] = restaurant.name
+                    self.locationMap[restaurant.id] = restaurant.location
+                }
+            })
+        })
     }
+
     
-    func getAllActiveDeals() {
+    func getAllActiveDeals(completion: @escaping () -> Void) {
         mDealService.fetchDeals { result in
             switch result {
             case .success(let deals):
@@ -34,7 +46,7 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func getAllRestaurants() {
+    func getAllRestaurants(completion: @escaping () -> Void) {
         mDealService.fetchRestaurants { result in
             switch result {
             case .success(let restaurants):

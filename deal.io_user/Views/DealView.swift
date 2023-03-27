@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct DealView: View {
-    @ObservedObject var dealVM: DealViewModel
+    @ObservedObject var viewModel: UserViewModel
     @State private var expanded = false
+    var deal: Deal
 
     
     var body: some View {
         VStack {
             if expanded {
-                ExpandedDealView(dealVM: dealVM)
+                ExpandedDealView(viewModel: viewModel, deal: deal)
             } else {
-                ContractedDealView(dealVM: dealVM)
+                ContractedDealView(viewModel: viewModel, deal: deal)
             }
         }
         .onTapGesture {

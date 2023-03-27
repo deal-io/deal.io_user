@@ -38,9 +38,9 @@ struct FeedView: View {
                 Spacer()
             }
             if (viewModel.currentFeed == .UPCOMING) {
-                UpcomingView(deals: self.upcomingDeals)
+                UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
             } else {
-                DailyView(deals: self.dailyDeals)
+                DailyView(viewModel: viewModel, deals: self.dailyDeals)
             }
         }
         .background(Deal_ioColor.background)
