@@ -21,17 +21,9 @@ class UserViewModel: ObservableObject {
     
     // TODO: guessing that the getAll's aren't completing before restaurant's loop
     init() {
-        DispatchQueue.main.async {
-            self.getAllActiveDeals()
-            self.getAllRestaurants()
-        }
-        for restaurant in self.restaurants {
-            self.nameMap[restaurant.id] = restaurant.name
-            self.locationMap[restaurant.id] = restaurant.location
-        }
+        self.getAllActiveDeals()
+        self.getAllRestaurants()
     }
-
-
     
     func getAllActiveDeals() {
         mDealService.fetchDeals { result in
@@ -52,6 +44,10 @@ class UserViewModel: ObservableObject {
             case .success(let restaurants):
                 print("Restaurants: \(restaurants)")
                 self.restaurants = restaurants;
+                for restaurant in self.restaurants {
+                    self.nameMap[restaurant.id] = restaurant.name
+                    self.locationMap[restaurant.id] = restaurant.location
+                }
             case .failure(let error):
                 //TODO handle error
                 print("Error: \(error.localizedDescription)")
@@ -61,26 +57,21 @@ class UserViewModel: ObservableObject {
     
     func getDailyDeals() -> [Deal]?{
         var dailyDeals: [Deal] = []
-        
         for deal in deals {
             if deal.dealAttributes.daysActive[0] {
                 dailyDeals.append(deal)
             }
         }
-        
         return dailyDeals
-        
     }
     
     func getUpcomingDeals() -> [Deal]?{
         var upcomingDeals: [Deal] = []
-        
         for deal in deals {
             if (deal.dealAttributes.daysActive[1...6].contains(true) && !(deal.dealAttributes.daysActive[0])) {
                 upcomingDeals.append(deal)
             }
         }
-        
         return upcomingDeals
     }
 }

@@ -24,11 +24,11 @@ struct ExpandedDealView: View {
             Text(deal.dealAttributes.description)
                 .padding(10)
                 .multilineTextAlignment(.center)
-            Text(viewModel.locationMap[deal.restaurantID]!)
+            Text(viewModel.locationMap[deal.restaurantID] ?? "Location returned nil")
                 .padding(10)
                 .multilineTextAlignment(.center)
                 HStack {
-                    Text(viewModel.nameMap[deal.restaurantID]!)
+                    Text(viewModel.nameMap[deal.restaurantID] ?? "Name returned nil")
                         .font(.title3)
                         .padding(.leading, 35)
                     Spacer()

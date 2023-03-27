@@ -15,7 +15,9 @@ struct WelcomeView: View {
             Spacer()
             Image("dealio_white_on_bg")
                 .resizable()
-                .frame(width: 500, height: 300)
+                .frame(width: 350, height: 150)
+            Spacer()
+            Spacer()
             Text("*Please input your @mines.edu email below: ")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -39,6 +41,12 @@ struct WelcomeView: View {
             */
             Spacer()
             Spacer()
+            SubmitButton()
+                .onTapGesture {
+                    /*
+                     TODO: handle suffix check, then save persistent data
+                     */
+                }
             Text("*Your email is only required to verify that you are a student.\n\nYou will not recieve any marketing or promotional materials at this email address.")
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
