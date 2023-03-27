@@ -26,22 +26,15 @@ struct FeedView: View {
                 .frame(width: 200, height: 90)
             HStack {
                 Spacer()
-                Button {
-                    viewModel.currentFeed = .DAILY
-                } label: {
-                    Text("Daily")
-                        .padding(5)
-                        .font(.title3)
-                }
+                DailyButton()
+                    .onTapGesture {
+                        viewModel.currentFeed = .DAILY
+                    }
                 Spacer()
-                Button {
-                    viewModel.currentFeed = .UPCOMING
-                } label: {
-                    Text("Upcoming")
-                        .padding(5)
-                        .font(.title3)
-                }
-                .contentShape(Rectangle())
+                UpcomingButton()
+                    .onTapGesture {
+                        viewModel.currentFeed = .UPCOMING
+                    }
                 Spacer()
             }
             if (viewModel.currentFeed == .UPCOMING) {

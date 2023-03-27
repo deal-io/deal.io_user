@@ -13,16 +13,16 @@ struct DealView: View {
 
     
     var body: some View {
-            VStack {
-                if expanded {
-                    ExpandedDealView(dealVM: dealVM)
-                } else {
-                    ContractedDealView(dealVM: dealVM)
-                }
+        VStack {
+            if expanded {
+                ExpandedDealView(dealVM: dealVM)
+            } else {
+                ContractedDealView(dealVM: dealVM)
             }
-            .onTapGesture {
-                withAnimation {
-                    expanded.toggle()
+        }
+        .onTapGesture {
+            withAnimation {
+                expanded.toggle()
             }
         }
     }
