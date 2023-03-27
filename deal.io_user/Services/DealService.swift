@@ -8,10 +8,10 @@
 import Foundation
 
 class DealService {
-    private let apiUrl = "https://dealio-backend-production.web.app/deal/active/?timezone=-7"
+    private let apiUrl = "https://dealio-backend-production.web.app"
     
     func fetchDeals(completion: @escaping (Result<[Deal], Error>) -> Void) {
-        guard let url = URL(string: apiUrl) else {
+        guard let url = URL(string: "\(apiUrl)/deal/active/?timezone=-7") else {
             completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
         }

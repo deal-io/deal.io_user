@@ -19,21 +19,21 @@ class UserViewModel: ObservableObject {
     
     private let mDealService = DealService();
     
+    // TODO: guessing that the getAll's aren't completing before restaurant's loop
     init() {
-        getAllActiveDeals(completion: { [weak self] in
-            guard let self = self else { return }
-            self.getAllRestaurants(completion: { [weak self] in
-                guard let self = self else { return }
-                for restaurant in self.restaurants {
-                    self.nameMap[restaurant.id] = restaurant.name
-                    self.locationMap[restaurant.id] = restaurant.location
-                }
-            })
-        })
+        DispatchQueue.main.async {
+            self.getAllActiveDeals()
+            self.getAllRestaurants()
+        }
+        for restaurant in self.restaurants {
+            self.nameMap[restaurant.id] = restaurant.name
+            self.locationMap[restaurant.id] = restaurant.location
+        }
     }
 
+
     
-    func getAllActiveDeals(completion: @escaping () -> Void) {
+    func getAllActiveDeals() {
         mDealService.fetchDeals { result in
             switch result {
             case .success(let deals):
@@ -46,7 +46,7 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func getAllRestaurants(completion: @escaping () -> Void) {
+    func getAllRestaurants() {
         mDealService.fetchRestaurants { result in
             switch result {
             case .success(let restaurants):

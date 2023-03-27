@@ -10,6 +10,13 @@ import SwiftUI
 struct ContractedDealView: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
+    
+    init(viewModel: UserViewModel, deal: Deal) {
+        self.viewModel = viewModel
+        self.deal = deal
+        print("Name Map: \(viewModel.nameMap)")
+        print("ID: \(deal.restaurantID)")
+    }
 
     var body: some View {
         VStack{
