@@ -16,7 +16,7 @@ struct ContentView: View {
      else, send to WelcomeView
      */
     var body: some View {
-        WelcomeView(welcomeVM: WelcomeViewModel(user: User(email: "")))
-    //    FeedView(viewModel: viewModel)
+//        WelcomeView(welcomeVM: WelcomeViewModel(user: User(email: "")))
+        FeedView(viewModel: viewModel)
     }
 }
