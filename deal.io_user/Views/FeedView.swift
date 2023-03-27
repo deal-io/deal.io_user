@@ -9,14 +9,14 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @ObservedObject var feedVM: FeedViewModel
+    @ObservedObject var viewModel: UserViewModel
     let dailyDeals: [Deal]
     let upcomingDeals: [Deal]
     
-    init(feedVM: FeedViewModel) {
-        self.feedVM = feedVM
-        self.dailyDeals = feedVM.getDailyDeals()!
-        self.upcomingDeals = feedVM.getUpcomingDeals()!
+    init(viewModel: UserViewModel) {
+        self.viewModel = viewModel
+        self.dailyDeals = viewModel.getDailyDeals()!
+        self.upcomingDeals = viewModel.getUpcomingDeals()!
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct FeedView: View {
             HStack {
                 Spacer()
                 Button {
-                    feedVM.currentFeed = .DAILY
+                    viewModel.currentFeed = .DAILY
                 } label: {
                     Text("Daily")
                         .padding(5)
@@ -35,7 +35,7 @@ struct FeedView: View {
                 }
                 Spacer()
                 Button {
-                    feedVM.currentFeed = .UPCOMING
+                    viewModel.currentFeed = .UPCOMING
                 } label: {
                     Text("Upcoming")
                         .padding(5)
@@ -44,7 +44,7 @@ struct FeedView: View {
                 .contentShape(Rectangle())
                 Spacer()
             }
-            if (feedVM.currentFeed == .UPCOMING) {
+            if (viewModel.currentFeed == .UPCOMING) {
                 UpcomingView(deals: self.upcomingDeals)
             } else {
                 DailyView(deals: self.dailyDeals)

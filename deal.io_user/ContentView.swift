@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var feedViewModel = FeedViewModel()
+    @ObservedObject private var viewModel = UserViewModel()
     
     /*
      TODO: build in a persistent boolean flag and string email
@@ -16,6 +16,6 @@ struct ContentView: View {
      else, send to WelcomeView
      */
     var body: some View {
-        FeedView(feedVM: feedViewModel)
+        FeedView(viewModel: viewModel)
     }
 }
