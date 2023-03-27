@@ -62,19 +62,23 @@ class DateUtil {
         return dayOfWeekDict
     }
     
-    func getHourDifference(inputHour: String) -> Int {
+    func getHourDifference(inputHour: String) -> Double {
+        let LOG = "GHD: "
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm a"
         
         let currentHour = formatter.string(from: Date())
+        print("\(LOG)currentHour: \(currentHour)")
         
-        guard let currentHourDate = formatter.date(from: currentHour),
-              let inputHourDate = formatter.date(from: inputHour) else {
-            return 0
-        }
+        let currentHourDate = formatter.date(from: currentHour)
+        let inputHourDate = formatter.date(from: inputHour)
+        print("\(LOG)currentHourDate: \(String(describing: currentHourDate))")
+        print("\(LOG)inputHourDate: \(String(describing: inputHourDate))")
         
         let calendar = Calendar.current
-        let hourDifference = calendar.dateComponents([.hour], from: currentHourDate, to: inputHourDate).hour!
+        let timeDifference = inputHourDate!.timeIntervalSince(currentHourDate!)
+        let hourDifference = timeDifference / 3600.0
+        print("\(LOG)hourDifference: \(hourDifference)")
         
         return hourDifference
     }
