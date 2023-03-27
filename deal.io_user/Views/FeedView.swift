@@ -24,22 +24,35 @@ struct FeedView: View {
             Image("dealio_white_on_bg")
                 .resizable()
                 .frame(width: 200, height: 90)
-            HStack {
-                Spacer()
-                DailyButton()
-                    .onTapGesture {
-                        viewModel.currentFeed = .DAILY
-                    }
-                Spacer()
-                UpcomingButton()
-                    .onTapGesture {
-                        viewModel.currentFeed = .UPCOMING
-                    }
-                Spacer()
-            }
             if (viewModel.currentFeed == .UPCOMING) {
+                HStack {
+                    Spacer()
+                    DailyButton(fillColor: Deal_ioColor.background)
+                        .onTapGesture {
+                            viewModel.currentFeed = .DAILY
+                        }
+                    Spacer()
+                    UpcomingButton(fillColor: Deal_ioColor.selected)
+                        .onTapGesture {
+                            viewModel.currentFeed = .UPCOMING
+                        }
+                    Spacer()
+                }
                 UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
             } else {
+                HStack {
+                    Spacer()
+                    DailyButton(fillColor: Deal_ioColor.selected)
+                        .onTapGesture {
+                            viewModel.currentFeed = .DAILY
+                        }
+                    Spacer()
+                    UpcomingButton(fillColor: Deal_ioColor.background)
+                        .onTapGesture {
+                            viewModel.currentFeed = .UPCOMING
+                        }
+                    Spacer()
+                }
                 DailyView(viewModel: viewModel, deals: self.dailyDeals)
             }
         }
