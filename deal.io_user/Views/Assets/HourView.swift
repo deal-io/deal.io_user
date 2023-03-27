@@ -14,8 +14,8 @@ struct HourView: View {
     var deal: Deal
     var startTime: String
     var endTime: String
-    var startHourDifference: Int
-    var endHourDifference: Int
+    var startHourDifference: Double
+    var endHourDifference: Double
     var upcomingDay: String
     var active: Bool
 
@@ -25,6 +25,7 @@ struct HourView: View {
         self.deal = deal
         self.startTime = deal.dealAttributes.startTime
         self.endTime = deal.dealAttributes.endTime
+        print("GHD: \(deal)")
         self.startHourDifference = DateUtil().getHourDifference(inputHour: startTime)
         self.endHourDifference = DateUtil().getHourDifference(inputHour: endTime)
         self.upcomingDay = DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive)!
@@ -54,13 +55,13 @@ struct HourView: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference <= 2 {
-                        Text("\(endHourDifference) hrs")
+                        Text("\(Int(ceil(endHourDifference))) hrs")
                             .padding(8)
                             .background(Deal_ioColor.twoHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference > 2 {
-                        Text("\(endHourDifference) hrs")
+                        Text("\(Int(ceil(endHourDifference))) hrs")
                             .padding(8)
                             .background(Deal_ioColor.fourHourColor)
                             .foregroundColor(Color.white)
