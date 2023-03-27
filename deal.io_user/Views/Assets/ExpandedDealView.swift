@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ExpandedDealView: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
@@ -21,17 +19,17 @@ struct ExpandedDealView: View {
                 .foregroundColor(.white)
                 .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
+            FromToTimeBubbleView(viewModel: viewModel, deal: deal)
+                .padding(.bottom, 10)
+            ActiveDaysBubbleView(viewModel: viewModel, deal: deal)
             Text(deal.dealAttributes.description)
                 .padding(10)
                 .multilineTextAlignment(.center)
-            Text("Active from \(deal.dealAttributes.startTime) to \(deal.dealAttributes.endTime)")
-                .padding(10)
-                .multilineTextAlignment(.center)
-            Text(viewModel.locationMap[deal.restaurantID] ?? "Location returned nil")
+            Text(viewModel.locationMap[deal.restaurantID] ?? "Nil location")
                 .padding(10)
                 .multilineTextAlignment(.center)
                 HStack {
-                    Text(viewModel.nameMap[deal.restaurantID] ?? "Name returned nil")
+                    Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
                         .font(.title3)
                         .padding(.leading, 35)
                     Spacer()
