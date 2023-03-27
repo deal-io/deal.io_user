@@ -75,10 +75,3 @@ struct EmailTextField: View {
     }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User(email: "")
-        let welcomeVM = WelcomeViewModel(user: user)
-        return WelcomeView(welcomeVM: welcomeVM)
-    }
-}

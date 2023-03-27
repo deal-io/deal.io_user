@@ -9,14 +9,14 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @ObservedObject var feedVM: FeedViewModel
+    @ObservedObject var viewModel: UserViewModel
     let dailyDeals: [Deal]
     let upcomingDeals: [Deal]
     
-    init(feedVM: FeedViewModel) {
-        self.feedVM = feedVM
-        self.dailyDeals = feedVM.getDailyDeals()!
-        self.upcomingDeals = feedVM.getUpcomingDeals()!
+    init(viewModel: UserViewModel) {
+        self.viewModel = viewModel
+        self.dailyDeals = viewModel.getDailyDeals()!
+        self.upcomingDeals = viewModel.getUpcomingDeals()!
     }
     
     var body: some View {
@@ -26,39 +26,23 @@ struct FeedView: View {
                 .frame(width: 200, height: 90)
             HStack {
                 Spacer()
-                Button {
-                    feedVM.currentFeed = .DAILY
-                } label: {
-                    Text("Daily")
-                        .padding(5)
-                        .font(.title3)
-                }
+                DailyButton()
+                    .onTapGesture {
+                        viewModel.currentFeed = .DAILY
+                    }
                 Spacer()
-                Button {
-                    feedVM.currentFeed = .UPCOMING
-                } label: {
-                    Text("Upcoming")
-                        .padding(5)
-                        .font(.title3)
-                }
-                .contentShape(Rectangle())
+                UpcomingButton()
+                    .onTapGesture {
+                        viewModel.currentFeed = .UPCOMING
+                    }
                 Spacer()
             }
-            if (feedVM.currentFeed == .UPCOMING) {
-                UpcomingView(deals: self.upcomingDeals)
+            if (viewModel.currentFeed == .UPCOMING) {
+                UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
             } else {
-                DailyView(deals: self.dailyDeals)
+                DailyView(viewModel: viewModel, deals: self.dailyDeals)
             }
         }
         .background(Deal_ioColor.background)
     }
 }
-
-
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView(feedVM: FeedViewModel())
-    }
-}
-
-    

@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct ContractedDealView: View {
-    @ObservedObject var dealVM: DealViewModel
+    @ObservedObject var viewModel: UserViewModel
+    var deal: Deal
+    
+    init(viewModel: UserViewModel, deal: Deal) {
+        self.viewModel = viewModel
+        self.deal = deal
+        print("Name Map: \(viewModel.nameMap)")
+        print("ID: \(deal.restaurantID)")
+    }
 
     var body: some View {
         VStack{
-                Spacer()
-            Text(dealVM.dealName)
+            Spacer()
+            Text(deal.dealAttributes.dealName)
                 .font(.title)
                 .foregroundColor(.white)
                 .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
             
             HStack {
-                Text(dealVM.restaurantName)
+                Text(viewModel.nameMap[deal.restaurantID]!)
                     .font(.title3)
                     .padding(.leading, 35)
                 Spacer()
-                if (dealVM.daily == false) {
-                    UpcomingDayHourView(dealVM: dealVM)
-                        .padding(.trailing, 35)
-                } else {
-                    DailyHourView(dealVM: dealVM)
-                        .padding(.trailing, 35)
-                }
+                HourView(viewModel: viewModel, deal: deal)
+                    .padding(.trailing, 35)
             }
                 Spacer()
         }

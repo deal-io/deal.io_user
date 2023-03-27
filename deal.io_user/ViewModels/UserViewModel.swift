@@ -7,18 +7,31 @@
 
 import Foundation
 
-class FeedViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
     // created synthetic data to figure out view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
     @Published var currentFeed: FeedType = .DAILY
     @Published var deals: [Deal] = []
+    @Published var restaurants: [Restaurant] = []
+    @Published var nameMap = [String: String]()
+    @Published var locationMap = [String: String]()
     
     private let mDealService = DealService();
     
+    // TODO: guessing that the getAll's aren't completing before restaurant's loop
     init() {
-        getAllActiveDeals()
+        DispatchQueue.main.async {
+            self.getAllActiveDeals()
+            self.getAllRestaurants()
+        }
+        for restaurant in self.restaurants {
+            self.nameMap[restaurant.id] = restaurant.name
+            self.locationMap[restaurant.id] = restaurant.location
+        }
     }
+
+
     
     func getAllActiveDeals() {
         mDealService.fetchDeals { result in
@@ -28,6 +41,19 @@ class FeedViewModel: ObservableObject {
                 self.deals = deals;
             case .failure(let error):
                 //TODO handle error 
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func getAllRestaurants() {
+        mDealService.fetchRestaurants { result in
+            switch result {
+            case .success(let restaurants):
+                print("Restaurants: \(restaurants)")
+                self.restaurants = restaurants;
+            case .failure(let error):
+                //TODO handle error
                 print("Error: \(error.localizedDescription)")
             }
         }

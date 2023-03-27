@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var feedViewModel = FeedViewModel()
+    @ObservedObject private var viewModel = UserViewModel()
     
+    /*
+     TODO: build in a persistent boolean flag and string email
+     send them to FeedView if flag is true and they've sent in an email
+     else, send to WelcomeView
+     */
     var body: some View {
-        FeedView(feedVM: feedViewModel)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        FeedView(viewModel: viewModel)
     }
 }

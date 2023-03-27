@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct UpcomingView: View {
+    @ObservedObject var viewModel: UserViewModel
     let deals: [Deal]
     
     var body: some View {
         ScrollView{
             LazyVStack{
                 ForEach(self.deals, id:\.id) { deal in
-                    DealView(dealVM: DealViewModel(deal: deal))
+                    DealView(viewModel: viewModel, deal: deal)
                 }
             }
         }
