@@ -27,7 +27,7 @@ class UserViewModel: ObservableObject {
     
     func refresh() -> Void {
         self.getAllActiveDeals()
-        self.getAllActiveDeals()
+        self.getAllRestaurants()
     }
     
     func clear() -> Void {
@@ -59,11 +59,11 @@ class UserViewModel: ObservableObject {
                 print("Restaurants: \(restaurants)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     self.restaurants = restaurants;
-                }
-                DispatchQueue.main.async {
-                    for restaurant in self.restaurants {
-                        self.nameMap[restaurant.id] = restaurant.name
-                        self.locationMap[restaurant.id] = restaurant.location
+                    DispatchQueue.main.async {
+                        for restaurant in self.restaurants {
+                            self.nameMap[restaurant.id] = restaurant.name
+                            self.locationMap[restaurant.id] = restaurant.location
+                        }
                     }
                 }
             case .failure(let error):
