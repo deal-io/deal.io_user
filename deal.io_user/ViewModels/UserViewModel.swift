@@ -25,12 +25,26 @@ class UserViewModel: ObservableObject {
         self.getAllRestaurants()
     }
     
+    func refresh() -> Void {
+        self.getAllActiveDeals()
+        self.getAllActiveDeals()
+    }
+    
+    func clear() -> Void {
+        DispatchQueue.main.async {
+            self.deals = []
+            self.restaurants = []
+        }
+    }
+    
     func getAllActiveDeals() {
         mDealService.fetchDeals { result in
             switch result {
             case .success(let deals):
                 print("Deals: \(deals)")
-                self.deals = deals;
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.deals = deals;
+                }
             case .failure(let error):
                 //TODO handle error 
                 print("Error: \(error.localizedDescription)")
@@ -43,10 +57,14 @@ class UserViewModel: ObservableObject {
             switch result {
             case .success(let restaurants):
                 print("Restaurants: \(restaurants)")
-                self.restaurants = restaurants;
-                for restaurant in self.restaurants {
-                    self.nameMap[restaurant.id] = restaurant.name
-                    self.locationMap[restaurant.id] = restaurant.location
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    self.restaurants = restaurants;
+                }
+                DispatchQueue.main.async {
+                    for restaurant in self.restaurants {
+                        self.nameMap[restaurant.id] = restaurant.name
+                        self.locationMap[restaurant.id] = restaurant.location
+                    }
                 }
             case .failure(let error):
                 //TODO handle error
