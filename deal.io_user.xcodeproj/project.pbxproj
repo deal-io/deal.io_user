@@ -143,18 +143,13 @@
 		AD00901229A4901600FDB1D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD76782129D11D03008728BB /* Colors */,
+				AD76782029D11CF8008728BB /* Assets */,
 				AD00901C29A58C8300FDB1D3 /* FeedView.swift */,
 				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
-				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
-				ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */,
 				ADF6879F29AED67600E86022 /* WelcomeView.swift */,
 				ADF687A529AEEA0F00E86022 /* DailyView.swift */,
 				ADF687A729AEEA1B00E86022 /* UpcomingView.swift */,
-				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
-				ADF687A929AEF31900E86022 /* ContractedDealView.swift */,
-				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
-				ADA633C429B2F5610032EF44 /* DailyHourView.swift */,
-				ADA633D029B7FED30032EF44 /* UpcomingDayHourView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +162,27 @@
 				ADA633CE29B7CA8F0032EF44 /* DealViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD76782029D11CF8008728BB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
+				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
+				ADA633C429B2F5610032EF44 /* DailyHourView.swift */,
+				ADA633D029B7FED30032EF44 /* UpcomingDayHourView.swift */,
+				ADF687A929AEF31900E86022 /* ContractedDealView.swift */,
+				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AD76782129D11D03008728BB /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		AD80720629A884F3007E263D /* Preview Content */ = {
