@@ -44,22 +44,18 @@ class DateUtil {
     }
     
     var todaysDict: Dictionary<Int, String> {
-        let calendar = Calendar.current
-        let today = Date()
-        let weekday = calendar.component(.weekday, from: today)
-
-        let weekdays = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]
-
-        var dayOfWeekDict = [Int: String]()
+        let dateFormatter = DateFormatter()
+        var weekdays = [Int: String]()
 
         for i in 0...6 {
-            let offset = i - (weekday - 1)
-            let date = calendar.date(byAdding: .day, value: offset, to: today)!
-            let dayOfWeekString = weekdays[(calendar.component(.weekday, from: date) - 1) % 7]
-            dayOfWeekDict[i] = dayOfWeekString
+            dateFormatter.dateFormat = "EEE"
+            let date = Calendar.current.date(byAdding: .day, value: i, to: Date())!
+            let weekday = dateFormatter.string(from: date)
+            weekdays[i] = weekday
         }
-        
-        return dayOfWeekDict
+
+        print("GHD: UDB: TD: \(weekdays)")
+        return weekdays
     }
     
     func getHourDifference(inputHour: String) -> Double {
@@ -89,6 +85,7 @@ class DateUtil {
         
         repeat {
             if daysActive[index] {
+                print("GHD: UDB: TD: DA: \(self.todaysDict[index])")
                 return self.todaysDict[index]
             }
             index = (index + 1) % 7

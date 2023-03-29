@@ -25,10 +25,12 @@ struct HourView: View {
         self.deal = deal
         self.startTime = deal.dealAttributes.startTime
         self.endTime = deal.dealAttributes.endTime
-        print("GHD: \(deal)")
+        print("GHD: UDB: \(deal.dealAttributes.dealName)")
         self.startHourDifference = DateUtil().getHourDifference(inputHour: startTime)
         self.endHourDifference = DateUtil().getHourDifference(inputHour: endTime)
         self.upcomingDay = DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive)!
+        print("GHD: UDB: \(deal.dealAttributes.daysActive)")
+        print("GHD: UDB: \(upcomingDay)")
         self.active = deal.dealAttributes.daysActive[0]
     }
     
