@@ -26,7 +26,6 @@ struct ContractedDealView: View {
                 .foregroundColor(.white)
                 .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
-            
             HStack {
                 Text(viewModel.nameMap[deal.restaurantID] ?? "Returned nil")
                     .font(.title3)

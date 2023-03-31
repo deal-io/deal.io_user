@@ -29,13 +29,14 @@ struct OpenMapsView: View {
                 mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
             }
         }) {
-            Text("Open in Apple Maps")
+            Text("\(viewModel.locationMap[deal.restaurantID] ?? "Unwrapped Nil Restaurant")")
                 .foregroundColor(.white)
-                .background() {
+                .padding(5)
+                .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Deal_ioColor.selected)
-                        .frame(width: 170, height: 26)
-                }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                )
         }
     }
 }
