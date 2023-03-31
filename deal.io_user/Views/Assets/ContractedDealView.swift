@@ -28,7 +28,7 @@ struct ContractedDealView: View {
                 .multilineTextAlignment(.center)
             HStack {
                 Text(viewModel.nameMap[deal.restaurantID] ?? "Returned nil")
-                    .font(.title3)
+                    .font(.title2)
                     .padding(.leading, 35)
                 Spacer()
                 HourView(viewModel: viewModel, deal: deal)

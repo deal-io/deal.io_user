@@ -28,7 +28,7 @@ struct ExpandedDealView: View {
             OpenMapsView(viewModel: viewModel, deal: deal)
             HStack {
                 Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
-                    .font(.title3)
+                    .font(.title2)
                     .padding(.leading, 35)
                 Spacer()
                 HourView(viewModel: viewModel, deal: deal)
