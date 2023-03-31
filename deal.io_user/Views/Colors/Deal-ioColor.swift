@@ -12,8 +12,8 @@ struct Deal_ioColor {
     static let accent = Color(red: 25/255, green: 25/255, blue: 25/255)
     static let background = Color(red: 30/255, green: 30/255, blue: 30/255)
     static let fromToBubble = Color(red: 35/255, green: 35/255, blue: 35/255)
-    static let contractedDeal = Color(red: 35/255, green: 35/255, blue: 35/255)
-    static let expandedDeal = Color(red: 40/255, green: 40/255, blue: 40/255)
+    static let contractedDeal = Color(red: 40/255, green: 40/255, blue: 40/255)
+    static let expandedDeal = Color(red: 45/255, green: 45/255, blue: 45/255)
     static let onBackground = Color(red: 50/255, green: 50/255, blue: 50/255)
     static let selected = Color(red: 55/255, green: 55/255, blue: 55/255)
     // changed below using coolors.co for white text accessibility purposes
