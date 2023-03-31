@@ -12,14 +12,13 @@ struct DailyView: View {
     let deals: [Deal]
     
     var body: some View {
-        ScrollView{
+        RefreshableScrollView(refreshing: self.$viewModel.loading) {
             LazyVStack{
                 ForEach(self.deals, id:\.id) { deal in
                     DealView(viewModel: viewModel, deal: deal)
                 }
             }
         }
-        .listRowSeparator(.hidden)
     }
 }
 

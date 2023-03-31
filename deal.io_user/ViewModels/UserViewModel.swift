@@ -16,10 +16,18 @@ class UserViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
     @Published var nameMap = [String: String]()
     @Published var locationMap = [String: String]()
+    @Published var loading: Bool = false {
+        didSet {
+            if oldValue == false && loading == true {
+                self.clear()
+                self.refresh()
+                loading = false
+            }
+        }
+    }
     
     private let mDealService = DealService();
     
-    // TODO: guessing that the getAll's aren't completing before restaurant's loop
     init() {
         self.getAllActiveDeals()
         self.getAllRestaurants()

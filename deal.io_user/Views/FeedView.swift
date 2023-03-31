@@ -33,24 +33,9 @@ struct FeedView: View {
             .background(Deal_ioColor.background)
         } else {
             VStack {
-                ZStack {
-                    Image("dealio_white_on_bg")
-                        .resizable()
-                        .frame(width: 200, height: 80)
-                    Button(action: {
-                        action()
-                        viewModel.clear()
-                        viewModel.refresh()
-                        disabled = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                            disabled = false
-                        }
-                    }) {
-                        RefreshButton()
-                    }
-                    .disabled(disabled)
-                    .padding(.trailing, 290)
-                }
+                Image("dealio_white_on_bg")
+                    .resizable()
+                    .frame(width: 200, height: 80)
                 if (viewModel.currentFeed == .UPCOMING) {
                     HStack {
                         Spacer()
