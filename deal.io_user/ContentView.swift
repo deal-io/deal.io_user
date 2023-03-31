@@ -22,5 +22,6 @@ struct ContentView: View {
     var body: some View {
 //        WelcomeView(welcomeVM: WelcomeViewModel(user: User(email: "")))
         FeedView(viewModel: viewModel)
+            .background(Deal_ioColor.background)
     }
 }

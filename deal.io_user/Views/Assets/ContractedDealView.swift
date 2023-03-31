@@ -36,7 +36,13 @@ struct ContractedDealView: View {
             }
                 Spacer()
         }
-        .background(Deal_ioColor.background)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Deal_ioColor.contractedDeal)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .padding(.horizontal, 5)
+                .padding(.vertical, 2)
+        )
         .foregroundColor(.white)
     }
 }

@@ -19,7 +19,6 @@ struct DailyView: View {
                 }
             }
         }
-        .background(Deal_ioColor.background)
         .listRowSeparator(.hidden)
     }
 }

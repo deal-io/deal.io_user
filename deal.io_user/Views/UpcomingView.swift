@@ -19,7 +19,6 @@ struct UpcomingView: View {
                 }
             }
         }
-        .background(Deal_ioColor.background)
         .listRowSeparator(.hidden)
     }
 }

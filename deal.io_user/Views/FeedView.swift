@@ -50,7 +50,6 @@ struct FeedView: View {
                     }
                     .disabled(disabled)
                     .padding(.trailing, 290)
-                    
                 }
                 if (viewModel.currentFeed == .UPCOMING) {
                     HStack {
@@ -84,7 +83,6 @@ struct FeedView: View {
                     DailyView(viewModel: viewModel, deals: self.dailyDeals)
                 }
             }
-            .background(Deal_ioColor.background)
         }
     }
 }
