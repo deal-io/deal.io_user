@@ -19,5 +19,6 @@ struct ContentView: View {
                 WelcomeView(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
             }
         }
+        .background(Deal_ioColor.background)
     }
 }

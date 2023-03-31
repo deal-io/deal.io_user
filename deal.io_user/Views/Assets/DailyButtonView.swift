@@ -17,6 +17,7 @@ struct DailyButton: View {
             Text("Daily")
                 .font(.title)
                 .foregroundColor(.white)
+                .fontWeight(.bold)
         }
     }
 }
