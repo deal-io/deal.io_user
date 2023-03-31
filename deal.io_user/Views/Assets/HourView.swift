@@ -71,7 +71,7 @@ struct HourView: View {
                     }
                 }
             } else {
-                Text("\(upcomingDay) at \(endTime)")
+                Text("\(upcomingDay) at \(startTime)")
                     .padding(8)
                     .background(Deal_ioColor.upcomingColor)
                     .foregroundColor(Color.white)
