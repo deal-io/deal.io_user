@@ -15,7 +15,7 @@ class UserManager {
     
     private let emailKey = "userEmail"
     private let loggedInKey = "userLoggedIn"
-    private let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults.standard
     
     @Published var isLoggedIn: Bool
     

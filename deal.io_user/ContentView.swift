@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAnalytics
 
 struct ContentView: View {
     @ObservedObject var viewModel = UserViewModel()

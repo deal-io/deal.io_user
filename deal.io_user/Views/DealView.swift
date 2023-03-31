@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct DealView: View {
     @ObservedObject var viewModel: UserViewModel
@@ -17,6 +18,9 @@ struct DealView: View {
         VStack {
             if expanded {
                 ExpandedDealView(viewModel: viewModel, deal: deal)
+                    .onAppear {
+                        logDealClickEvent(viewModel: viewModel, deal: deal)
+                    }
             } else {
                 ContractedDealView(viewModel: viewModel, deal: deal)
             }

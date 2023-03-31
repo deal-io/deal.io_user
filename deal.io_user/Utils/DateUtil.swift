@@ -54,28 +54,20 @@ class DateUtil {
             weekdays[i] = weekday
         }
 
-        print("GHD: UDB: TD: \(weekdays)")
         return weekdays
     }
     
     func getHourDifference(inputHour: String) -> Double {
-        let LOG = "GHD: "
-        print("\(LOG)inputHour: \(inputHour)")
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         
         let currentHour = formatter.string(from: Date())
-        print("\(LOG)currentHour: \(currentHour)")
         
         let inputHourDate = formatter.date(from: inputHour)
         let currentHourDate = formatter.date(from: currentHour)
-        print("\(LOG)currentHourDate: \(String(describing: currentHourDate))")
-        print("\(LOG)inputHourDate: \(String(describing: inputHourDate))")
         
-        let calendar = Calendar.current
         let timeDifference = inputHourDate!.timeIntervalSince(currentHourDate!)
         let hourDifference = timeDifference / 3600.0
-        print("\(LOG)hourDifference: \(hourDifference)")
         
         return hourDifference
     }
@@ -85,7 +77,6 @@ class DateUtil {
         
         repeat {
             if daysActive[index] {
-                print("GHD: UDB: TD: DA: \(self.todaysDict[index])")
                 return self.todaysDict[index]
             }
             index = (index + 1) % 7

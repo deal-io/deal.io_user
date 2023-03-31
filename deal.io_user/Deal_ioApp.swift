@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 @main
 struct Deal_io: App {
@@ -16,5 +17,16 @@ struct Deal_io: App {
         WindowGroup {
             ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+    }
+}
+
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        
+        return true
     }
 }

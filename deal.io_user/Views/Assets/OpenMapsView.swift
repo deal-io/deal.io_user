@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MapKit
+import FirebaseAnalytics
 
 struct OpenMapsView: View {
     @ObservedObject var viewModel: UserViewModel
@@ -16,6 +16,7 @@ struct OpenMapsView: View {
     var body: some View {
         Button(action: {
             action()
+            logMapOpenEvent(viewModel: viewModel, deal: deal)
             let address = viewModel.locationMap[deal.restaurantID] ?? ""
             let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             let url = URL(string: "maps://?q=\(encodedAddress)")!

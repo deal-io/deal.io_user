@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 
 class UserViewModel: ObservableObject {
     // created synthetic data to figure out view functionality
@@ -34,6 +35,7 @@ class UserViewModel: ObservableObject {
     }
     
     func refresh() -> Void {
+        logRefreshEvent(viewModel: self)
         self.getAllActiveDeals()
         self.getAllRestaurants()
     }
