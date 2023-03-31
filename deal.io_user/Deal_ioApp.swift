@@ -12,6 +12,7 @@ import Firebase
 @main
 struct Deal_io: App {
     let persistenceController = PersistenceController.shared
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {

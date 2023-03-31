@@ -22,7 +22,7 @@ struct OpenMapsView: View {
             let url = URL(string: "maps://?q=\(encodedAddress)")!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }) {
-            Text("\(viewModel.locationMap[deal.restaurantID] ?? "Unwrapped Nil Restaurant")")
+            Text("Get Directions")
                 .foregroundColor(.white)
                 .padding(5)
                 .background(
