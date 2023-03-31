@@ -40,6 +40,7 @@ struct ExpandedDealView: View {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Deal_ioColor.expandedDeal)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .padding(.horizontal, 2)
                 .padding(.vertical, 2)
         )
         .foregroundColor(.white)

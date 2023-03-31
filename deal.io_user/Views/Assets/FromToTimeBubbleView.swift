@@ -17,7 +17,7 @@ struct FromToTimeBubbleView: View {
                 Text("From: ")
                 Text("\(deal.dealAttributes.startTime)")
                     .padding(8)
-                    .background(Deal_ioColor.selected)
+                    .background(Deal_ioColor.fromToBubble)
                     .foregroundColor(Color.white)
                     .cornerRadius(10)
             }
@@ -27,7 +27,7 @@ struct FromToTimeBubbleView: View {
                 Text("To: ")
                 Text("\(deal.dealAttributes.endTime)")
                     .padding(8)
-                    .background(Deal_ioColor.selected)
+                    .background(Deal_ioColor.fromToBubble)
                     .foregroundColor(Color.white)
                     .cornerRadius(10)
             }
