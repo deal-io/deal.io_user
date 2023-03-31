@@ -13,6 +13,7 @@
 		AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */; };
 		AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */; };
 		AD2A739E29D75666002EC0D3 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */; };
+		AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73A029D778FC002EC0D3 /* UserManager.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
@@ -46,6 +47,7 @@
 		AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubbleView.swift; sourceTree = "<group>"; };
 		AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsView.swift; sourceTree = "<group>"; };
 		AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonView.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubbleView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		AD2A739F29D778E6002EC0D3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AD2A73A029D778FC002EC0D3 /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		AD76782029D11CF8008728BB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				AD2A739F29D778E6002EC0D3 /* User */,
 				ADA633D529B930150032EF44 /* Utils */,
 				AD00901229A4901600FDB1D3 /* Views */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
@@ -291,6 +302,7 @@
 				ADA633D129B7FED30032EF44 /* HourView.swift in Sources */,
 				ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
+				AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				ADA633C329B2F40C0032EF44 /* UpcomingButtonView.swift in Sources */,
 				AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */,
