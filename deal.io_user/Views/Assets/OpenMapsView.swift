@@ -10,24 +10,16 @@ import MapKit
 
 struct OpenMapsView: View {
     @ObservedObject var viewModel: UserViewModel
-    var canOpenGoogleMaps: Bool {
-        return UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!)
-    }
     var deal: Deal
     var action: () -> Void = {}
     
     var body: some View {
         Button(action: {
             action()
-            let geocoder = CLGeocoder()
-            geocoder.geocodeAddressString(viewModel.locationMap[deal.restaurantID] ?? "") { placemarks, error in
-                guard let placemark = placemarks?.first, let coordinate = placemark.location?.coordinate else {
-                    return
-                }
-                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
-                mapItem.name = viewModel.locationMap[deal.restaurantID]
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
-            }
+            let address = viewModel.locationMap[deal.restaurantID] ?? ""
+            let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let url = URL(string: "maps://?q=\(encodedAddress)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }) {
             Text("\(viewModel.locationMap[deal.restaurantID] ?? "Unwrapped Nil Restaurant")")
                 .foregroundColor(.white)
