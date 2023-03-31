@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @ObservedObject var welcomeVM: WelcomeViewModel
+    @ObservedObject var viewModel: UserViewModel
+    @State private var email = ""
+    @State private var showInvalidAlert = false
+    var onLogin: () -> Void // new closure parameter
     
     var body: some View {
         VStack {
@@ -21,38 +24,39 @@ struct WelcomeView: View {
             Text("*Please input your @mines.edu email below: ")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-            EmailTextField(email: welcomeVM.emailBinding)
-            // below code allows for change of view from WelcomeView
-            // to FeedView after a valid email is passed in
-            // the else block needs to be updated
-            // can't pass in code without API calls because it would bloat
-            // tf out of this file
-            /*
+            EmailTextField(email: $email)
+            Spacer()
+            Spacer()
             Button(action: {
-                if welcomeVM.validateEmail() {
-                    welcomeVM.saveUser()
-                    UIApplication.shared.windows.first?.rootViewController = UIHostingController(rootView: FeedView(feedVM: FeedViewModel(), dailyDeals: , upcomingDeals: <#T##[BasicDealViewModel]#>))
+                if isValidEmail(email: email) {
+                    print("WV: isValid: true")
+                    UserManager.shared.login(email: email)
+                    showInvalidAlert = false
+                    onLogin()
                 } else {
-                    welcomeVM.showError = true
+                    print("WV: isValid: false")
+                    showInvalidAlert = true
                 }
             }) {
-                Text("Submit")
-            }
-            */
-            Spacer()
-            Spacer()
-            SubmitButton()
-                .onTapGesture {
-                    /*
-                     TODO: handle suffix check, then save persistent data
-                     */
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.blue)
+                        .frame(width: 160, height: 80)
+                    Text("Submit")
+                        .font(.title)
+                        .foregroundColor(.white)
                 }
+            }
             Text("*Your email is only required to verify that you are a student.\n\nYou will not recieve any marketing or promotional materials at this email address.")
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(16)
                 .font(.footnote)
-        }.background(Deal_ioColor.background)
+        }
+        .background(Deal_ioColor.background)
+        .alert(isPresented: $showInvalidAlert) {
+            Alert(title: Text("Invalid Login"), message: Text("Please enter an @mines.edu email"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
@@ -71,15 +75,11 @@ struct EmailTextField: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .shadow(color: Deal_ioColor.darkShadow, radius: 1, x: 2, y: 2)
             .shadow(color: Deal_ioColor.lightShadow, radius: 1, x: -2, y: -2)
-        /*
-            .onChange(of: email) { value in
-                isEmailValid = isValidEmail(email)
-            }
-         */
-    }
-    
-    private func isValidEmail(_ email: String) -> Bool {
-        return email.hasSuffix("@mines.edu")
     }
 }
+
+func isValidEmail(email: String) -> Bool {
+    return email.hasSuffix("@mines.edu")
+}
+
 
