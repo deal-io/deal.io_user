@@ -54,28 +54,59 @@ class DateUtil {
             weekdays[i] = weekday
         }
 
-        print("GHD: UDB: TD: \(weekdays)")
         return weekdays
     }
     
+    func checkMilitaryTime(timeString: String) -> String {
+        let dateFormatter = DateFormatter()
+        //dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "h:mm a"
+        
+        var date = dateFormatter.date(from: timeString)
+        
+        if (date == nil){
+            let military = convertToMilitaryTime(timeString: timeString)
+            dateFormatter.dateFormat = "HH:mm"
+            date = dateFormatter.date(from: convertToMilitaryTime(timeString: timeString))
+            if (date == nil){
+                return ""
+            }
+            return military
+        }
+      
+        return timeString
+    }
+    
+    func convertToMilitaryTime(timeString: String) -> String {
+        var components = timeString.components(separatedBy: " ")
+           var timeComponents = components[0].components(separatedBy: ":")
+           var hour = Int(timeComponents[0]) ?? 0
+           let minute = timeComponents[1]
+           let amPM = components[1]
+           
+           if amPM == "PM" && hour < 12 {
+               hour += 12
+           } else if amPM == "AM" && hour == 12 {
+               hour = 0
+           }
+           
+           let militaryTime = String(format: "%02d:%@", hour, minute)
+           return militaryTime
+    }
+
+    
     func getHourDifference(inputHour: String) -> Double {
-        let LOG = "GHD: "
-        print("\(LOG)inputHour: \(inputHour)")
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "hh:mm a"
         
         let currentHour = formatter.string(from: Date())
-        print("\(LOG)currentHour: \(currentHour)")
         
         let inputHourDate = formatter.date(from: inputHour)
         let currentHourDate = formatter.date(from: currentHour)
-        print("\(LOG)currentHourDate: \(String(describing: currentHourDate))")
-        print("\(LOG)inputHourDate: \(String(describing: inputHourDate))")
         
-        let calendar = Calendar.current
         let timeDifference = inputHourDate!.timeIntervalSince(currentHourDate!)
         let hourDifference = timeDifference / 3600.0
-        print("\(LOG)hourDifference: \(hourDifference)")
         
         return hourDifference
     }
@@ -85,7 +116,6 @@ class DateUtil {
         
         repeat {
             if daysActive[index] {
-                print("GHD: UDB: TD: DA: \(self.todaysDict[index])")
                 return self.todaysDict[index]
             }
             index = (index + 1) % 7

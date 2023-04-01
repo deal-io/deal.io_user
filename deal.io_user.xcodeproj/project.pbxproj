@@ -12,9 +12,17 @@
 		AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* UserViewModel.swift */; };
 		AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */; };
 		AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */; };
+		AD2A739E29D75666002EC0D3 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */; };
+		AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73A029D778FC002EC0D3 /* UserManager.swift */; };
+		AD2A73A429D78A73002EC0D3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73A329D78A73002EC0D3 /* FirebaseAnalytics */; };
+		AD2A73A629D78A73002EC0D3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73A529D78A73002EC0D3 /* FirebaseAnalyticsSwift */; };
+		AD2A73A829D78A73002EC0D3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73A729D78A73002EC0D3 /* FirebaseAuth */; };
+		AD2A73AA29D78A73002EC0D3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73A929D78A73002EC0D3 /* FirebaseDatabase */; };
+		AD2A73AC29D78A73002EC0D3 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */; };
+		AD2A73AE29D78B95002EC0D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */; };
+		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
-		AD76782B29D204C9008728BB /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782A29D204C9008728BB /* RefreshButton.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
 		AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioApp.swift */; };
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
@@ -45,9 +53,12 @@
 		AD00902029A58CC600FDB1D3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubbleView.swift; sourceTree = "<group>"; };
 		AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsView.swift; sourceTree = "<group>"; };
+		AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deal.io_user/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonView.swift; sourceTree = "<group>"; };
-		AD76782A29D204C9008728BB /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubbleView.swift; sourceTree = "<group>"; };
 		AD80720729A8855C007E263D /* Deal_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioApp.swift; sourceTree = "<group>"; };
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
@@ -78,6 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2A73AC29D78A73002EC0D3 /* FirebaseDatabaseSwift in Frameworks */,
+				AD2A73A629D78A73002EC0D3 /* FirebaseAnalyticsSwift in Frameworks */,
+				AD2A73A829D78A73002EC0D3 /* FirebaseAuth in Frameworks */,
+				AD2A73AA29D78A73002EC0D3 /* FirebaseDatabase in Frameworks */,
+				AD2A73A429D78A73002EC0D3 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +134,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		AD2A739F29D778E6002EC0D3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AD2A73A029D778FC002EC0D3 /* UserManager.swift */,
+				AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		AD76782029D11CF8008728BB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,10 +152,10 @@
 				ADF687A929AEF31900E86022 /* ContractedDealView.swift */,
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDealView.swift */,
 				AD76782429D141DE008728BB /* SubmitButtonView.swift */,
-				AD76782A29D204C9008728BB /* RefreshButton.swift */,
 				AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */,
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */,
 				AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */,
+				AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -170,6 +195,7 @@
 		ADC4D47D299807E500B7BD24 = {
 			isa = PBXGroup;
 			children = (
+				AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */,
 				ADC4D488299807E500B7BD24 /* deal.io_user */,
 				ADC4D487299807E500B7BD24 /* Products */,
 			);
@@ -186,6 +212,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				AD2A739F29D778E6002EC0D3 /* User */,
 				ADA633D529B930150032EF44 /* Utils */,
 				AD00901229A4901600FDB1D3 /* Views */,
 				AD00901329A4902600FDB1D3 /* ViewModels */,
@@ -226,6 +253,11 @@
 			);
 			name = deal.io_user;
 			packageProductDependencies = (
+				AD2A73A329D78A73002EC0D3 /* FirebaseAnalytics */,
+				AD2A73A529D78A73002EC0D3 /* FirebaseAnalyticsSwift */,
+				AD2A73A729D78A73002EC0D3 /* FirebaseAuth */,
+				AD2A73A929D78A73002EC0D3 /* FirebaseDatabase */,
+				AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */,
 			);
 			productName = deal.io_customer;
 			productReference = ADC4D486299807E500B7BD24 /* deal.io_user.app */;
@@ -256,7 +288,7 @@
 			);
 			mainGroup = ADC4D47D299807E500B7BD24;
 			packageReferences = (
-				ADF6875F29AE63E600E86022 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = ADC4D487299807E500B7BD24 /* Products */;
 			projectDirPath = "";
@@ -274,6 +306,7 @@
 			files = (
 				ADD3190029B15AC700800A46 /* test in Resources */,
 				ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */,
+				AD2A73AE29D78B95002EC0D3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,16 +322,18 @@
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
 				AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourView.swift in Sources */,
+				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
 				ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
+				AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				ADA633C329B2F40C0032EF44 /* UpcomingButtonView.swift in Sources */,
 				AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
 				ADA633C129B2F4010032EF44 /* DailyButtonView.swift in Sources */,
+				AD2A739E29D75666002EC0D3 /* RefreshableScrollView.swift in Sources */,
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */,
-				AD76782B29D204C9008728BB /* RefreshButton.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
@@ -456,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -492,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -528,15 +563,43 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ADF6875F29AE63E600E86022 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD2A73A329D78A73002EC0D3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		AD2A73A529D78A73002EC0D3 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		AD2A73A729D78A73002EC0D3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AD2A73A929D78A73002EC0D3 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */ = {

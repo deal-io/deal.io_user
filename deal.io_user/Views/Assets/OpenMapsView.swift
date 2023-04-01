@@ -6,36 +6,30 @@
 //
 
 import SwiftUI
-import MapKit
+import FirebaseAnalytics
 
 struct OpenMapsView: View {
     @ObservedObject var viewModel: UserViewModel
-    var canOpenGoogleMaps: Bool {
-        return UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!)
-    }
     var deal: Deal
     var action: () -> Void = {}
     
     var body: some View {
         Button(action: {
             action()
-            let geocoder = CLGeocoder()
-            geocoder.geocodeAddressString(viewModel.locationMap[deal.restaurantID] ?? "") { placemarks, error in
-                guard let placemark = placemarks?.first, let coordinate = placemark.location?.coordinate else {
-                    return
-                }
-                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
-                mapItem.name = viewModel.locationMap[deal.restaurantID]
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
-            }
+            logMapOpenEvent(viewModel: viewModel, deal: deal)
+            let address = viewModel.locationMap[deal.restaurantID] ?? ""
+            let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let url = URL(string: "maps://?q=\(encodedAddress)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }) {
-            Text("Open in Apple Maps")
+            Text("Get Directions")
                 .foregroundColor(.white)
-                .background() {
+                .padding(5)
+                .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Deal_ioColor.selected)
-                        .frame(width: 170, height: 26)
-                }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                )
         }
     }
 }

@@ -25,22 +25,25 @@ struct ExpandedDealView: View {
             Text(deal.dealAttributes.description)
                 .padding(10)
                 .multilineTextAlignment(.center)
-            Text(viewModel.locationMap[deal.restaurantID] ?? "Nil location")
-                .padding(10)
-                .multilineTextAlignment(.center)
             OpenMapsView(viewModel: viewModel, deal: deal)
-                HStack {
-                    Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
-                        .font(.title3)
-                        .padding(.leading, 35)
-                    Spacer()
-                    HourView(viewModel: viewModel, deal: deal)
-                        .padding(.trailing, 35)
-                }
+            HStack {
+                Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
+                    .font(.title2)
+                    .padding(.leading, 35)
                 Spacer()
+                HourView(viewModel: viewModel, deal: deal)
+                    .padding(.trailing, 35)
             }
-            .background(Deal_ioColor.background)
-            .foregroundColor(.white)
+            Spacer()
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Deal_ioColor.expandedDeal)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .padding(.horizontal, 2)
+                .padding(.vertical, 2)
+        )
+        .foregroundColor(.white)
     }
 }
 

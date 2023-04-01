@@ -17,6 +17,7 @@ struct UpcomingButton: View {
             Text("Upcoming")
                 .font(.title)
                 .foregroundColor(.white)
+                .fontWeight(.bold)
         }
     }
 }

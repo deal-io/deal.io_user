@@ -6,21 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAnalytics
 
 struct ContentView: View {
-    @ObservedObject private var viewModel = UserViewModel()
+    @ObservedObject var viewModel = UserViewModel()
+    @State var isLoggedIn = UserManager.shared.isLoggedIn
     
-    init(viewModel: UserViewModel = UserViewModel()) {
-        self.viewModel = viewModel
-    }
-    
-    /*
-     TODO: build in a persistent boolean flag and string email
-     send them to FeedView if flag is true and they've sent in an email
-     else, send to WelcomeView
-     */
     var body: some View {
-//        WelcomeView(welcomeVM: WelcomeViewModel(user: User(email: "")))
-        FeedView(viewModel: viewModel)
+        Group {
+            if isLoggedIn {
+                FeedView(viewModel: viewModel)
+            } else {
+                WelcomeView(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
+            }
+        }
+        .background(Deal_ioColor.background)
     }
 }
