@@ -20,21 +20,27 @@ struct ContractedDealView: View {
 
     var body: some View {
         VStack{
-            Spacer()
-            Text(deal.dealAttributes.dealName)
-                .font(.title)
-                .foregroundColor(.white)
-                .padding(.horizontal, 4.5)
-                .multilineTextAlignment(.center)
-            HStack {
-                Text(viewModel.nameMap[deal.restaurantID] ?? "Returned nil")
-                    .font(.title2)
-                    .padding(.leading, 35)
+            
+            HStack{
+                VStack(alignment: .leading) {
+                    Text(deal.dealAttributes.dealName)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                    
+                    Text(viewModel.nameMap[deal.restaurantID] ?? "Returned nil")
+                        .font(.title2)
+                        .foregroundColor(Color.gray)
+                        
+                }
+                
+                
+                
                 Spacer()
                 HourView(viewModel: viewModel, deal: deal)
-                    .padding(.trailing, 35)
-            }
-                Spacer()
+                    .padding(.trailing, 5)
+            }.padding(.horizontal, 20).padding(.vertical, 30)
+                
         }
         .background(
             RoundedRectangle(cornerRadius: 8)
