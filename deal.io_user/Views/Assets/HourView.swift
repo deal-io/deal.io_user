@@ -46,24 +46,28 @@ struct HourView: View {
                 } else {
                     if endHourDifference < 0 {
                         Text("Ended")
+                            .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference <= 1 {
                         Text("< 1 hr")
+                            .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference <= 2 {
                         Text("\(Int(ceil(endHourDifference))) hrs")
+                            .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.twoHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference > 2 {
                         Text("\(Int(ceil(endHourDifference))) hrs")
+                            .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.fourHourColor)
                             .foregroundColor(Color.white)
@@ -71,12 +75,24 @@ struct HourView: View {
                     }
                 }
             } else {
-                Text("\(upcomingDay) at \(DateUtil().checkMilitaryTime(timeString: startTime))")
-                    .padding(8)
-                    .background(Deal_ioColor.upcomingColor)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(10)
+                VStack(alignment: .trailing, spacing: 5){
+                    Text("\(upcomingDay)")
+                        .font(.title2)
+                        .padding(8)
+                        .background(Deal_ioColor.upcomingColor)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(10)
+                    
+                    Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
+                        .font(.title2)
+                        .padding(8)
+                        .background(Deal_ioColor.upcomingColor)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(10)
+                }.padding(8)
+                
             }
+
         }
     }
 }
