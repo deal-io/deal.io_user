@@ -38,7 +38,7 @@ struct HourView: View {
         VStack {
             if (active) {
                 if startHourDifference > 0 {
-                    Text("\(startTime)")
+                    Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
                         .padding(8)
                         .background(Deal_ioColor.upcomingColor)
                         .foregroundColor(Color.white)
@@ -71,7 +71,7 @@ struct HourView: View {
                     }
                 }
             } else {
-                Text("\(upcomingDay) at \(startTime)")
+                Text("\(upcomingDay) at \(DateUtil().checkMilitaryTime(timeString: startTime))")
                     .padding(8)
                     .background(Deal_ioColor.upcomingColor)
                     .foregroundColor(Color.white)

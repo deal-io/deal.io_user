@@ -15,7 +15,7 @@ struct FromToTimeBubbleView: View {
         HStack {
             HStack {
                 Text("From: ")
-                Text("\(deal.dealAttributes.startTime)")
+                Text("\(DateUtil().checkMilitaryTime(timeString: deal.dealAttributes.startTime))")
                     .padding(8)
                     .background(Deal_ioColor.fromToBubble)
                     .foregroundColor(Color.white)
@@ -25,7 +25,7 @@ struct FromToTimeBubbleView: View {
             Spacer()
             HStack {
                 Text("To: ")
-                Text("\(deal.dealAttributes.endTime)")
+                Text("\(DateUtil().checkMilitaryTime(timeString: deal.dealAttributes.endTime))")
                     .padding(8)
                     .background(Deal_ioColor.fromToBubble)
                     .foregroundColor(Color.white)
