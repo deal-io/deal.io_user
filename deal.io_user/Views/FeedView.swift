@@ -23,16 +23,6 @@ struct FeedView: View {
     }
     
     var body: some View {
-        if self.viewModel.deals.isEmpty {
-            VStack {
-                ProgressView("Loading deals...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                    .scaleEffect(2.0)
-                    .padding()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Deal_ioColor.background)
-        } else {
             VStack {
                 Image("dealio_white_on_bg")
                     .resizable()
@@ -51,7 +41,18 @@ struct FeedView: View {
                             }
                         Spacer()
                     }
-                    UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
+                    if self.viewModel.deals.isEmpty {
+                        VStack {
+                            ProgressView("Loading deals...")
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                .scaleEffect(2.0)
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Deal_ioColor.background)
+                    } else {
+                        UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
+                    }
                 } else {
                     HStack {
                         Spacer()
@@ -66,9 +67,19 @@ struct FeedView: View {
                             }
                         Spacer()
                     }
-                    DailyView(viewModel: viewModel, deals: self.dailyDeals)
+                    if self.viewModel.deals.isEmpty {
+                        VStack {
+                            ProgressView("Loading deals...")
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                .scaleEffect(2.0)
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Deal_ioColor.background)
+                    } else {
+                        DailyView(viewModel: viewModel, deals: self.dailyDeals)
+                    }
                 }
             }
         }
-    }
 }
