@@ -39,6 +39,7 @@ struct HourView: View {
             if (active) {
                 if startHourDifference > 0 {
                     Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
+                        .font(.title2)
                         .padding(8)
                         .background(Deal_ioColor.upcomingColor)
                         .foregroundColor(Color.white)
@@ -89,7 +90,7 @@ struct HourView: View {
                         .background(Deal_ioColor.upcomingColor)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
-                }.padding(8)
+                }.padding(15)
                 
             }
 

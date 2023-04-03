@@ -20,7 +20,6 @@ struct ContractedDealView: View {
 
     var body: some View {
         VStack{
-            
             HStack{
                 VStack(alignment: .leading) {
                     Text(deal.dealAttributes.dealName)
@@ -33,9 +32,6 @@ struct ContractedDealView: View {
                         .foregroundColor(Color.gray)
                         
                 }
-                
-                
-                
                 Spacer()
                 HourView(viewModel: viewModel, deal: deal)
                     .padding(.trailing, 5)

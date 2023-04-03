@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 // Codable so that it can be JSON encoded and decoded for API calls
 struct Deal: Codable, Identifiable {
