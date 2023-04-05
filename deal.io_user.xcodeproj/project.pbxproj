@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD00901529A490D100FDB1D3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901429A490D100FDB1D3 /* Deal.swift */; };
-		AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* FeedView.swift */; };
+		AD00901D29A58C8300FDB1D3 /* FeedSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* FeedSwitchView.swift */; };
 		AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* UserViewModel.swift */; };
 		AD2A739729D22E99002EC0D3 /* FromToTimeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */; };
 		AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */; };
@@ -21,6 +21,8 @@
 		AD2A73AC29D78A73002EC0D3 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */; };
 		AD2A73AE29D78B95002EC0D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */; };
 		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
+		AD2A73B229DE1339002EC0D3 /* FavoritesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */; };
+		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
@@ -41,15 +43,13 @@
 		ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6879F29AED67600E86022 /* WelcomeView.swift */; };
 		ADF687A229AEDB5600E86022 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A129AEDB5600E86022 /* User.swift */; };
 		ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */; };
-		ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A529AEEA0F00E86022 /* DailyView.swift */; };
-		ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A729AEEA1B00E86022 /* UpcomingView.swift */; };
 		ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687A929AEF31900E86022 /* ContractedDealView.swift */; };
 		ADF687FB29B001C800E86022 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687FA29B001C800E86022 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD00901429A490D100FDB1D3 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
-		AD00901C29A58C8300FDB1D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		AD00901C29A58C8300FDB1D3 /* FeedSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSwitchView.swift; sourceTree = "<group>"; };
 		AD00902029A58CC600FDB1D3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubbleView.swift; sourceTree = "<group>"; };
 		AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsView.swift; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deal.io_user/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButtonView.swift; sourceTree = "<group>"; };
+		AD2A73B329DE13BA002EC0D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonView.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubbleView.swift; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		ADF6879F29AED67600E86022 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		ADF687A129AEDB5600E86022 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
-		ADF687A529AEEA0F00E86022 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
-		ADF687A729AEEA1B00E86022 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
 		ADF687A929AEF31900E86022 /* ContractedDealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractedDealView.swift; sourceTree = "<group>"; };
 		ADF687FA29B001C800E86022 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,11 +116,10 @@
 			children = (
 				AD76782129D11D03008728BB /* Colors */,
 				AD76782029D11CF8008728BB /* Assets */,
-				AD00901C29A58C8300FDB1D3 /* FeedView.swift */,
+				AD00901C29A58C8300FDB1D3 /* FeedSwitchView.swift */,
 				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
 				ADF6879F29AED67600E86022 /* WelcomeView.swift */,
-				ADF687A529AEEA0F00E86022 /* DailyView.swift */,
-				ADF687A729AEEA1B00E86022 /* UpcomingView.swift */,
+				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +155,7 @@
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubbleView.swift */,
 				AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */,
 				AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */,
+				AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -323,7 +323,6 @@
 				AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourView.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
-				ADF687A629AEEA1000E86022 /* DailyView.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
 				AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
@@ -333,17 +332,18 @@
 				ADA633C129B2F4010032EF44 /* DailyButtonView.swift in Sources */,
 				AD2A739E29D75666002EC0D3 /* RefreshableScrollView.swift in Sources */,
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
-				AD00901D29A58C8300FDB1D3 /* FeedView.swift in Sources */,
+				AD00901D29A58C8300FDB1D3 /* FeedSwitchView.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
-				ADF687A829AEEA1B00E86022 /* UpcomingView.swift in Sources */,
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,
+				AD2A73B229DE1339002EC0D3 /* FavoritesButtonView.swift in Sources */,
 				ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */,
 				ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDealView.swift in Sources */,
+				AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */,
 				ADA633D729B930240032EF44 /* DateUtil.swift in Sources */,
 				ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */,
 				ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */,

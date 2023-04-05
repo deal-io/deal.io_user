@@ -29,12 +29,10 @@ struct WelcomeView: View {
             Spacer()
             Button(action: {
                 if isValidEmail(email: email) {
-                    print("WV: isValid: true")
                     UserManager.shared.login(email: email)
                     showInvalidAlert = false
                     onLogin()
                 } else {
-                    print("WV: isValid: false")
                     showInvalidAlert = true
                 }
             }) {

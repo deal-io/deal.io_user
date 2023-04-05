@@ -131,10 +131,31 @@ class UserViewModel: ObservableObject {
         
         return sortedUpcomingDeals
     }
+    
+    func getFavoriteDeals() -> [Deal]?{
+        var upcomingDeals: [Deal] = []
+        for deal in deals {
+            if ((deal.dealAttributes.daysActive[1...6].contains(true) && !deal.dealAttributes.daysActive[0]) || (deal.dealAttributes.daysActive[0] && (DateUtil().getHourDifference(inputHour: deal.dealAttributes.startTime) > 0))) {
+                upcomingDeals.append(deal)
+            }
+        }
+        
+        var sortedUpcomingDeals: [Deal] = []
+        for i in 0...6 {
+            for deal in upcomingDeals {
+                if deal.dealAttributes.daysActive[i] && !sortedUpcomingDeals.contains(where: { $0.id == deal.id }) {
+                    sortedUpcomingDeals.append(deal)
+                }
+            }
+        }
+        
+        return sortedUpcomingDeals
+    }
 }
 
 enum FeedType {
     case DAILY
     case UPCOMING
+    case FAVORITES
 }
 

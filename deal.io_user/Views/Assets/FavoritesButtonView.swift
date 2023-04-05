@@ -1,24 +1,23 @@
 //
-//  DailyButton.swift
+//  FavoritesButtonView.swift
 //  deal.io_user
 //
-//  Created by Tyler Keller on 3/3/23.
+//  Created by Tyler Keller on 4/5/23.
 //
 
 import SwiftUI
 
-struct DailyButton: View {
+struct FavoritesButton: View {
     @State var fillColor: Color
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(fillColor)
-                .frame(width: 80, height: 40)
-            Text("Daily")
+                .frame(width: 130, height: 40)
+            Text("Favorites")
                 .font(.title2)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
         }
     }
 }
-

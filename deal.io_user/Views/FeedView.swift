@@ -1,85 +1,34 @@
 //
-//  DailyFeedView.swift
-//  deal.io_customer
+//  FavoritesView.swift
+//  deal.io_user
 //
-//  Created by Tyler Keller on 2/21/23.
+//  Created by Tyler Keller on 4/5/23.
 //
 
 import SwiftUI
-import FirebaseAnalytics
 
 struct FeedView: View {
-    
     @ObservedObject var viewModel: UserViewModel
-    @State var action: () -> Void = {}
-    @State var disabled = false
-    let dailyDeals: [Deal]
-    let upcomingDeals: [Deal]
-    
-    init(viewModel: UserViewModel) {
-        self.viewModel = viewModel
-        self.dailyDeals = viewModel.getDailyDeals()!
-        self.upcomingDeals = viewModel.getUpcomingDeals()!
-    }
+    let deals: [Deal]
     
     var body: some View {
+        if self.viewModel.deals.isEmpty {
             VStack {
-                Image("dealio_white_on_bg")
-                    .resizable()
-                    .frame(width: 200, height: 80)
-                if (viewModel.currentFeed == .UPCOMING) {
-                    HStack {
-                        Spacer()
-                        DailyButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
-                        Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
-                        Spacer()
-                    }
-                    if self.viewModel.deals.isEmpty {
-                        VStack {
-                            ProgressView("Loading deals...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                .scaleEffect(2.0)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Deal_ioColor.background)
-                    } else {
-                        UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
-                    }
-                } else {
-                    HStack {
-                        Spacer()
-                        DailyButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
-                        Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
-                        Spacer()
-                    }
-                    if self.viewModel.deals.isEmpty {
-                        VStack {
-                            ProgressView("Loading deals...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                .scaleEffect(2.0)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Deal_ioColor.background)
-                    } else {
-                        DailyView(viewModel: viewModel, deals: self.dailyDeals)
+                ProgressView("Loading deals...")
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                    .scaleEffect(2.0)
+                    .padding()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Deal_ioColor.background)
+        } else {
+            RefreshableScrollView(refreshing: self.$viewModel.loading) {
+                LazyVStack{
+                    ForEach(self.deals, id:\.id) { deal in
+                        DealView(viewModel: viewModel, deal: deal)
                     }
                 }
             }
         }
+    }
 }
