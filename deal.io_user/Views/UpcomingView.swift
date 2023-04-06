@@ -15,7 +15,7 @@ struct UpcomingView: View {
         RefreshableScrollView(refreshing: self.$viewModel.loading) {
             LazyVStack{
                 ForEach(self.deals, id:\.id) { deal in
-                    DealView(viewModel: viewModel, deal: deal)
+                    DealView(viewModel: viewModel, deal: deal, upcoming: true)
                 }
             }
         }

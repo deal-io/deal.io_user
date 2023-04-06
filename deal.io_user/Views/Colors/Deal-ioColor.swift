@@ -15,7 +15,8 @@ struct Deal_ioColor {
     static let contractedDeal = Color(red: 40/255, green: 40/255, blue: 40/255)
     static let expandedDeal = Color(red: 45/255, green: 45/255, blue: 45/255)
     static let onBackground = Color(red: 50/255, green: 50/255, blue: 50/255)
-    static let selected = Color(red: 55/255, green: 55/255, blue: 55/255)
+    static let star = Color(red:252.0/255.0, green:194.0/255.0, blue:0/255)
+    static let selected = Color(red: 85/255, green: 85/255, blue: 85/255)
     // changed below using coolors.co for white text accessibility purposes
     static let oneHourColor = Color(red: 133/255, green: 7/255, blue: 0/255) // Dark red
     static let twoHourColor = Color(red: 77/255, green: 64/255, blue: 0/255) // Dark mustard

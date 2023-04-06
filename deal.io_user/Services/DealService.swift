@@ -9,9 +9,11 @@ import Foundation
 
 class DealService {
     private let apiUrl = "https://dealio-backend-production.web.app"
+    //DEV CHANGE
+    //private let apiUrl = "http://192.168.0.183:3000"
     
-    func fetchDeals(completion: @escaping (Result<[Deal], Error>) -> Void) {
-        guard let url = URL(string: "\(apiUrl)/deal/active/?timezone=-7") else {
+    func fetchDeals(timezone: Int, completion: @escaping (Result<[Deal], Error>) -> Void) {
+        guard let url = URL(string: "\(apiUrl)/deal/active/?timezone=\(timezone)") else {
             completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
         }
