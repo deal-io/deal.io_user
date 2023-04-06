@@ -54,7 +54,7 @@ class UserViewModel: ObservableObject {
     }
     
     func getAllActiveDeals() {
-        mDealService.fetchDeals { result in
+        mDealService.fetchDeals(timezone: DateUtil().getTimezone()) { result in
             switch result {
             case .success(let deals):
                 print("Deals: \(deals)")

@@ -127,6 +127,15 @@ class DateUtil {
         
     }
     
+    func getTimezone() -> Int{
+        let timeZone = TimeZone.current
+        let secondsFromGMT = timeZone.secondsFromGMT()
+        let hoursFromGMT = secondsFromGMT / 3600
+        
+        print("Timezone: \(hoursFromGMT)")
+        return hoursFromGMT
+    }
+    
     
     func checkDealEnded(deal: Deal) -> Bool{
         return getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.endTime) <= 0
