@@ -15,8 +15,7 @@ struct StarButtonView: View {
     init(viewModel: UserViewModel, deal: Deal) {
         self.viewModel = viewModel
         self.deal = deal
-        let favorites = UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [Deal] ?? []
-        self.favorited = favorites.contains { $0 == deal }
+        self.favorited = viewModel.checkDealFavorite(deal: deal)
         print("F: init favorited: \(self.favorited)")
     }
     
@@ -24,11 +23,11 @@ struct StarButtonView: View {
         Button(action: {
             if favorited {
                 favorited = false
-                UserManager.shared.removeFavorite(deal: deal)
+                UserManager.shared.removeFavorite(dealID: deal.id)
                 print("F: init favorited: \(self.favorited)")
             } else {
                 favorited = true
-                UserManager.shared.addFavorite(deal: deal)
+                UserManager.shared.addFavorite(dealID: deal.id)
                 print("F: init favorited: \(self.favorited)")
             }
         }) {

@@ -21,7 +21,7 @@ struct FeedSwitchView: View {
         self.viewModel = viewModel
         self.dailyDeals = viewModel.getDailyDeals()!
         self.upcomingDeals = viewModel.getUpcomingDeals()!
-        self.favoriteDeals = viewModel.getFavoriteDeals() ?? []
+        self.favoriteDeals = viewModel.getFavoriteDeals()
     }
     
     var body: some View {

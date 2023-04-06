@@ -132,8 +132,28 @@ class UserViewModel: ObservableObject {
         return sortedUpcomingDeals
     }
     
-    func getFavoriteDeals() -> [Deal]? {
-        return UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [Deal]
+    func getFavoriteDeals() -> [Deal] {
+        let favoriteIDArray = UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [String]
+        
+        print("LOG: \(String(describing: favoriteIDArray))")
+        
+        var favoriteDeals: [Deal] = []
+
+        // Loop through each deal in the "deals" array
+        for deal in deals {
+            // Check if the deal's ID is in the "favoriteIDArray"
+            if let id = favoriteIDArray, id.contains(deal.id) {
+                // If the ID is in the "favoriteIDArray", add the deal to the "favoriteDeals" array
+                favoriteDeals.append(deal)
+            }
+        }
+        
+        return favoriteDeals
+        
+    }
+    
+    func checkDealFavorite(deal: Deal) -> Bool {
+        return getFavoriteDeals().contains(deal)
     }
 
 }

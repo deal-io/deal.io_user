@@ -44,18 +44,30 @@ class UserManager {
         print("UM: \(userDefaults.bool(forKey: loggedInKey))")
     }
     
-    func addFavorite(deal: Deal) {
-        var favorites = userDefaults.array(forKey: favoritesKey)
-        favorites?.append(deal)
+    func addFavorite(dealID: String) {
+        print("LOG AddID: \(dealID)")
+        // Get the existing favorites array from user defaults
+        var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
+        // Append the new deal ID to the favorites array
+        favorites.append(dealID)
+        // Save the updated favorites array to user defaults
         userDefaults.set(favorites, forKey: favoritesKey)
+        print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
+        
     }
+
     
-    func removeFavorite(deal: Deal) {
-        var favorites = userDefaults.array(forKey: favoritesKey) as? [Deal] ?? []
-            
-        if let index = favorites.firstIndex(where: { $0 == deal }) {
+    func removeFavorite(dealID: String) {
+        print("LOG RemoveID: \(dealID)")
+        var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
+
+        while let index = favorites.firstIndex(of: dealID) {
             favorites.remove(at: index)
-            userDefaults.set(favorites, forKey: favoritesKey)
         }
+        
+        userDefaults.set(favorites, forKey: favoritesKey)
+        print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
     }
+
+    
 }
