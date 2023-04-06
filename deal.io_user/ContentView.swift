@@ -26,6 +26,11 @@ struct ContentView: View {
                             Text("Feed")
                         }
                         .tag(0)
+                        //.toolbar(.visible, for: .tabBar)
+
+                            .toolbarBackground(
+                                Deal_ioColor.tabColor,
+                                for: .tabBar)
                     
                     FavoriteView(viewModel: viewModel)
                         .background(Deal_ioColor.background)
@@ -34,6 +39,10 @@ struct ContentView: View {
                             Text("Favorites")
                         }
                         .tag(1)
+                        //.toolbar(.visible, for: .tabBar)
+                        .toolbarBackground(
+                                Deal_ioColor.tabColor,
+                                for: .tabBar)
                 }
                 // binds TabView id to tabSelection, on change, refreshes entire TabView
                 .id(viewModel.tabSelection)
