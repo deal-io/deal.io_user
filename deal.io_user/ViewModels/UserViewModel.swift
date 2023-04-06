@@ -12,7 +12,10 @@ class UserViewModel: ObservableObject {
     // created synthetic data to figure out view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
+    private var LOG_TAG = "LOG: ViewModel"
     @Published var currentFeed: FeedType = .DAILY
+    @Published var dailySortType: DailySortType = .DEFAULT
+    @Published var upcomingSortType: UpcomingSortType = .DAY_ASC
     @Published var deals: [Deal] = []
     @Published var restaurants: [Restaurant] = []
     @Published var nameMap = [String: String]()
@@ -32,6 +35,7 @@ class UserViewModel: ObservableObject {
     init() {
         self.getAllActiveDeals()
         self.getAllRestaurants()
+        print("\(LOG_TAG) Init")
     }
     
     func refresh() -> Void {
@@ -86,36 +90,104 @@ class UserViewModel: ObservableObject {
     /*
      daily requires that daysActive[0] is true, that's all
      */
-    func getDailyDeals() -> [Deal]?{
-        var dailyDeals: [Deal] = []
+    func getDailyDeals() -> [Deal]? {
+       // print("\(LOG_TAG) Daily Deals \(dailySortType)")
+        var sortedDeals: [Deal] = []
         for deal in deals {
             if deal.dealAttributes.daysActive[0] {
-                dailyDeals.append(deal)
+                sortedDeals.append(deal)
             }
         }
         
-        // below sorts
-        var sortedDailyDeals: [Deal] = []
-        for deal in dailyDeals {
-            if DateUtil().getHourDifference(inputHour: deal.dealAttributes.endTime) > 0 {
-                sortedDailyDeals.append(deal)
+
+        switch dailySortType {
+        case .DEFAULT:
+            sortedDeals = sortedDeals.sorted { (deal1, deal2) -> Bool in
+                // Compare the DealEnded attribute
+                let deal1Ended = DateUtil().checkDealEnded(deal: deal1)
+                let deal2Ended = DateUtil().checkDealEnded(deal: deal2)
+                
+                // If deal1 is ended but deal2 is not, deal1 should be after deal2
+                if deal1Ended && !deal2Ended {
+                    return false
+                }
+                
+                // If deal1 is not ended but deal2 is, deal1 should be before deal2
+                if !deal1Ended && deal2Ended {
+                    return true
+                }
+                
+                return false
             }
+          
+        case .START_ASC:
+            sortedDeals = sortedDeals.sorted(by: { DateUtil().getHourDifference(hourOne: $0.dealAttributes.startTime, hourTwo: $1.dealAttributes.startTime) < 0  })
+        case .START_DEC:
+            sortedDeals = sortedDeals.sorted(by: { DateUtil().getHourDifference(hourOne: $0.dealAttributes.startTime, hourTwo: $1.dealAttributes.startTime) > 0  })
+        case .END_DEC:
+            sortedDeals = sortedDeals.sorted(by: { DateUtil().getHourDifference(hourOne: $0.dealAttributes.endTime, hourTwo: $1.dealAttributes.endTime) > 0  })
+        case .END_ASC:
+            sortedDeals = sortedDeals.sorted(by: { DateUtil().getHourDifference(hourOne: $0.dealAttributes.endTime, hourTwo: $1.dealAttributes.endTime) < 0  })
+        case .ACTIVE:
+            sortedDeals = sortedDeals.filter({DateUtil().checkDealActive(deal: $0)})
+            
+            // if we want to sort instead of filtering
+            /*
+             { (deal1, deal2) -> Bool in
+                 // Compare the DealEnded attribute
+                 let deal1Active = DateUtil().checkDealActive(deal: deal1)
+                 let deal2Active = DateUtil().checkDealActive(deal: deal2)
+
+                 // If deal1 is active but deal2 is not, deal1 should be before deal2
+                 if deal1Active && !deal2Active {
+                     return true
+                 }
+
+                 // If deal1 is not active but deal2 is, deal1 should be after deal2
+                 if !deal1Active && deal2Active {
+                     return false
+                 }
+
+                 return false
+             }
+             */
+        case .ENDED:
+            sortedDeals = sortedDeals.filter({DateUtil().checkDealEnded(deal: $0)})
+            
+            // if we want to sort instead of filtering
+            /*
+             { (deal1, deal2) -> Bool in
+                 // Compare the DealEnded attribute
+                 let deal1Ended = DateUtil().checkDealEnded(deal: deal1)
+                 let deal2Ended = DateUtil().checkDealEnded(deal: deal2)
+                 
+                 // If deal1 is ended but deal2 is not, deal1 should be before deal2
+                 if deal1Ended && !deal2Ended {
+                     return true
+                 }
+                 
+                 // If deal1 is not ended but deal2 is, deal1 should be after deal2
+                 if !deal1Ended && deal2Ended {
+                     return false
+                 }
+                 
+                 return false
+             }
+             */
         }
-        for deal in dailyDeals {
-            if !sortedDailyDeals.contains(where: { $0.id == deal.id }) {
-                sortedDailyDeals.append(deal)
-            }
-        }
-        return sortedDailyDeals
+
+        return sortedDeals
     }
+
     
     /*
      upcoming requires that any of the daysActive are true or if daysActive[0] is true, then CurrentTime - StartTime is positive
      */
     func getUpcomingDeals() -> [Deal]?{
+       // print("\(LOG_TAG) Upcoming Deals \(upcomingSortType)")
         var upcomingDeals: [Deal] = []
         for deal in deals {
-            if ((deal.dealAttributes.daysActive[1...6].contains(true) && !deal.dealAttributes.daysActive[0]) || (deal.dealAttributes.daysActive[0] && (DateUtil().getHourDifference(inputHour: deal.dealAttributes.startTime) > 0))) {
+            if (deal.dealAttributes.daysActive[1...6].contains(true)) {
                 upcomingDeals.append(deal)
             }
         }
@@ -129,6 +201,31 @@ class UserViewModel: ObservableObject {
             }
         }
         
+        switch upcomingSortType {
+    
+        case .DAY_ASC:
+            sortedUpcomingDeals.sort(by: { (deal1, deal2) -> Bool in
+                let deal1Arr = deal1.dealAttributes.daysActive
+                let deal2Arr = deal2.dealAttributes.daysActive
+                let firstTrueIndex1 = deal1Arr.firstIndex(of: true) ?? deal1Arr.count
+                let firstTrueIndex2 = deal2Arr.firstIndex(of: true) ?? deal2Arr.count
+                
+                return firstTrueIndex1 < firstTrueIndex2
+            })
+            
+        case .DAY_DEC:
+            sortedUpcomingDeals.sort(by: { (deal1, deal2) -> Bool in
+                let deal1Arr = deal1.dealAttributes.daysActive
+                let deal2Arr = deal2.dealAttributes.daysActive
+                let firstTrueIndex1 = deal1Arr.firstIndex(of: true) ?? deal1Arr.count
+                let firstTrueIndex2 = deal2Arr.firstIndex(of: true) ?? deal2Arr.count
+                
+                return firstTrueIndex1 > firstTrueIndex2
+            })
+            
+        }
+            
+        
         return sortedUpcomingDeals
     }
 }
@@ -137,4 +234,20 @@ enum FeedType {
     case DAILY
     case UPCOMING
 }
+
+enum DailySortType{
+    case DEFAULT
+    case START_ASC
+    case START_DEC
+    case END_ASC
+    case END_DEC
+    case ACTIVE
+    case ENDED
+}
+
+enum UpcomingSortType{
+    case DAY_ASC
+    case DAY_DEC
+}
+
 

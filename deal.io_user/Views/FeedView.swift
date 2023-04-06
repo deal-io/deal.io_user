@@ -38,33 +38,47 @@ struct FeedView: View {
                     .resizable()
                     .frame(width: 200, height: 80)
                 if (viewModel.currentFeed == .UPCOMING) {
-                    HStack {
+                    HStack(alignment: .center) {
                         Spacer()
-                        DailyButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
+                        UpcomingSortButton(viewModel: viewModel)
+                        
                         Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
+                        HStack{
+                            DailyButton(fillColor: Deal_ioColor.onBackground)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .DAILY
+                                }
+                            UpcomingButton(fillColor: Deal_ioColor.selected)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .UPCOMING
+                                }.shadow(radius: 10)
+                        }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                        
                         Spacer()
+                        
                     }
                     UpcomingView(viewModel: viewModel, deals: self.upcomingDeals)
                 } else {
-                    HStack {
+                    HStack(alignment: .center) {
                         Spacer()
-                        DailyButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
+                        DailySortButton(viewModel: viewModel)
+                        
                         Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
+                        HStack{
+                            DailyButton(fillColor: Deal_ioColor.selected)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .DAILY
+                                }.shadow(radius: 10)
+                            
+                            UpcomingButton(fillColor: Deal_ioColor.onBackground)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .UPCOMING
+                                }
+                        }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                        
                         Spacer()
+                        
+                        
                     }
                     DailyView(viewModel: viewModel, deals: self.dailyDeals)
                 }

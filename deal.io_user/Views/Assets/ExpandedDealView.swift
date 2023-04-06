@@ -26,16 +26,13 @@ struct ExpandedDealView: View {
                 .padding(10)
                 .multilineTextAlignment(.center)
             OpenMapsView(viewModel: viewModel, deal: deal)
-            HStack {
-                Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
-                    .font(.title2)
-                    .padding(.leading, 35)
-                Spacer()
-                HourView(viewModel: viewModel, deal: deal)
-                    .padding(.trailing, 35)
-            }
+            
+            Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
+                .font(.title2)
+               
             Spacer()
         }
+        .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 8)
                 .fill(Deal_ioColor.expandedDeal)

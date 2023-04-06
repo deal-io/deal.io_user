@@ -95,7 +95,7 @@ class DateUtil {
     }
 
     
-    func getHourDifference(inputHour: String) -> Double {
+    func getHourDifferenceBetweenNow(inputHour: String) -> Double {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "hh:mm a"
@@ -111,8 +111,36 @@ class DateUtil {
         return hourDifference
     }
     
-    func getFirstActiveWeekday(daysActive: [Bool]) -> String? {
+    func getHourDifference(hourOne: String, hourTwo: String) -> Double{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "hh:mm a"
+        
+        let hourOneDate = formatter.date(from: hourOne)
+        let hourTwoDate = formatter.date(from: hourTwo)
+        
+        let timeDifference = hourOneDate!.timeIntervalSince(hourTwoDate!)
+        let hourDifference = timeDifference / 3600.0
+        
+        return hourDifference
+        
+    }
+    
+    
+    func checkDealEnded(deal: Deal) -> Bool{
+        return getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.endTime) <= 0
+    }
+    
+    func checkDealActive(deal: Deal) -> Bool{
+        return (getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.startTime) <= 0 && getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.endTime) >= 0)
+    }
+    
+    func getFirstActiveWeekday(daysActive: [Bool], skipFirst: Bool) -> String? {
         var index = 0
+        
+        if (skipFirst){
+            index = 1
+        }
         
         repeat {
             if daysActive[index] {

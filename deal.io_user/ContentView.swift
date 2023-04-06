@@ -12,7 +12,7 @@ import FirebaseAnalytics
 struct ContentView: View {
     @ObservedObject var viewModel = UserViewModel()
     @State var isLoggedIn = UserManager.shared.isLoggedIn
-    
+
     var body: some View {
         Group {
             if isLoggedIn {
@@ -23,4 +23,7 @@ struct ContentView: View {
         }
         .background(Deal_ioColor.background)
     }
+    
+                
+        
 }
