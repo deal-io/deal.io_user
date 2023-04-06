@@ -12,6 +12,7 @@ struct DealView: View {
     @ObservedObject var viewModel: UserViewModel
     @State private var expanded = false
     var deal: Deal
+    var upcoming: Bool
 
     
     var body: some View {
@@ -22,7 +23,7 @@ struct DealView: View {
                         logDealClickEvent(viewModel: viewModel, deal: deal)
                     }
             } else {
-                ContractedDealView(viewModel: viewModel, deal: deal)
+                ContractedDealView(viewModel: viewModel, deal: deal, upcoming: upcoming)
             }
         }
         .onTapGesture {

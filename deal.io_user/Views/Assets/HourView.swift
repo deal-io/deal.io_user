@@ -12,6 +12,7 @@ struct HourView: View {
     
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
+    var upcoming: Bool
     var startTime: String
     var endTime: String
     var startHourDifference: Double
@@ -20,25 +21,28 @@ struct HourView: View {
     var active: Bool
 
     
-    init(viewModel: UserViewModel, deal: Deal) {
+    init(viewModel: UserViewModel, deal: Deal, upcoming: Bool) {
         self.viewModel = viewModel
         self.deal = deal
+        self.upcoming = upcoming
         self.startTime = deal.dealAttributes.startTime
         self.endTime = deal.dealAttributes.endTime
         print("GHD: UDB: \(deal.dealAttributes.dealName)")
-        self.startHourDifference = DateUtil().getHourDifference(inputHour: startTime)
-        self.endHourDifference = DateUtil().getHourDifference(inputHour: endTime)
-        self.upcomingDay = DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive)!
+        self.startHourDifference = DateUtil().getHourDifferenceBetweenNow(inputHour: startTime)
+        self.endHourDifference = DateUtil().getHourDifferenceBetweenNow(inputHour: endTime)
+        // if deal.dealAttributes.daysActive[0] is true, this means the deal is active, if its also upcoming, we want to only get the next available day
+        self.upcomingDay = DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive, skipFirst: deal.dealAttributes.daysActive[0])!
         print("GHD: UDB: \(deal.dealAttributes.daysActive)")
         print("GHD: UDB: \(upcomingDay)")
         self.active = deal.dealAttributes.daysActive[0]
+       
     }
     
     var body: some View {
         VStack {
-            if (active) {
+            if (active && upcoming == false) {
                 if startHourDifference > 0 {
-                    Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
+                    Text("@\(DateUtil().checkMilitaryTime(timeString: startTime))")
                         .font(.title2)
                         .padding(8)
                         .background(Deal_ioColor.upcomingColor)
@@ -53,21 +57,21 @@ struct HourView: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference <= 1 {
-                        Text("< 1 hr")
+                        Text("< 1 hr left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference <= 2 {
-                        Text("\(Int(ceil(endHourDifference))) hrs")
+                        Text("\(Int(ceil(endHourDifference))) hrs left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.twoHourColor)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
                     } else if endHourDifference > 2 {
-                        Text("\(Int(ceil(endHourDifference))) hrs")
+                        Text("\(Int(ceil(endHourDifference))) hrs left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.fourHourColor)
@@ -76,21 +80,21 @@ struct HourView: View {
                     }
                 }
             } else {
-                VStack(alignment: .trailing, spacing: 5){
-                    Text("\(upcomingDay)")
-                        .font(.title2)
-                        .padding(8)
-                        .background(Deal_ioColor.upcomingColor)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                    
-                    Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
-                        .font(.title2)
-                        .padding(8)
-                        .background(Deal_ioColor.upcomingColor)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                }.padding(15)
+                    VStack(alignment: .trailing, spacing: 5){
+                        Text("\(upcomingDay)")
+                            .font(.title2)
+                            .padding(8)
+                            .background(Deal_ioColor.upcomingColor)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                        
+                        Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
+                            .font(.title2)
+                            .padding(8)
+                            .background(Deal_ioColor.upcomingColor)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(10)
+                    }.padding(8)
                 
             }
 
