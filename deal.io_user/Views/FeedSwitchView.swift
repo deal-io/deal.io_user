@@ -31,6 +31,7 @@ struct FeedSwitchView: View {
                     .frame(width: 200, height: 80)
                 if (viewModel.currentFeed == .UPCOMING) {
                     HStack {
+                        UpcomingSortButton(viewModel: viewModel)
                         Spacer()
                         DailyButton(fillColor: Deal_ioColor.background)
                             .onTapGesture {
@@ -58,7 +59,7 @@ struct FeedSwitchView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Deal_ioColor.background)
                     } else {
-                        FeedView(viewModel: viewModel, deals: self.upcomingDeals)
+                        FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
                     }
                 } else if (viewModel.currentFeed == .FAVORITES) {
                     HStack {
@@ -79,9 +80,10 @@ struct FeedSwitchView: View {
                             }
                         Spacer()
                     }
-                    FeedView(viewModel: viewModel, deals: self.favoriteDeals)
+                    FeedView(viewModel: viewModel, deals: self.favoriteDeals,  upcoming: false)
                 } else {
                     HStack {
+                        DailySortButton(viewModel: viewModel)
                         Spacer()
                         DailyButton(fillColor: Deal_ioColor.selected)
                             .onTapGesture {
@@ -99,7 +101,7 @@ struct FeedSwitchView: View {
                             }
                         Spacer()
                     }
-                    FeedView(viewModel: viewModel, deals: self.dailyDeals)
+                    FeedView(viewModel: viewModel, deals: self.dailyDeals,  upcoming: false)
                 }
             }
         }
