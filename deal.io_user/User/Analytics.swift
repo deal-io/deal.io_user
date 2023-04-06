@@ -36,7 +36,7 @@ func logMapOpenEvent(viewModel: UserViewModel, deal: Deal) {
 
 func logRefreshEvent(viewModel: UserViewModel) {
     let parameters = [
-        "user_email": "\(UserManager.shared.userDefaults.string(forKey: "userEmail") ?? "nil")" as NSObject,
+        "refresh": "\(viewModel.currentFeed)" as NSObject,
     ] as [String : Any]
     print("LOG: \(AnalyticsEvents.refresh): \(parameters)")
     Analytics.logEvent(AnalyticsEvents.refresh, parameters: parameters)
