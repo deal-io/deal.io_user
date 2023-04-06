@@ -10,10 +10,12 @@ import SwiftUI
 struct ContractedDealView: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
+    var upcoming: Bool
     
-    init(viewModel: UserViewModel, deal: Deal) {
+    init(viewModel: UserViewModel, deal: Deal, upcoming: Bool) {
         self.viewModel = viewModel
         self.deal = deal
+        self.upcoming = upcoming
         print("Name Map: \(viewModel.nameMap)")
         print("ID: \(deal.restaurantID)")
     }
@@ -37,7 +39,7 @@ struct ContractedDealView: View {
                 
                 
                 Spacer()
-                HourView(viewModel: viewModel, deal: deal)
+                HourView(viewModel: viewModel, deal: deal, upcoming: upcoming)
                     .padding(.trailing, 5)
             }.padding(.horizontal, 20).padding(.vertical, 30)
                 
