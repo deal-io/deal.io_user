@@ -43,4 +43,19 @@ class UserManager {
         isLoggedIn = false
         print("UM: \(userDefaults.bool(forKey: loggedInKey))")
     }
+    
+    func addFavorite(deal: Deal) {
+        var favorites = userDefaults.array(forKey: favoritesKey)
+        favorites?.append(deal)
+        userDefaults.set(favorites, forKey: favoritesKey)
+    }
+    
+    func removeFavorite(deal: Deal) {
+        var favorites = userDefaults.array(forKey: favoritesKey) as? [Deal] ?? []
+            
+        if let index = favorites.firstIndex(where: { $0 == deal }) {
+            favorites.remove(at: index)
+            userDefaults.set(favorites, forKey: favoritesKey)
+        }
+    }
 }

@@ -14,11 +14,15 @@ struct ExpandedDealView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text(deal.dealAttributes.dealName)
-                .font(.title)
-                .foregroundColor(.white)
-                .padding(.horizontal, 4.5)
-                .multilineTextAlignment(.center)
+            ZStack {
+                StarButtonView(viewModel: viewModel, deal: deal)
+                    .padding(.trailing, 350)
+                Text(deal.dealAttributes.dealName)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 4.5)
+                    .multilineTextAlignment(.center)
+            }
             FromToTimeBubbleView(viewModel: viewModel, deal: deal)
                 .padding(.bottom, 10)
             ActiveDaysBubbleView(viewModel: viewModel, deal: deal)

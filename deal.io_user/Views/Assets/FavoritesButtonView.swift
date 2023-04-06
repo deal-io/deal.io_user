@@ -13,7 +13,7 @@ struct FavoritesButton: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(fillColor)
-                .frame(width: 130, height: 40)
+                .frame(width: 120, height: 40)
             Text("Favorites")
                 .font(.title2)
                 .foregroundColor(.white)

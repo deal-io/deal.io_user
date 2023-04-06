@@ -23,6 +23,7 @@
 		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
 		AD2A73B229DE1339002EC0D3 /* FavoritesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */; };
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
+		AD2A73B629DE38E6002EC0D3 /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
@@ -59,6 +60,7 @@
 		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButtonView.swift; sourceTree = "<group>"; };
 		AD2A73B329DE13BA002EC0D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButtonView.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonView.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubbleView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				AD2A739829D246B0002EC0D3 /* OpenMapsView.swift */,
 				AD2A739D29D75666002EC0D3 /* RefreshableScrollView.swift */,
 				AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */,
+				AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedSwitchView.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */,
+				AD2A73B629DE38E6002EC0D3 /* StarButtonView.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,

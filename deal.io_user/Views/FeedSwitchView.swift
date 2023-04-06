@@ -21,7 +21,7 @@ struct FeedSwitchView: View {
         self.viewModel = viewModel
         self.dailyDeals = viewModel.getDailyDeals()!
         self.upcomingDeals = viewModel.getUpcomingDeals()!
-        self.favoriteDeals = viewModel.getFavoriteDeals()!
+        self.favoriteDeals = viewModel.getFavoriteDeals() ?? []
     }
     
     var body: some View {
@@ -79,18 +79,7 @@ struct FeedSwitchView: View {
                             }
                         Spacer()
                     }
-                    if self.viewModel.deals.isEmpty {
-                        VStack {
-                            ProgressView("Loading deals...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                .scaleEffect(2.0)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Deal_ioColor.background)
-                    } else {
-                        FeedView(viewModel: viewModel, deals: self.upcomingDeals)
-                    }
+                    FeedView(viewModel: viewModel, deals: self.favoriteDeals)
                 } else {
                     HStack {
                         Spacer()
@@ -110,18 +99,7 @@ struct FeedSwitchView: View {
                             }
                         Spacer()
                     }
-                    if self.viewModel.deals.isEmpty {
-                        VStack {
-                            ProgressView("Loading deals...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                .scaleEffect(2.0)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Deal_ioColor.background)
-                    } else {
-                        FeedView(viewModel: viewModel, deals: self.dailyDeals)
-                    }
+                    FeedView(viewModel: viewModel, deals: self.dailyDeals)
                 }
             }
         }

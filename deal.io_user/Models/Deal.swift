@@ -18,6 +18,12 @@ struct Deal: Codable, Identifiable {
     var dealAttributes: DealAttributes
 }
 
+extension Deal: Equatable {
+    static func == (lhs: Deal, rhs: Deal) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 struct DealAttributes: Codable {
     // initialized values from database
     var daysActive: [Bool]

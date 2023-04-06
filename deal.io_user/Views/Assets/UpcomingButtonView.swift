@@ -13,7 +13,7 @@ struct UpcomingButton: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(fillColor)
-                .frame(width: 145, height: 40)
+                .frame(width: 135, height: 40)
             Text("Upcoming")
                 .font(.title2)
                 .foregroundColor(.white)
