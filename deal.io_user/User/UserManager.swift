@@ -15,6 +15,7 @@ class UserManager {
     
     private let emailKey = "userEmail"
     private let loggedInKey = "userLoggedIn"
+    private let favoritesKey = "userFavorites"
     let userDefaults = UserDefaults.standard
     
     @Published var isLoggedIn: Bool
@@ -42,4 +43,31 @@ class UserManager {
         isLoggedIn = false
         print("UM: \(userDefaults.bool(forKey: loggedInKey))")
     }
+    
+    func addFavorite(dealID: String) {
+        print("LOG AddID: \(dealID)")
+        // Get the existing favorites array from user defaults
+        var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
+        // Append the new deal ID to the favorites array
+        favorites.append(dealID)
+        // Save the updated favorites array to user defaults
+        userDefaults.set(favorites, forKey: favoritesKey)
+        print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
+        
+    }
+
+    
+    func removeFavorite(dealID: String) {
+        print("LOG RemoveID: \(dealID)")
+        var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
+
+        while let index = favorites.firstIndex(of: dealID) {
+            favorites.remove(at: index)
+        }
+        
+        userDefaults.set(favorites, forKey: favoritesKey)
+        print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
+    }
+
+    
 }

@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if isLoggedIn {
-                FeedView(viewModel: viewModel)
+                FeedSwitchView(viewModel: viewModel)
             } else {
                 WelcomeView(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
             }

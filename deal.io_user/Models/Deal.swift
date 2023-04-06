@@ -6,15 +6,22 @@
 //
 
 import Foundation
+import Firebase
 
 // Codable so that it can be JSON encoded and decoded for API calls
 struct Deal: Codable, Identifiable {
     
     // initialized values from database
-    var id: String?
+    var id: String
     var restaurantID: String
-    var enterDate: BackendDate?
+    var enterDate: BackendDate
     var dealAttributes: DealAttributes
+}
+
+extension Deal: Equatable {
+    static func == (lhs: Deal, rhs: Deal) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct DealAttributes: Codable {

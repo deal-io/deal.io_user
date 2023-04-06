@@ -15,11 +15,10 @@ struct AnalyticsEvents {
 
 func logDealClickEvent(viewModel: UserViewModel, deal: Deal) -> Void {
     let parameters = [
-        "user_email": "\(UserManager.shared.userDefaults.string(forKey: "userEmail") ?? "nil")" as NSObject,
-        "timestamp": ServerValue.timestamp(),
         "deal_id": "\(deal.id ?? "nil")" as NSObject,
         "deal_name": "\(deal.dealAttributes.dealName)" as NSObject,
-        "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject
+        "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject,
+        "upcoming_or_daily": "\(deal.dealAttributes.daysActive[0] ? "daily" : "upcoming")" as NSObject
     ] as [String : Any]
     print("LOG: \(AnalyticsEvents.dealClick): \(parameters)")
     Analytics.logEvent(AnalyticsEvents.dealClick, parameters: parameters)
@@ -27,8 +26,6 @@ func logDealClickEvent(viewModel: UserViewModel, deal: Deal) -> Void {
 
 func logMapOpenEvent(viewModel: UserViewModel, deal: Deal) {
     let parameters = [
-        "user_email": "\(UserManager.shared.userDefaults.string(forKey: "userEmail") ?? "nil")" as NSObject,
-        "timestamp": ServerValue.timestamp(),
         "deal_id": "\(deal.id ?? "nil")" as NSObject,
         "deal_name": "\(deal.dealAttributes.dealName)" as NSObject,
         "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject
@@ -40,7 +37,6 @@ func logMapOpenEvent(viewModel: UserViewModel, deal: Deal) {
 func logRefreshEvent(viewModel: UserViewModel) {
     let parameters = [
         "user_email": "\(UserManager.shared.userDefaults.string(forKey: "userEmail") ?? "nil")" as NSObject,
-        "timestamp": ServerValue.timestamp(),
     ] as [String : Any]
     print("LOG: \(AnalyticsEvents.refresh): \(parameters)")
     Analytics.logEvent(AnalyticsEvents.refresh, parameters: parameters)

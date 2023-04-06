@@ -24,7 +24,7 @@ struct OpenMapsView: View {
         }) {
             Text("Get Directions")
                 .foregroundColor(.white)
-                .padding(5)
+                .padding(7)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Deal_ioColor.selected)

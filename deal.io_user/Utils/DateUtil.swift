@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 extension Date {
     func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {

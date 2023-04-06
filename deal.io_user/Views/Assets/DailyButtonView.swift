@@ -13,9 +13,9 @@ struct DailyButton: View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
                 .fill(fillColor)
-                .frame(width: 145, height: 45)
+                .frame(width: 75, height: 40)
             Text("Daily")
-                .font(.title)
+                .font(.title2)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
         }
