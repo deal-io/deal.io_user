@@ -11,11 +11,9 @@ import SwiftUI
 struct FavoriteView: View {
     @ObservedObject var viewModel: UserViewModel
     
-
-
     init(viewModel: UserViewModel) {
         self.viewModel = viewModel
-        print("LOG Fav View")
+        //print("LOG Fav View")
     }
     
     var body: some View {

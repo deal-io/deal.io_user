@@ -234,7 +234,7 @@ class UserViewModel: ObservableObject {
     func getFavoriteDeals() -> [Deal] {
         let favoriteIDArray = UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [String]
         
-        print("LOG: \(String(describing: favoriteIDArray))")
+        //print("LOG: \(String(describing: favoriteIDArray))")
         
         var favoriteDeals: [Deal] = []
 
