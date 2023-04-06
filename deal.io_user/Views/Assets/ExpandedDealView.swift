@@ -10,30 +10,31 @@ import SwiftUI
 struct ExpandedDealView: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
-
+    
     var body: some View {
         VStack{
             Spacer()
-            ZStack {
-                StarButtonView(viewModel: viewModel, deal: deal)
-                    .padding(.trailing, 350)
-                Text(deal.dealAttributes.dealName)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 4.5)
-                    .multilineTextAlignment(.center)
-            }
+            
+            Text(deal.dealAttributes.dealName)
+                .font(.title)
+                .foregroundColor(.white)
+                .padding(.horizontal, 4.5)
+                .multilineTextAlignment(.center)
+            
             FromToTimeBubbleView(viewModel: viewModel, deal: deal)
                 .padding(.bottom, 10)
+            
             ActiveDaysBubbleView(viewModel: viewModel, deal: deal)
+            
             Text(deal.dealAttributes.description)
                 .padding(10)
                 .multilineTextAlignment(.center)
+            
             OpenMapsView(viewModel: viewModel, deal: deal)
             
             Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
                 .font(.title2)
-               
+                
             Spacer()
         }
         .padding(.vertical, 10)
@@ -45,7 +46,15 @@ struct ExpandedDealView: View {
                 .padding(.vertical, 2)
         )
         .foregroundColor(.white)
+        .overlay(
+            
+            StarButtonView(viewModel: viewModel, deal: deal)
+            .padding(.leading, 15)
+            .padding(.top, 20),
+            alignment: .topLeading
+        )
     }
 }
+
 
 

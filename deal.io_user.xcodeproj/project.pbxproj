@@ -48,7 +48,7 @@
 		FB353CD829DDF68A00AC0240 /* DailySortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CD729DDF68A00AC0240 /* DailySortButton.swift */; };
 		FB353CDA29DE038800AC0240 /* UpcomingSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */; };
 		FB353CDB29DE504F00AC0240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */; };
-		FB353CDD29DE761A00AC0240 /* FavoriteSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CDC29DE761A00AC0240 /* FavoriteSortButton.swift */; };
+		FB353CDF29DE795C00AC0240 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CDE29DE795C00AC0240 /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +90,7 @@
 		FB34210329DD0F3A00648DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../deal.io_producer/deal.io_producer/Auth/DevPlist/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB353CD729DDF68A00AC0240 /* DailySortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySortButton.swift; sourceTree = "<group>"; };
 		FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSortButton.swift; sourceTree = "<group>"; };
-		FB353CDC29DE761A00AC0240 /* FavoriteSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSortButton.swift; sourceTree = "<group>"; };
+		FB353CDE29DE795C00AC0240 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,7 @@
 				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
 				ADF6879F29AED67600E86022 /* WelcomeView.swift */,
 				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
+				FB353CDE29DE795C00AC0240 /* FavoriteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,7 +169,6 @@
 				AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */,
 				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
-				FB353CDC29DE761A00AC0240 /* FavoriteSortButton.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -334,7 +334,6 @@
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
-				FB353CDD29DE761A00AC0240 /* FavoriteSortButton.swift in Sources */,
 				AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourView.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
@@ -354,6 +353,7 @@
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
 				ADF687A029AED67600E86022 /* WelcomeView.swift in Sources */,
 				AD2A73B229DE1339002EC0D3 /* FavoritesButtonView.swift in Sources */,
+				FB353CDF29DE795C00AC0240 /* FavoriteView.swift in Sources */,
 				ADF687AA29AEF31900E86022 /* ContractedDealView.swift in Sources */,
 				ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,

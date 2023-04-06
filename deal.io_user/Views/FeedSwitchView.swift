@@ -10,99 +10,77 @@ import FirebaseAnalytics
 
 struct FeedSwitchView: View {
     
+    
     @ObservedObject var viewModel: UserViewModel
     @State var action: () -> Void = {}
     @State var disabled = false
     let dailyDeals: [Deal]
     let upcomingDeals: [Deal]
-    let favoriteDeals: [Deal]
     
     init(viewModel: UserViewModel) {
         self.viewModel = viewModel
         self.dailyDeals = viewModel.getDailyDeals()!
         self.upcomingDeals = viewModel.getUpcomingDeals()!
-        self.favoriteDeals = viewModel.getFavoriteDeals()
     }
     
     var body: some View {
-            VStack {
-                Image("dealio_white_on_bg")
-                    .resizable()
-                    .frame(width: 200, height: 80)
-                if (viewModel.currentFeed == .UPCOMING) {
-                    HStack {
-                        UpcomingSortButton(viewModel: viewModel)
-                        Spacer()
-                        DailyButton(fillColor: Deal_ioColor.background)
+        
+        VStack {
+            Image("dealio_white_on_bg")
+                .resizable()
+                .frame(width: 200, height: 80)
+            if (viewModel.currentFeed == .UPCOMING) {
+                HStack(alignment: .center) {
+                    Spacer()
+                    UpcomingSortButton(viewModel: viewModel)
+                    
+                    Spacer()
+                    HStack{
+                        DailyButton(fillColor: Deal_ioColor.onBackground)
                             .onTapGesture {
                                 viewModel.currentFeed = .DAILY
                             }
-                        Spacer()
                         UpcomingButton(fillColor: Deal_ioColor.selected)
                             .onTapGesture {
                                 viewModel.currentFeed = .UPCOMING
-                            }
-                        Spacer()
-                        FavoritesButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .FAVORITES
-                            }
-                        Spacer()
-                    }
-                    if self.viewModel.deals.isEmpty {
-                        VStack {
-                            ProgressView("Loading deals...")
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                                .scaleEffect(2.0)
-                                .padding()
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Deal_ioColor.background)
-                    } else {
-                        FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
-                    }
-                } else if (viewModel.currentFeed == .FAVORITES) {
-                    HStack {
-                        Spacer()
-                        DailyButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
-                        Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
-                        Spacer()
-                        FavoritesButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .FAVORITES
-                            }
-                        Spacer()
-                    }
-                    FeedView(viewModel: viewModel, deals: self.favoriteDeals,  upcoming: false)
-                } else {
-                    HStack {
-                        DailySortButton(viewModel: viewModel)
-                        Spacer()
+                            }.shadow(radius: 10)
+                    }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                    
+                    Spacer()
+                    
+                }
+                FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
+            } else {
+                HStack(alignment: .center) {
+                    Spacer()
+                    DailySortButton(viewModel: viewModel)
+                    
+                    Spacer()
+                    HStack{
                         DailyButton(fillColor: Deal_ioColor.selected)
                             .onTapGesture {
                                 viewModel.currentFeed = .DAILY
-                            }
-                        Spacer()
-                        UpcomingButton(fillColor: Deal_ioColor.background)
+                            }.shadow(radius: 10)
+                        
+                        UpcomingButton(fillColor: Deal_ioColor.onBackground)
                             .onTapGesture {
                                 viewModel.currentFeed = .UPCOMING
                             }
-                        Spacer()
-                        FavoritesButton(fillColor: Deal_ioColor.background)
-                            .onTapGesture {
-                                viewModel.currentFeed = .FAVORITES
-                            }
-                        Spacer()
-                    }
-                    FeedView(viewModel: viewModel, deals: self.dailyDeals,  upcoming: false)
+                    }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                    
+                    Spacer()
+                    
+                    
                 }
+                FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
             }
         }
+        
+    }
+    
+    
 }
+
+
+
+

@@ -13,6 +13,8 @@ class UserViewModel: ObservableObject {
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality
     private var LOG_TAG = "LOG: ViewModel"
+    @Published var tabSelection: Int = 0
+    
     @Published var currentFeed: FeedType = .DAILY
     @Published var dailySortType: DailySortType = .DEFAULT
     @Published var upcomingSortType: UpcomingSortType = .DAY_ASC
