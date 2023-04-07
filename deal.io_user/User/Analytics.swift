@@ -15,7 +15,8 @@ struct AnalyticsEvents {
 
 func logDealClickEvent(viewModel: UserViewModel, deal: Deal) -> Void {
     let parameters = [
-        "deal_id": "\(deal.id ?? "nil")" as NSObject,
+        "user_id":"\(UserManager.shared.userID)" as NSObject,
+        "deal_id": "\(deal.id)" as NSObject,
         "deal_name": "\(deal.dealAttributes.dealName)" as NSObject,
         "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject,
         "upcoming_or_daily": "\(deal.dealAttributes.daysActive[0] ? "daily" : "upcoming")" as NSObject
@@ -26,7 +27,8 @@ func logDealClickEvent(viewModel: UserViewModel, deal: Deal) -> Void {
 
 func logMapOpenEvent(viewModel: UserViewModel, deal: Deal) {
     let parameters = [
-        "deal_id": "\(deal.id ?? "nil")" as NSObject,
+        "user_id":"\(UserManager.shared.userID)" as NSObject,
+        "deal_id": "\(deal.id)" as NSObject,
         "deal_name": "\(deal.dealAttributes.dealName)" as NSObject,
         "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject
     ] as [String : Any]
@@ -36,6 +38,7 @@ func logMapOpenEvent(viewModel: UserViewModel, deal: Deal) {
 
 func logRefreshEvent(viewModel: UserViewModel) {
     let parameters = [
+        "user_id":"\(UserManager.shared.userID)" as NSObject,
         "refresh": "\(viewModel.currentFeed)" as NSObject,
     ] as [String : Any]
     print("LOG: \(AnalyticsEvents.refresh): \(parameters)")
