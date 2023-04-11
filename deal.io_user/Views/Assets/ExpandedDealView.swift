@@ -57,6 +57,7 @@ struct ExpandedDealView: View {
                     let shareText = "\(appURL)\n\(deal.dealAttributes.dealName) at \(String(describing: viewModel.nameMap[deal.restaurantID]))\n\(DateUtil().dateToCalendarComponents(date: DateUtil().secondsToDate(seconds: deal.dealAttributes.startDate._seconds, nanoseconds: deal.dealAttributes.startDate._nanoseconds)))"
                     let activityController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
                     UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
+                    logDealShareEvent(viewModel: viewModel, deal: deal)
                 }) {
                     Image(systemName: "square.and.arrow.up")
                         .foregroundColor(.white)
