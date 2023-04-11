@@ -13,6 +13,7 @@ struct AnalyticsEvents {
     static let refresh = "refresh"
     static let favorite = "favorite"
     static let unfavorite = "unfavorite"
+    static let share = "share"
 }
 
 func logDealClickEvent(viewModel: UserViewModel, deal: Deal) -> Void {
@@ -64,5 +65,16 @@ func logRefreshEvent(viewModel: UserViewModel) {
         "refresh": "\(viewModel.currentFeed)" as NSObject,
     ] as [String : Any]
     Analytics.logEvent(AnalyticsEvents.refresh, parameters: parameters)
+}
+
+func logDealShareEvent(viewModel: UserViewModel, deal: Deal) -> Void {
+    let parameters = [
+        "user_id":"\(UserManager.shared.userID)" as NSObject,
+        "deal_id": "\(deal.id)" as NSObject,
+        "deal_name": "\(deal.dealAttributes.dealName)" as NSObject,
+        "restaurant_name": "\(viewModel.nameMap[deal.restaurantID] ?? "nil")" as NSObject,
+        "upcoming_or_daily": "\(deal.dealAttributes.daysActive[0] ? "daily" : "upcoming")" as NSObject
+    ] as [String : Any]
+    Analytics.logEvent(AnalyticsEvents.share, parameters: parameters)
 }
 
