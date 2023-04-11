@@ -47,10 +47,23 @@ struct ExpandedDealView: View {
         )
         .foregroundColor(.white)
         .overlay(
-            
-            StarButtonView(viewModel: viewModel, deal: deal)
-            .padding(.leading, 15)
-            .padding(.top, 20),
+            HStack{
+                StarButtonView(viewModel: viewModel, deal: deal)
+                    .padding(.leading, 15)
+                    .padding(.top, 20)
+                Spacer()
+                Button(action: {
+                    let appURL = "https://apps.apple.com/app/id6446871125"
+                    let shareText = "\(appURL)\n\(deal.dealAttributes.dealName) at \(String(describing: viewModel.nameMap[deal.restaurantID]))\n\(DateUtil().dateToCalendarComponents(date: DateUtil().secondsToDate(seconds: deal.dealAttributes.startDate._seconds, nanoseconds: deal.dealAttributes.startDate._nanoseconds)))"
+                    let activityController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+                    UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.white)
+                        .padding(.trailing, 25)
+                        .padding(.top, 20)
+                }
+            },
             alignment: .topLeading
         )
     }
