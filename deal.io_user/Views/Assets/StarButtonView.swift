@@ -16,7 +16,6 @@ struct StarButtonView: View {
         self.viewModel = viewModel
         self.deal = deal
         self.favorited = viewModel.checkDealFavorite(deal: deal)
-        print("F: init favorited: \(self.favorited)")
     }
     
     var body: some View {
@@ -24,11 +23,11 @@ struct StarButtonView: View {
             if favorited {
                 favorited = false
                 UserManager.shared.removeFavorite(dealID: deal.id)
-                print("F: init favorited: \(self.favorited)")
+                logDealUnfavorite(viewModel: viewModel, deal: deal)
             } else {
                 favorited = true
                 UserManager.shared.addFavorite(dealID: deal.id)
-                print("F: init favorited: \(self.favorited)")
+                logDealFavorite(viewModel: viewModel, deal: deal)
             }
         }) {
             if favorited {
