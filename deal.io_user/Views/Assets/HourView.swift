@@ -31,7 +31,7 @@ struct HourView: View {
         self.startHourDifference = DateUtil().getHourDifferenceBetweenNow(inputHour: startTime)
         self.endHourDifference = DateUtil().getHourDifferenceBetweenNow(inputHour: endTime)
         // if deal.dealAttributes.daysActive[0] is true, this means the deal is active, if its also upcoming, we want to only get the next available day
-        self.upcomingDay = DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive, skipFirst: deal.dealAttributes.daysActive[0])!
+        self.upcomingDay = (viewModel.upcomingSortType == UpcomingSortType.DAY_ASC ? DateUtil().getFirstActiveWeekday(daysActive: deal.dealAttributes.daysActive, skipFirst: deal.dealAttributes.daysActive[0])! : DateUtil().getLastActiveWeekday(daysActive: deal.dealAttributes.daysActive)!)
         print("GHD: UDB: \(deal.dealAttributes.daysActive)")
         print("GHD: UDB: \(upcomingDay)")
         self.active = deal.dealAttributes.daysActive[0]

@@ -44,6 +44,7 @@ struct ContentView: View {
                                 Deal_ioColor.tabColor,
                                 for: .tabBar)
                 }
+                .overlay(HelpButton(), alignment: .topTrailing)
                 // binds TabView id to tabSelection, on change, refreshes entire TabView
                 .id(viewModel.tabSelection)
                 .onChange(of: selection) { newValue in
@@ -52,9 +53,12 @@ struct ContentView: View {
                 }
             } else {
                 WelcomeView(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
+                
             }
         }
+      
         .background(Deal_ioColor.background)
+       
     }
     
                 

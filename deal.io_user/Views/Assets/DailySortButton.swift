@@ -21,14 +21,12 @@ struct DailySortButton: View {
     var body: some View {
        
             Menu{
-                Picker("Sort by", selection: $selectedSortType) {
-                    Text("Default").tag(DailySortType.DEFAULT)
+                Picker("Filter by", selection: $selectedSortType) {
+                    Text("None").tag(DailySortType.NONE)
                     Text("Active").tag(DailySortType.ACTIVE)
+                    Text("Upcoming").tag(DailySortType.UPCOMING)
                     Text("Ended").tag(DailySortType.ENDED)
-                    Text("Start: High-Low").tag(DailySortType.START_ASC)
-                    Text("Start: Low-High").tag(DailySortType.START_DEC)
-                    Text("End: High-Low").tag(DailySortType.END_ASC)
-                    Text("End: Low-High").tag(DailySortType.END_DEC)
+                    
                 }
                 
             }label: {
