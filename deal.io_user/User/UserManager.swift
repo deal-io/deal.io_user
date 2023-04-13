@@ -16,12 +16,16 @@ class UserManager {
     private let emailKey = "userEmail"
     private let loggedInKey = "userLoggedIn"
     private let favoritesKey = "userFavorites"
+    private let userIDKey = "userID"
     let userDefaults = UserDefaults.standard
     
     @Published var isLoggedIn: Bool
+    var userID: String
     
     private init() {
         isLoggedIn = userDefaults.bool(forKey: loggedInKey)
+        userID = userDefaults.string(forKey: userIDKey) ?? UUID().uuidString
+        userDefaults.set(userID, forKey: userIDKey)
     }
     
     func checkLoginStatus() -> Bool {

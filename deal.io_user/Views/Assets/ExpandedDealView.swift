@@ -47,10 +47,24 @@ struct ExpandedDealView: View {
         )
         .foregroundColor(.white)
         .overlay(
-            
-            StarButtonView(viewModel: viewModel, deal: deal)
-            .padding(.leading, 15)
-            .padding(.top, 20),
+            HStack{
+                StarButtonView(viewModel: viewModel, deal: deal)
+                    .padding(.leading, 15)
+                    .padding(.top, 20)
+                Spacer()
+                Button(action: {
+                    let appURL = "https://apps.apple.com/app/id6446871125"
+                    let shareText = "\(appURL)\nCheck out this deal at \(String(describing: viewModel.nameMap[deal.restaurantID]!)):\n \(deal.dealAttributes.dealName)"
+                    let activityController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+                    UIApplication.shared.windows.first?.rootViewController?.present(activityController, animated: true, completion: nil)
+                    logDealShareEvent(viewModel: viewModel, deal: deal)
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.white)
+                        .padding(.trailing, 25)
+                        .padding(.top, 20)
+                }
+            },
             alignment: .topLeading
         )
     }
