@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+import NotificationCenter
 
 struct FavoriteView: View {
+    
     @ObservedObject var viewModel: UserViewModel
     
     init(viewModel: UserViewModel) {
@@ -31,6 +33,34 @@ struct FavoriteView: View {
                     .fontWeight(.bold)
             }
             FeedView(viewModel: viewModel, deals: viewModel.getFavoriteDeals(), upcoming: false)
+        }
+        .onAppear {
+            requestNotificationPermission()
+        }
+    }
+}
+
+func requestNotificationPermission() {
+    UNUserNotificationCenter.current().getNotificationSettings { settings in
+        if settings.authorizationStatus == .notDetermined {
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: "Allow Notifications?", message: "We'll use notifications to inform you about your favorite deals.", preferredStyle: .alert)
+
+                let okayAction = UIAlertAction(title: "Okay", style: .default) { _ in
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                        if let error = error {
+                            print("Error requesting authorization for notifications: \(error.localizedDescription)")
+                        }
+                    }
+                }
+
+
+                alertController.addAction(okayAction)
+
+                if let viewController = UIApplication.shared.windows.first?.rootViewController {
+                    viewController.present(alertController, animated: true, completion: nil)
+                }
+            }
         }
     }
 }

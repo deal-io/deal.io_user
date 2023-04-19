@@ -33,10 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let siren = Siren.shared
         
         // prompts the user to update everytime they open it
-        siren.rulesManager = RulesManager(globalRules: .annoying)
+//        siren.rulesManager = RulesManager(globalRules: .annoying)
         
         // FORCES the user to update before they can use it
-        // siren.rulesManager = RulesManager(globalRules: .critical)
+         siren.rulesManager = RulesManager(globalRules: .critical)
         
         // Major, Minor, Patch, and Revision custom rules
         /* siren.rulesManager = RulesManager(majorUpdateRules: .critical,
