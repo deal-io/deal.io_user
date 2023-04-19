@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseAnalytics
+import Updates
 
 struct ContentView: View {
     @ObservedObject var viewModel = UserViewModel()
@@ -26,12 +27,9 @@ struct ContentView: View {
                             Text("Feed")
                         }
                         .tag(0)
-                        //.toolbar(.visible, for: .tabBar)
-
-                            .toolbarBackground(
-                                Deal_ioColor.tabColor,
-                                for: .tabBar)
-                    
+                        .toolbarBackground(
+                            Deal_ioColor.tabColor,
+                            for: .tabBar)
                     FavoriteView(viewModel: viewModel)
                         .background(Deal_ioColor.background)
                         .tabItem {
@@ -39,7 +37,6 @@ struct ContentView: View {
                             Text("Favorites")
                         }
                         .tag(1)
-                        //.toolbar(.visible, for: .tabBar)
                         .toolbarBackground(
                                 Deal_ioColor.tabColor,
                                 for: .tabBar)
@@ -56,13 +53,8 @@ struct ContentView: View {
                 
             }
         }
-      
         .background(Deal_ioColor.background)
-       
     }
-    
-                
-        
 }
 
 

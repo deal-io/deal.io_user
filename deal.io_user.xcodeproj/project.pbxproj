@@ -23,6 +23,7 @@
 		AD2A73B229DE1339002EC0D3 /* FavoritesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B129DE1339002EC0D3 /* FavoritesButtonView.swift */; };
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
 		AD2A73B629DE38E6002EC0D3 /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */; };
+		AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73BD29EFA7AA002EC0D3 /* Siren */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButtonView.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubbleView.swift */; };
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */,
 				AD2A73AC29D78A73002EC0D3 /* FirebaseDatabaseSwift in Frameworks */,
 				AD2A73A629D78A73002EC0D3 /* FirebaseAnalyticsSwift in Frameworks */,
 				AD2A73A829D78A73002EC0D3 /* FirebaseAuth in Frameworks */,
@@ -275,6 +277,7 @@
 				AD2A73A729D78A73002EC0D3 /* FirebaseAuth */,
 				AD2A73A929D78A73002EC0D3 /* FirebaseDatabase */,
 				AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */,
+				AD2A73BD29EFA7AA002EC0D3 /* Siren */,
 			);
 			productName = deal.io_customer;
 			productReference = ADC4D486299807E500B7BD24 /* deal.io_user.app */;
@@ -306,6 +309,7 @@
 			mainGroup = ADC4D47D299807E500B7BD24;
 			packageReferences = (
 				AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AD2A73BC29EFA7AA002EC0D3 /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = ADC4D487299807E500B7BD24 /* Products */;
 			projectDirPath = "";
@@ -496,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"deal.io_user/Preview Content\"";
 				DEVELOPMENT_TEAM = V2UFVZ3SA9;
 				ENABLE_PREVIEWS = YES;
@@ -513,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -532,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"deal.io_user/Preview Content\"";
 				DEVELOPMENT_TEAM = V2UFVZ3SA9;
 				ENABLE_PREVIEWS = YES;
@@ -549,7 +553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -593,6 +597,14 @@
 				kind = branch;
 			};
 		};
+		AD2A73BC29EFA7AA002EC0D3 /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -620,6 +632,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD2A73A229D78A73002EC0D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabaseSwift;
+		};
+		AD2A73BD29EFA7AA002EC0D3 /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2A73BC29EFA7AA002EC0D3 /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
 		};
 /* End XCSwiftPackageProductDependency section */
 
