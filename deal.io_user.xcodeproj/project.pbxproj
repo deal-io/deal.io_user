@@ -47,8 +47,9 @@
 		ADF687FB29B001C800E86022 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF687FA29B001C800E86022 /* ContentView.swift */; };
 		FB353CD829DDF68A00AC0240 /* DailySortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CD729DDF68A00AC0240 /* DailySortButton.swift */; };
 		FB353CDA29DE038800AC0240 /* UpcomingSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */; };
-		FB353CDB29DE504F00AC0240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */; };
 		FB353CDF29DE795C00AC0240 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB353CDE29DE795C00AC0240 /* FavoriteView.swift */; };
+		FBBEEAEB29E894F200489A4C /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBEEAEA29E894F200489A4C /* HelpButton.swift */; };
+		FBBEEAEE29E8BC1900489A4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		FB353CD729DDF68A00AC0240 /* DailySortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySortButton.swift; sourceTree = "<group>"; };
 		FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSortButton.swift; sourceTree = "<group>"; };
 		FB353CDE29DE795C00AC0240 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		FBBEEAEA29E894F200489A4C /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				AD2A73B529DE38E6002EC0D3 /* StarButtonView.swift */,
 				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
+				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -319,8 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD3190029B15AC700800A46 /* test in Resources */,
+				FBBEEAEE29E8BC1900489A4C /* GoogleService-Info.plist in Resources */,
 				ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */,
-				FB353CDB29DE504F00AC0240 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
+				FBBEEAEB29E894F200489A4C /* HelpButton.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
 				AD2A739929D246B0002EC0D3 /* OpenMapsView.swift in Sources */,
@@ -509,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -545,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

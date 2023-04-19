@@ -145,6 +145,10 @@ class DateUtil {
         return (getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.startTime) <= 0 && getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.endTime) >= 0)
     }
     
+    func checkDealDailyUpcoming(deal: Deal) -> Bool{
+        return getHourDifferenceBetweenNow(inputHour: deal.dealAttributes.startTime) >= 0
+    }
+    
     func getFirstActiveWeekday(daysActive: [Bool], skipFirst: Bool) -> String? {
         var index = 0
         
@@ -159,7 +163,21 @@ class DateUtil {
             index = (index + 1) % 7
         } while true
         
-        return nil
+        
+    }
+    
+    func getLastActiveWeekday(daysActive: [Bool]) -> String? {
+        var index = daysActive.index(before: daysActive.endIndex)
+
+        // TODO infinite loop?
+        repeat {
+            if daysActive[index] {
+                return self.todaysDict[index]
+            }
+            index = daysActive.index(before: index)
+        } while true
+
+    
     }
     
     func getAllActiveWeekdays(daysActive: [Bool]) -> [String] {

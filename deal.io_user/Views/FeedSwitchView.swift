@@ -46,6 +46,7 @@ struct FeedSwitchView: View {
                             }.shadow(radius: 10)
                     }.background(Deal_ioColor.onBackground).cornerRadius(10)
                     
+                   
                     Spacer()
                     
                 }
@@ -68,6 +69,7 @@ struct FeedSwitchView: View {
                             }
                     }.background(Deal_ioColor.onBackground).cornerRadius(10)
                     
+                   
                     Spacer()
                     
                     

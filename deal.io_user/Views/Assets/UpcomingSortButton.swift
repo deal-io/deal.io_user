@@ -29,13 +29,13 @@ struct UpcomingSortButton: View {
                  }
                  
              }label: {
-                 Image(systemName: "arrow.up.arrow.down")
+                 Image(systemName: "slider.horizontal.3")
                      .padding(10)
                      .background(Deal_ioColor.onBackground)
-                     .foregroundColor(.blue)
+                     .foregroundColor(.white)
                      .clipShape(Circle())
              }
-         
+            
              .onChange(of: selectedSortType) { newValue in
                  viewModel.upcomingSortType = newValue
              }
@@ -44,4 +44,6 @@ struct UpcomingSortButton: View {
          }
     
 }
+
+
 
