@@ -54,7 +54,6 @@ func requestNotificationPermission() {
                     }
                 }
 
-
                 alertController.addAction(okayAction)
 
                 if let viewController = UIApplication.shared.windows.first?.rootViewController {
