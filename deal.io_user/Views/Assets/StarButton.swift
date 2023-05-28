@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StarButtonView: View {
+struct StarButton: View {
     @ObservedObject var viewModel: UserViewModel
     @State var favorited: Bool
     var deal: Deal

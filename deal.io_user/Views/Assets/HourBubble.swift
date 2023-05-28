@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HourView: View {
+struct HourBubble: View {
     let LOG_TAG = "HOUR_VIEW: "
     
     @ObservedObject var viewModel: UserViewModel

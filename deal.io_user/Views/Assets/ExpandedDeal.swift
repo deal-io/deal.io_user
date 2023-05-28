@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExpandedDealView: View {
+struct ExpandedDeal: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     
@@ -21,16 +21,16 @@ struct ExpandedDealView: View {
                 .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
             
-            FromToTimeBubbleView(viewModel: viewModel, deal: deal)
+            FromToTimeBubble(viewModel: viewModel, deal: deal)
                 .padding(.bottom, 10)
             
-            ActiveDaysBubbleView(viewModel: viewModel, deal: deal)
+            ActiveDaysBubble(viewModel: viewModel, deal: deal)
             
             Text(deal.dealAttributes.description)
                 .padding(10)
                 .multilineTextAlignment(.center)
             
-            OpenMapsView(viewModel: viewModel, deal: deal)
+            OpenMaps(viewModel: viewModel, deal: deal)
             
             Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
                 .font(.title2)
@@ -48,7 +48,7 @@ struct ExpandedDealView: View {
         .foregroundColor(.white)
         .overlay(
             HStack{
-                StarButtonView(viewModel: viewModel, deal: deal)
+                StarButton(viewModel: viewModel, deal: deal)
                     .padding(.leading, 15)
                     .padding(.top, 20)
                 Spacer()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActiveDaysBubbleView: View {
+struct ActiveDaysBubble: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     

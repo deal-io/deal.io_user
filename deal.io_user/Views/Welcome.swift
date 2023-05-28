@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct Welcome: View {
     @ObservedObject var viewModel: UserViewModel
     @State private var email = ""
     @State private var showInvalidAlert = false

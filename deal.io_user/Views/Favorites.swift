@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import NotificationCenter
 
-struct FavoriteView: View {
+struct Favorites: View {
     
     @ObservedObject var viewModel: UserViewModel
     

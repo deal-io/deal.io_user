@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAnalytics
 
-struct FeedSwitchView: View {
+struct FeedSwitch: View {
     
     
     @ObservedObject var viewModel: UserViewModel

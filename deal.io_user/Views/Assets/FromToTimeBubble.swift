@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FromToTimeBubbleView: View {
+struct FromToTimeBubble: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     

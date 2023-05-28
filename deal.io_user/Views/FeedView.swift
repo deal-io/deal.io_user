@@ -23,7 +23,7 @@ struct FeedView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Deal_ioColor.background)
         } else {
-            RefreshableScrollView(refreshing: self.$viewModel.loading) {
+            RefreshableScroll(refreshing: self.$viewModel.loading) {
                 LazyVStack{
                     ForEach(self.deals, id:\.id) { deal in
                         DealView(viewModel: viewModel, deal: deal, upcoming: upcoming)

@@ -20,7 +20,7 @@ struct ContentView: View {
         Group {
             if isLoggedIn {
                 TabView(selection: $selection) {
-                    FeedSwitchView(viewModel: viewModel)
+                    FeedSwitch(viewModel: viewModel)
                         .background(Deal_ioColor.background)
                         .tabItem {
                             Image(systemName: "list.dash")
@@ -30,7 +30,7 @@ struct ContentView: View {
                         .toolbarBackground(
                             Deal_ioColor.tabColor,
                             for: .tabBar)
-                    FavoriteView(viewModel: viewModel)
+                    Favorites(viewModel: viewModel)
                         .background(Deal_ioColor.background)
                         .tabItem {
                             Image(systemName: "star.fill")
@@ -49,7 +49,7 @@ struct ContentView: View {
                     viewModel.tabSelection = newValue
                 }
             } else {
-                WelcomeView(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
+                Welcome(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
                 
             }
         }

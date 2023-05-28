@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContractedDealView: View {
+struct ContractedDeal: View {
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     var upcoming: Bool
@@ -35,7 +35,7 @@ struct ContractedDealView: View {
                         
                 }
                 Spacer()
-                HourView(viewModel: viewModel, deal: deal, upcoming: upcoming)
+                HourBubble(viewModel: viewModel, deal: deal, upcoming: upcoming)
                     .padding(.trailing, 5)
             }.padding(.horizontal, 20).padding(.vertical, 30)
                 
