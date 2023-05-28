@@ -30,51 +30,59 @@ struct FeedSwitch: View {
                 .resizable()
                 .frame(width: 200, height: 80)
             if (viewModel.currentFeed == .UPCOMING) {
-                HStack(alignment: .center) {
-                    Spacer()
-                    UpcomingSortButton(viewModel: viewModel)
-                    
-                    Spacer()
-                    HStack{
-                        DailyButton(fillColor: Deal_ioColor.onBackground)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }
-                        UpcomingButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }.shadow(radius: 10)
-                    }.background(Deal_ioColor.onBackground).cornerRadius(10)
-                    
-                   
-                    Spacer()
-                    
-                }
-                FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
-            } else {
-                HStack(alignment: .center) {
-                    Spacer()
-                    DailySortButton(viewModel: viewModel)
-                    
-                    Spacer()
-                    HStack{
-                        DailyButton(fillColor: Deal_ioColor.selected)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
-                            }.shadow(radius: 10)
+                VStack {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        UpcomingSortButton(viewModel: viewModel)
                         
-                        UpcomingButton(fillColor: Deal_ioColor.onBackground)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
-                    }.background(Deal_ioColor.onBackground).cornerRadius(10)
-                    
-                   
-                    Spacer()
-                    
-                    
+                        Spacer()
+                        HStack{
+                            DailyButton(fillColor: Deal_ioColor.onBackground)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .DAILY
+                                }
+                            UpcomingButton(fillColor: Deal_ioColor.selected)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .UPCOMING
+                                }.shadow(radius: 10)
+                        }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                        
+                        
+                        Spacer()
+                        
+                    }
+                    FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
+                    Rectangle()  // This could also be Color.red or Image("yourImageName")
+                        .foregroundColor(Deal_ioColor.background) // You can change this to be any color you like
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(width: 200, height: 5)  // You can change these values to whatever you want
                 }
-                FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
+            } else {
+                VStack{
+                    HStack(alignment: .center) {
+                        Spacer()
+                        DailySortButton(viewModel: viewModel)
+                        
+                        Spacer()
+                        HStack{
+                            DailyButton(fillColor: Deal_ioColor.selected)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .DAILY
+                                }.shadow(radius: 10)
+                            
+                            UpcomingButton(fillColor: Deal_ioColor.onBackground)
+                                .onTapGesture {
+                                    viewModel.currentFeed = .UPCOMING
+                                }
+                        }.background(Deal_ioColor.onBackground).cornerRadius(10)
+                        Spacer()
+                    }
+                    FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
+                    Rectangle()  // This could also be Color.red or Image("yourImageName")
+                        .foregroundColor(Deal_ioColor.background) // You can change this to be any color you like
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(width: 200, height: 5)  // You can change these values to whatever you want
+                }
             }
         }
         

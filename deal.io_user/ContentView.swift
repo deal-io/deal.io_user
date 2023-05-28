@@ -26,31 +26,30 @@ struct ContentView: View {
                             Image(systemName: "list.dash")
                             Text("Feed")
                         }
-                        .tag(0)
                         .toolbarBackground(
-                            Deal_ioColor.tabColor,
+                            Deal_ioColor.background,
                             for: .tabBar)
+                        .tag(0)
                     Favorites(viewModel: viewModel)
                         .background(Deal_ioColor.background)
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text("Favorites")
                         }
-                        .tag(1)
                         .toolbarBackground(
-                                Deal_ioColor.tabColor,
-                                for: .tabBar)
+                            Deal_ioColor.background,
+                            for: .tabBar)
+                        .tag(1)
                 }
                 .overlay(HelpButton(), alignment: .topTrailing)
                 // binds TabView id to tabSelection, on change, refreshes entire TabView
                 .id(viewModel.tabSelection)
                 .onChange(of: selection) { newValue in
-                   print("Change")
+                    print("Change")
                     viewModel.tabSelection = newValue
                 }
             } else {
                 Welcome(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
-                
             }
         }
         .background(Deal_ioColor.background)
