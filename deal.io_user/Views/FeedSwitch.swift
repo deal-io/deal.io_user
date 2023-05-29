@@ -10,21 +10,21 @@ import FirebaseAnalytics
 
 struct FeedSwitch: View {
     
-    
     @ObservedObject var viewModel: UserViewModel
     @State var action: () -> Void = {}
     @State var disabled = false
     let dailyDeals: [Deal]
     let upcomingDeals: [Deal]
+    let everydayDeals: [Deal]
     
     init(viewModel: UserViewModel) {
         self.viewModel = viewModel
         self.dailyDeals = viewModel.getDailyDeals()!
         self.upcomingDeals = viewModel.getUpcomingDeals()!
+        self.everydayDeals = viewModel.getEverydayDeals()!
     }
     
     var body: some View {
-        
         VStack {
             Image("dealio_white_on_bg")
                 .resizable()
@@ -34,7 +34,6 @@ struct FeedSwitch: View {
                     HStack(alignment: .center) {
                         Spacer()
                         UpcomingSortButton(viewModel: viewModel)
-                        
                         Spacer()
                         HStack{
                             DailyButton(fillColor: Deal_ioColor.onBackground)
@@ -46,23 +45,19 @@ struct FeedSwitch: View {
                                     viewModel.currentFeed = .UPCOMING
                                 }.shadow(radius: 10)
                         }.background(Deal_ioColor.onBackground).cornerRadius(10)
-                        
-                        
                         Spacer()
-                        
                     }
                     FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
-                    Rectangle()  // This could also be Color.red or Image("yourImageName")
-                        .foregroundColor(Deal_ioColor.background) // You can change this to be any color you like
+                    Rectangle()
+                        .foregroundColor(Deal_ioColor.background)
                         .edgesIgnoringSafeArea(.all)
-                        .frame(width: 200, height: 5)  // You can change these values to whatever you want
+                        .frame(width: 200, height: 5) 
                 }
             } else {
                 VStack{
                     HStack(alignment: .center) {
                         Spacer()
                         DailySortButton(viewModel: viewModel)
-                        
                         Spacer()
                         HStack{
                             DailyButton(fillColor: Deal_ioColor.selected)
@@ -78,17 +73,14 @@ struct FeedSwitch: View {
                         Spacer()
                     }
                     FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
-                    Rectangle()  // This could also be Color.red or Image("yourImageName")
-                        .foregroundColor(Deal_ioColor.background) // You can change this to be any color you like
+                    Rectangle()
+                        .foregroundColor(Deal_ioColor.background)
                         .edgesIgnoringSafeArea(.all)
-                        .frame(width: 200, height: 5)  // You can change these values to whatever you want
+                        .frame(width: 200, height: 5)
                 }
             }
         }
-        
     }
-    
-    
 }
 
 

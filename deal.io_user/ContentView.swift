@@ -40,6 +40,16 @@ struct ContentView: View {
                             Deal_ioColor.background,
                             for: .tabBar)
                         .tag(1)
+                    Everydays(viewModel: viewModel, deals: viewModel.getEverydayDeals()!)
+                        .background(Deal_ioColor.background)
+                        .tabItem {
+                            Image(systemName: "clock.fill")
+                            Text("Everyday Deals")
+                        }
+                        .toolbarBackground(
+                            Deal_ioColor.background,
+                            for: .tabBar)
+                        .tag(2)
                 }
                 .overlay(HelpButton(), alignment: .topTrailing)
                 // binds TabView id to tabSelection, on change, refreshes entire TabView

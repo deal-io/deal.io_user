@@ -24,6 +24,8 @@
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
 		AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B529DE38E6002EC0D3 /* StarButton.swift */; };
 		AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73BD29EFA7AA002EC0D3 /* Siren */; };
+		AD2A73C02A241905002EC0D3 /* EverydayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */; };
+		AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C12A2434D5002EC0D3 /* Everydays.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButton.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */; };
@@ -66,6 +68,8 @@
 		AD2A73B129DE1339002EC0D3 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		AD2A73B329DE13BA002EC0D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD2A73B529DE38E6002EC0D3 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
+		AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayButton.swift; sourceTree = "<group>"; };
+		AD2A73C12A2434D5002EC0D3 /* Everydays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Everydays.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubble.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				ADF6879F29AED67600E86022 /* Welcome.swift */,
 				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
 				FB353CDE29DE795C00AC0240 /* Favorites.swift */,
+				AD2A73C12A2434D5002EC0D3 /* Everydays.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
 				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
+				AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -356,8 +362,10 @@
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */,
+				AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */,
 				AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButton.swift in Sources */,
+				AD2A73C02A241905002EC0D3 /* EverydayButton.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
 				ADF687A029AED67600E86022 /* Welcome.swift in Sources */,
 				AD2A73B229DE1339002EC0D3 /* FavoritesButton.swift in Sources */,

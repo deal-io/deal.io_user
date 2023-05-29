@@ -15,7 +15,6 @@ struct Favorites: View {
     
     init(viewModel: UserViewModel) {
         self.viewModel = viewModel
-        //print("LOG Fav View")
     }
     
     var body: some View {
