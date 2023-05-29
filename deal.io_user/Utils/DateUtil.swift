@@ -22,7 +22,7 @@ class DateUtil {
     
     func secondsToDate(seconds: Int64, nanoseconds: Int64) -> Date {
         let timeInterval = TimeInterval(seconds + (nanoseconds / 1_000_000_000))
-        return Date(timeIntervalSinceReferenceDate: timeInterval)
+        return Date(timeIntervalSince1970: timeInterval)
     }
     
     func dateToCalendarComponents(date: Date) -> DateComponents {

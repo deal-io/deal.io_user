@@ -163,6 +163,10 @@ class UserViewModel: ObservableObject {
         for deal in deals {
             if (deal.dealAttributes.daysActive.allSatisfy { $0 == true}) {
                 sortedDeals.append(deal)
+                var log = "DATE TEST"
+                print("\(log): \(deal.dealAttributes.startDate._seconds)")
+                print("\(log): \(deal.dealAttributes.startDate._nanoseconds)")
+                print("\(log): \(DateUtil().secondsToDate(seconds: deal.dealAttributes.startDate._seconds, nanoseconds: deal.dealAttributes.startDate._nanoseconds))")
             }
         }
         

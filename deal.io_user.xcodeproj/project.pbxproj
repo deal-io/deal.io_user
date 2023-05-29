@@ -26,6 +26,7 @@
 		AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73BD29EFA7AA002EC0D3 /* Siren */; };
 		AD2A73C02A241905002EC0D3 /* EverydayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */; };
 		AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C12A2434D5002EC0D3 /* Everydays.swift */; };
+		AD2A73C42A243F82002EC0D3 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButton.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */; };
@@ -70,6 +71,7 @@
 		AD2A73B529DE38E6002EC0D3 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
 		AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayButton.swift; sourceTree = "<group>"; };
 		AD2A73C12A2434D5002EC0D3 /* Everydays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Everydays.swift; sourceTree = "<group>"; };
+		AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubble.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				ADA633D629B930240032EF44 /* DateUtil.swift */,
+				AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
+				AD2A73C42A243F82002EC0D3 /* NotificationUtil.swift in Sources */,
 				AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				ADA633C329B2F40C0032EF44 /* UpcomingButton.swift in Sources */,
