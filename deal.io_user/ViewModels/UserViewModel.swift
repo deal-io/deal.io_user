@@ -229,7 +229,7 @@ class UserViewModel: ObservableObject {
        // print("\(LOG_TAG) Upcoming Deals \(upcomingSortType)")
         var sortedUpcomingDeals: [Deal] = []
         for deal in deals {
-            if (deal.dealAttributes.daysActive[1...6].contains(true)) {
+            if (deal.dealAttributes.daysActive[1...6].contains(true) && !(deal.dealAttributes.daysActive.allSatisfy { $0 == true })) {
                 sortedUpcomingDeals.append(deal)
             }
         }
