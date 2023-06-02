@@ -20,7 +20,6 @@
 		AD2A73AA29D78A73002EC0D3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73A929D78A73002EC0D3 /* FirebaseDatabase */; };
 		AD2A73AC29D78A73002EC0D3 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73AB29D78A73002EC0D3 /* FirebaseDatabaseSwift */; };
 		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
-		AD2A73B229DE1339002EC0D3 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B129DE1339002EC0D3 /* FavoritesButton.swift */; };
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
 		AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B529DE38E6002EC0D3 /* StarButton.swift */; };
 		AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73BD29EFA7AA002EC0D3 /* Siren */; };
@@ -66,7 +65,6 @@
 		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deal.io_user/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		AD2A73B129DE1339002EC0D3 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		AD2A73B329DE13BA002EC0D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD2A73B529DE38E6002EC0D3 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
 		AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayButton.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */,
 				AD2A739829D246B0002EC0D3 /* OpenMaps.swift */,
 				AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */,
-				AD2A73B129DE1339002EC0D3 /* FavoritesButton.swift */,
 				AD2A73B529DE38E6002EC0D3 /* StarButton.swift */,
 				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
@@ -372,7 +369,6 @@
 				AD2A73C02A241905002EC0D3 /* EverydayButton.swift in Sources */,
 				AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */,
 				ADF687A029AED67600E86022 /* Welcome.swift in Sources */,
-				AD2A73B229DE1339002EC0D3 /* FavoritesButton.swift in Sources */,
 				FB353CDF29DE795C00AC0240 /* Favorites.swift in Sources */,
 				ADF687AA29AEF31900E86022 /* ContractedDeal.swift in Sources */,
 				ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */,
