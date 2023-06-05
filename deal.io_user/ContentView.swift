@@ -26,9 +26,6 @@ struct ContentView: View {
                             Image(systemName: "list.dash")
                             Text("Feed")
                         }
-                        .toolbarBackground(
-                            Deal_ioColor.background,
-                            for: .tabBar)
                         .tag(0)
                     Favorites(viewModel: viewModel)
                         .background(Deal_ioColor.background)
@@ -36,9 +33,6 @@ struct ContentView: View {
                             Image(systemName: "star.fill")
                             Text("Favorites")
                         }
-                        .toolbarBackground(
-                            Deal_ioColor.background,
-                            for: .tabBar)
                         .tag(1)
                     Everydays(viewModel: viewModel, deals: viewModel.getEverydayDeals()!)
                         .background(Deal_ioColor.background)
@@ -46,9 +40,6 @@ struct ContentView: View {
                             Image(systemName: "clock.fill")
                             Text("Everyday Deals")
                         }
-                        .toolbarBackground(
-                            Deal_ioColor.background,
-                            for: .tabBar)
                         .tag(2)
                 }
                 .overlay(HelpButton(), alignment: .topTrailing)
