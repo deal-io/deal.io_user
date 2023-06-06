@@ -109,7 +109,42 @@ class DealService {
         }
     }
     
-    func addFavorite(favorite: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func updateToken(token: Token, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string: "\(apiUrl)/customer/\(UserManager.shared.userID)") else {
+            completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(token)
+            request.httpBody = jsonData
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid HTTP response"])))
+                    
+                    return
+                }
+                
+                completion(.success(()))
+                
+            }.resume()
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func addFavorite(favorite: Favorite, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let url = URL(string: "\(apiUrl)/customer/\(UserManager.shared.userID)/favorites") else {
             completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -144,7 +179,7 @@ class DealService {
         }
     }
     
-    func removeFavorite(favorite: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func removeFavorite(favorite: Favorite, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let url = URL(string: "\(apiUrl)/customer/\(UserManager.shared.userID)/favorites") else {
             completion(.failure(NSError(domain: "DealService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return

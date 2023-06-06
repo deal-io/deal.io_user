@@ -16,4 +16,14 @@ struct Customer: Codable {
     
 }
 
+struct Favorite: Codable {
+    
+    var favorite: String
+    
+}
 
+struct Token: Codable {
+    
+    var token: String
+    
+}

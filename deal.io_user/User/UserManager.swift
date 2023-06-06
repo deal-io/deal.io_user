@@ -18,6 +18,7 @@ class UserManager {
     private let favoritesKey = "userFavorites"
     private let userIDKey = "userID"
     let userDefaults = UserDefaults.standard
+    private let mDealService = DealService();
     
     @Published var isLoggedIn: Bool
     var userID: String
@@ -49,15 +50,22 @@ class UserManager {
     }
     
     func addFavorite(dealID: String) {
-        //print("LOG AddID: \(dealID)")
         // Get the existing favorites array from user defaults
         var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
-        // Append the new deal ID to the favorites array
-        favorites.append(dealID)
+        // Make call to backend to update the user's favorites array in db
+        // Append the new deal ID to the favorites array on successful backend update
+        mDealService.addFavorite(favorite: Favorite(favorite: dealID)) { result in
+            switch result {
+            case .success():
+                favorites.append(dealID)
+                print("Favorite successfully added.")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
         // Save the updated favorites array to user defaults
         userDefaults.set(favorites, forKey: favoritesKey)
         //print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
-        
     }
 
     
@@ -65,8 +73,16 @@ class UserManager {
         //print("LOG RemoveID: \(dealID)")
         var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
 
-        while let index = favorites.firstIndex(of: dealID) {
-            favorites.remove(at: index)
+        mDealService.removeFavorite(favorite: Favorite(favorite: dealID)) { result in
+            switch result {
+            case .success():
+                while let index = favorites.firstIndex(of: dealID) {
+                    favorites.remove(at: index)
+                }
+                print("Favorite successfully removed.")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
         }
         
         userDefaults.set(favorites, forKey: favoritesKey)

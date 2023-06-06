@@ -65,6 +65,18 @@ class UserViewModel: ObservableObject {
         }
     }
     
+    func updateToken(token: String) {
+        let token = Token(token: token)
+        mDealService.updateToken(token: token) { result in
+            switch result {
+            case .success():
+                print("Token successfully updated.")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     func getAllActiveDeals() {
         mDealService.fetchDeals(timezone: DateUtil().getTimezone()) { result in
             switch result {
