@@ -32,6 +32,10 @@ struct Everydays: View {
                     }
                 }
             }
+            Rectangle()
+                .foregroundColor(Deal_ioColor.background)
+                .edgesIgnoringSafeArea(.all)
+                .frame(width: 200, height: 5) 
         }
     }
 }
