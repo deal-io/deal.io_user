@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Firebase
+import FirebaseMessaging
 import Siren
 
 @main
@@ -27,34 +28,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window?.makeKeyAndVisible()
-        
         let siren = Siren.shared
-        
-        // prompts the user to update everytime they open it
-//        siren.rulesManager = RulesManager(globalRules: .annoying)
-        
-        // FORCES the user to update before they can use it
-         siren.rulesManager = RulesManager(globalRules: .critical)
-        
-        // Major, Minor, Patch, and Revision custom rules
-        /* siren.rulesManager = RulesManager(majorUpdateRules: .critical,
-                                              minorUpdateRules: .annoying,
-                                              patchUpdateRules: .default,
-                                              revisionUpdateRules: Rules(promptFrequency: .weekly, forAlertType: .option))
-        */
-        
-        // custom color and text
-        siren.presentationManager = PresentationManager(appName: "deal.io",
-                                                        alertTitle: "Update",
-                                                        skipButtonTitle: "Skip")
-        
-        
+        siren.rulesManager = RulesManager(globalRules: .critical)
+        siren.presentationManager = PresentationManager(appName: "deal.io", alertTitle: "Update", skipButtonTitle: "Skip")
         siren.wail()
-
         FirebaseApp.configure()
-        
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("FCM registration token: \(token)")
+                // Use this token to setup your customer and call the postNewCustomer method
+                // You'll have to handle this part, as AppDelegate doesn't have access to your view model
+                let customer = Customer(id: UserManager.shared.userID, userID: UserManager.shared.userID, token: token, favorites: UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [String] ?? [])
+                let mDealService = DealService()
+                mDealService.createCustomer(customer: customer) { result in
+                    switch result {
+                    case .success():
+                        print("Customer successfully added.")
+                    case .failure(let error):
+                        print("Error: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notifications with error: \(error)")
     }
 }

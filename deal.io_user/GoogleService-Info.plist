@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>974382621403-denppndvi41vtd5hd255rbd9bg2ci9k1.apps.googleusercontent.com</string>
+	<string>974382621403-dahrd2hu1v0393qssufmu55q28rootnp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.974382621403-denppndvi41vtd5hd255rbd9bg2ci9k1</string>
+	<string>com.googleusercontent.apps.974382621403-dahrd2hu1v0393qssufmu55q28rootnp</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDjk00y0aoWO69oLkR4aYs_OV5gYQj5clw</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.intropent.deal-io-producer</string>
+	<string>com.intropent.deal-io-user</string>
 	<key>PROJECT_ID</key>
 	<string>dealio-backend-production</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:974382621403:ios:199a823c6b4d6bdb8a22fe</string>
+	<string>1:974382621403:ios:abc35d9bbd3b98438a22fe</string>
 </dict>
 </plist>

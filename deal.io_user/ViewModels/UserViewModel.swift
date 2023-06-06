@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAnalytics
+import FirebaseMessaging
 
 class UserViewModel: ObservableObject {
     // created synthetic data to figure out view functionality
@@ -112,6 +113,53 @@ class UserViewModel: ObservableObject {
             }
         }
     }
+    
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                switch settings.authorizationStatus {
+                case .notDetermined:
+                    // prompt user for notification permissions
+                    self.promptForNotifications()
+                case .denied:
+                    // handle denied state
+                    print("User has denied notifications")
+                case .authorized, .provisional, .ephemeral:
+                    // notifications already enabled
+                    print("Notifications already enabled")
+                    UIApplication.shared.registerForRemoteNotifications()
+                default:
+                    break
+                }
+            }
+        }
+    }
+
+    private func promptForNotifications() {
+        let alertController = UIAlertController(title: "Allow Notifications?", message: "We'll use notifications to inform you about your favorite deals.", preferredStyle: .alert)
+
+        let okayAction = UIAlertAction(title: "Okay", style: .default) { _ in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if let error = error {
+                    print("Error requesting authorization for notifications: \(error.localizedDescription)")
+                } else if granted {
+                    // Authorization granted, now we fetch the Firebase Cloud Messaging token
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                } else {
+                    print("User did not grant notifications")
+                }
+            }
+        }
+
+        alertController.addAction(okayAction)
+
+        if let viewController = UIApplication.shared.windows.first?.rootViewController {
+            viewController.present(alertController, animated: true, completion: nil)
+        }
+    }
+
     
     /*
      daily requires that daysActive[0] is true and not all daysActive are true
