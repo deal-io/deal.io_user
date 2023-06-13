@@ -54,30 +54,6 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func postNewCustomer(token: String) {
-        let customer = Customer(id: UserManager.shared.userID, userID: UserManager.shared.userID, token: token, favorites: UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [String] ?? [])
-        mDealService.createCustomer(customer: customer) { result in
-            switch result {
-            case .success():
-                print("Customer successfully added.")
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    func updateToken(token: String) {
-        let token = Token(token: token)
-        mDealService.updateToken(token: token) { result in
-            switch result {
-            case .success():
-                print("Token successfully updated.")
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     func getAllActiveDeals() {
         mDealService.fetchDeals(timezone: DateUtil().getTimezone()) { result in
             switch result {

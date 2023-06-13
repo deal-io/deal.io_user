@@ -45,18 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error fetching FCM registration token: \(error)")
             } else if let token = token {
                 print("FCM registration token: \(token)")
-                // Use this token to setup your customer and call the postNewCustomer method
-                // You'll have to handle this part, as AppDelegate doesn't have access to your view model
-                let customer = Customer(id: UserManager.shared.userID, userID: UserManager.shared.userID, token: token, favorites: UserManager.shared.userDefaults.array(forKey: "userFavorites") as? [String] ?? [])
-                let mDealService = DealService()
-                mDealService.createCustomer(customer: customer) { result in
-                    switch result {
-                    case .success():
-                        print("Customer successfully added.")
-                    case .failure(let error):
-                        print("Error: \(error.localizedDescription)")
-                    }
-                }
             }
         }
     }

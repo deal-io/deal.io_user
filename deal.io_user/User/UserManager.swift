@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import FirebaseMessaging
 
 class UserManager {
     static let shared = UserManager()
@@ -52,20 +53,20 @@ class UserManager {
     func addFavorite(dealID: String) {
         // Get the existing favorites array from user defaults
         var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
-        // Make call to backend to update the user's favorites array in db
-        // Append the new deal ID to the favorites array on successful backend update
-        mDealService.addFavorite(favorite: Favorite(favorite: dealID)) { result in
-            switch result {
-            case .success():
-                favorites.append(dealID)
-                print("Favorite successfully added.")
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+        
+        favorites.append(dealID)
         // Save the updated favorites array to user defaults
         userDefaults.set(favorites, forKey: favoritesKey)
         //print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
+        // Check if user has allowed notifications
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { (settings) in
+            print("FAVORITES_SUBSCRIPTION: Notification settings: \(settings)")
+            if settings.authorizationStatus == .authorized {
+                // The user has allowed notifications, subscribe them to the dealID topic
+                Messaging.messaging().subscribe(toTopic: dealID)
+            }
+        }
     }
 
     
@@ -73,21 +74,19 @@ class UserManager {
         //print("LOG RemoveID: \(dealID)")
         var favorites = userDefaults.array(forKey: favoritesKey) as? [String] ?? []
 
-        mDealService.removeFavorite(favorite: Favorite(favorite: dealID)) { result in
-            switch result {
-            case .success():
-                while let index = favorites.firstIndex(of: dealID) {
-                    favorites.remove(at: index)
-                }
-                print("Favorite successfully removed.")
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
+        while let index = favorites.firstIndex(of: dealID) {
+            favorites.remove(at: index)
         }
         
         userDefaults.set(favorites, forKey: favoritesKey)
         //print("LOG Array \(String(describing: userDefaults.array(forKey: favoritesKey)))")
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { (settings) in
+            print("FAVORITES_SUBSCRIPTION: Notification settings: \(settings)")
+            if settings.authorizationStatus == .authorized {
+                // The user has allowed notifications, subscribe them to the dealID topic
+                Messaging.messaging().unsubscribe(fromTopic: dealID)
+            }
+        }
     }
-
-    
 }
