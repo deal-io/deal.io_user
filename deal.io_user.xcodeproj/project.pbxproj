@@ -91,6 +91,7 @@
 		AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubble.swift; sourceTree = "<group>"; };
 		AD80720729A8855C007E263D /* Deal_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioApp.swift; sourceTree = "<group>"; };
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
+		AD96AC252A38C44600992AE1 /* deal.io_user.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = deal.io_user.entitlements; sourceTree = "<group>"; };
 		ADA633C029B2F4000032EF44 /* DailyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButton.swift; sourceTree = "<group>"; };
 		ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingButton.swift; sourceTree = "<group>"; };
 		ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealResponse.swift; sourceTree = "<group>"; };
@@ -268,6 +269,7 @@
 		ADC4D488299807E500B7BD24 /* deal.io_user */ = {
 			isa = PBXGroup;
 			children = (
+				AD96AC252A38C44600992AE1 /* deal.io_user.entitlements */,
 				AD2A739F29D778E6002EC0D3 /* User */,
 				ADA633D529B930150032EF44 /* Utils */,
 				AD00901229A4901600FDB1D3 /* Views */,
@@ -553,11 +555,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = deal.io_user/deal.io_user.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"deal.io_user/Preview Content\"";
-				DEVELOPMENT_TEAM = V2UFVZ3SA9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V2UFVZ3SA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = deal.io;
@@ -576,6 +581,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "APNs PP";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -591,11 +597,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = deal.io_user/deal.io_user.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"deal.io_user/Preview Content\"";
-				DEVELOPMENT_TEAM = V2UFVZ3SA9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V2UFVZ3SA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = deal.io;
@@ -614,6 +623,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.intropent.deal-io-user";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "APNs PP";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
