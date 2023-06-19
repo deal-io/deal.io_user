@@ -18,16 +18,20 @@ class UserManager {
     private let loggedInKey = "userLoggedIn"
     private let favoritesKey = "userFavorites"
     private let userIDKey = "userID"
+    private let colorSchemeKey = "colorScheme"
     let userDefaults = UserDefaults.standard
     private let mDealService = DealService();
     
     @Published var isLoggedIn: Bool
     var userID: String
+    var colorScheme: String
     
     private init() {
         isLoggedIn = userDefaults.bool(forKey: loggedInKey)
         userID = userDefaults.string(forKey: userIDKey) ?? UUID().uuidString
+        colorScheme = userDefaults.string(forKey: colorSchemeKey) ?? "DARK"
         userDefaults.set(userID, forKey: userIDKey)
+        userDefaults.set(colorScheme, forKey: colorSchemeKey)
     }
     
     func checkLoginStatus() -> Bool {
