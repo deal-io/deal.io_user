@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseMessaging
 
-class UserManager {
+class UserManager: ObservableObject {
     static let shared = UserManager()
     
     var currentUser: User?

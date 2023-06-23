@@ -42,6 +42,7 @@ struct ContentView: View {
                         .tag(2)
                 }
                 .overlay(HelpButton(), alignment: .topTrailing)
+                .overlay(LightDarkModeButton(), alignment: .topLeading)
                 // binds TabView id to tabSelection, on change, refreshes entire TabView
                 .id(viewModel.tabSelection)
                 .onChange(of: selection) { newValue in
