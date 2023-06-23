@@ -25,7 +25,7 @@ struct Favorites: View {
                 .frame(width: 200, height: 80)
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Deal_ioColor.onBackground)
+                    .fill(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme))
                     .frame(width: 145, height: 45)
                 Text("Favorites")
                     .font(.title)

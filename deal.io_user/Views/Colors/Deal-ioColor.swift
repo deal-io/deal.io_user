@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Deal_ioColor {
     
+    /*
     static var accent = Color(red: 25/255, green: 25/255, blue: 25/255)
     static var background = Color(red: 30/255, green: 30/255, blue: 30/255)
     static var fromToBubble = Color(red: 35/255, green: 35/255, blue: 35/255)
@@ -26,6 +27,128 @@ struct Deal_ioColor {
     static var darkShadow = Color(red: 163 / 255, green: 177 / 255, blue: 198 / 255)
     
     static var tabColor = Color(red: 30/255, green: 30/255, blue: 30/255)
+     */
+    
+    static func accent(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 25/255, green: 25/255, blue: 25/255)
+        case .dark:
+            return Color(red: 25/255, green: 25/255, blue: 25/255)
+        }
+    }
+    static func background(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 30/255, green: 30/255, blue: 30/255)
+        case .dark:
+            return Color(red: 30/255, green: 30/255, blue: 30/255)
+        }
+    }
+    static func fromToBubble(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 35/255, green: 35/255, blue: 35/255)
+        case .dark:
+            return Color(red: 35/255, green: 35/255, blue: 35/255)
+        }
+    }
+    static func contractedDeal(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 40/255, green: 40/255, blue: 40/255)
+        case .dark:
+            return Color(red: 40/255, green: 40/255, blue: 40/255)
+        }
+    }
+    static func expandedDeal(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 45/255, green: 45/255, blue: 45/255)
+        case .dark:
+            return Color(red: 45/255, green: 45/255, blue: 45/255)
+        }
+    }
+    static func onBackground(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 50/255, green: 50/255, blue: 50/255)
+        case .dark:
+            return Color(red: 50/255, green: 50/255, blue: 50/255)
+        }
+    }
+    static func star(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red:252/255, green:194/255, blue:0/255)
+        case .dark:
+            return Color(red:252/255, green:194/255, blue:0/255)
+        }
+    }
+    static func selected(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 85/255, green: 85/255, blue: 85/255)
+        case .dark:
+            return Color(red: 85/255, green: 85/255, blue: 85/255)
+        }
+    }
+    static func oneHourColor(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 133/255, green: 7/255, blue: 0/255)
+        case .dark:
+            return Color(red: 133/255, green: 7/255, blue: 0/255)
+        }
+    }
+    static func twoHourColor(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 77/255, green: 64/255, blue: 0/255)
+        case .dark:
+            return Color(red: 77/255, green: 64/255, blue: 0/255)
+        }
+    }
+    static func fourHourColor(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 16/255, green: 76/255, blue: 26/255)
+        case .dark:
+            return Color(red: 16/255, green: 76/255, blue: 26/255)
+        }
+    }
+    static func upcomingColor(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 6/255, green: 57/255, blue: 152/255)
+        case .dark:
+            return Color(red: 6/255, green: 57/255, blue: 152/255)
+        }
+    }
+    static func lightShadow(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 255/255, green: 255/255, blue: 255/255)
+        case .dark:
+            return Color(red: 255/255, green: 255/255, blue: 255/255)
+        }
+    }
+    static func darkShadow(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 163/255, green: 177/255, blue: 198/255)
+        case .dark:
+            return Color(red: 163/255, green: 177/255, blue: 198/255)
+        }
+    }
+    static func tabColor(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 30/255, green: 30/255, blue: 30/255)
+        case .dark:
+            return Color(red: 30/255, green: 30/255, blue: 30/255)
+        }
+    }
 }
 
 enum ColorScheme: String {

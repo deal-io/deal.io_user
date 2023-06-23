@@ -42,7 +42,7 @@ struct ContractedDeal: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Deal_ioColor.contractedDeal)
+                .fill(Deal_ioColor.contractedDeal(for: UserManager.shared.colorScheme))
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .padding(.horizontal, 5)
                 .padding(.vertical, 2)

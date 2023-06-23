@@ -32,7 +32,7 @@ struct DailySortButton: View {
             }label: {
                 Image(systemName: "slider.horizontal.3")
                     .padding(10)
-                    .background(Deal_ioColor.onBackground)
+                    .background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme))
                     .foregroundColor(.white)
                     .clipShape(Circle())
             }

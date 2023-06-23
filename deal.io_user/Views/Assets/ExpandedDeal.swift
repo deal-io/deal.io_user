@@ -40,7 +40,7 @@ struct ExpandedDeal: View {
         .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Deal_ioColor.expandedDeal)
+                .fill(Deal_ioColor.expandedDeal(for: UserManager.shared.colorScheme))
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .padding(.horizontal, 2)
                 .padding(.vertical, 2)

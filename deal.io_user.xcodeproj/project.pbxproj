@@ -55,6 +55,7 @@
 		ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D492299807E700B7BD24 /* Persistence.swift */; };
 		ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */; };
 		ADD3190029B15AC700800A46 /* test in Resources */ = {isa = PBXBuildFile; fileRef = ADD318FF29B15AC700800A46 /* test */; };
+		ADD3BFC22A4631E100CDD43D /* LightDarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */; };
 		ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */; };
 		ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */; };
 		ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */; };
@@ -102,6 +103,7 @@
 		ADC4D492299807E700B7BD24 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ADC4D495299807E700B7BD24 /* deal_io_customer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deal_io_customer.xcdatamodel; sourceTree = "<group>"; };
 		ADD318FF29B15AC700800A46 /* test */ = {isa = PBXFileReference; lastKnownFileType = text; path = test; sourceTree = "<group>"; };
+		ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkModeButton.swift; sourceTree = "<group>"; };
 		ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
 		ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDeal.swift; sourceTree = "<group>"; };
 		ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal-ioColor.swift"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
 				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
 				AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */,
+				ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */,
 				AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */,
 				ADA633D729B930240032EF44 /* DateUtil.swift in Sources */,
+				ADD3BFC22A4631E100CDD43D /* LightDarkModeButton.swift in Sources */,
 				FB353CD829DDF68A00AC0240 /* DailySortButton.swift in Sources */,
 				ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */,
 				ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */,

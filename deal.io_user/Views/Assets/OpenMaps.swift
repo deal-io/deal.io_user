@@ -27,7 +27,7 @@ struct OpenMaps: View {
                 .padding(7)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(Deal_ioColor.selected)
+                        .fill(Deal_ioColor.selected(for: UserManager.shared.colorScheme))
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 )
         }

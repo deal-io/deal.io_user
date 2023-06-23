@@ -33,12 +33,12 @@ struct StarButton: View {
             if favorited {
                 Image(systemName: "star.fill")
                     .resizable()
-                    .foregroundColor(Deal_ioColor.star)
+                    .foregroundColor(Deal_ioColor.star(for: UserManager.shared.colorScheme))
                     .frame(width: 30, height: 30)
             } else {
                 Image(systemName: "star")
                     .resizable()
-                    .foregroundColor(Deal_ioColor.star)
+                    .foregroundColor(Deal_ioColor.star(for: UserManager.shared.colorScheme))
                 .frame(width: 30, height: 30)
             }
         }

@@ -20,21 +20,21 @@ struct ContentView: View {
             if isLoggedIn {
                 TabView(selection: $selection) {
                     FeedSwitch(viewModel: viewModel)
-                        .background(Deal_ioColor.background)
+                        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
                         .tabItem {
                             Image(systemName: "list.dash")
                             Text("Feed")
                         }
                         .tag(0)
                     Favorites(viewModel: viewModel)
-                        .background(Deal_ioColor.background)
+                        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text("Favorites")
                         }
                         .tag(1)
                     Everydays(viewModel: viewModel, deals: viewModel.getEverydayDeals()!)
-                        .background(Deal_ioColor.background)
+                        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
                         .tabItem {
                             Image(systemName: "clock.fill")
                             Text("Everyday Deals")
@@ -52,7 +52,7 @@ struct ContentView: View {
                 Welcome(viewModel: viewModel, onLogin: { self.isLoggedIn = true })
             }
         }
-        .background(Deal_ioColor.background)
+        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
     }
 }
 

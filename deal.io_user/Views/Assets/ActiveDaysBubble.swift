@@ -16,14 +16,14 @@ struct ActiveDaysBubble: View {
             if !deal.dealAttributes.daysActive.contains(false) {
                     Text("Everyday")
                         .padding(8)
-                        .background(Deal_ioColor.upcomingColor)
+                        .background(Deal_ioColor.upcomingColor(for: UserManager.shared.colorScheme))
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
             } else {
                 ForEach(DateUtil().getAllActiveWeekdays(daysActive: self.deal.dealAttributes.daysActive), id:\.self) { weekday in
                     Text("\(weekday)")
                         .padding(8)
-                        .background(Deal_ioColor.upcomingColor)
+                        .background(Deal_ioColor.upcomingColor(for: UserManager.shared.colorScheme))
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                 }

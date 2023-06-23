@@ -21,7 +21,7 @@ struct FeedView: View {
                     .padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Deal_ioColor.background)
+            .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
         } else {
             RefreshableScroll(refreshing: self.$viewModel.loading) {
                 LazyVStack{

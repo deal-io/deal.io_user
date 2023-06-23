@@ -19,24 +19,34 @@ class UserManager {
     private let favoritesKey = "userFavorites"
     private let userIDKey = "userID"
     private let colorSchemeKey = "colorScheme"
-    let userDefaults = UserDefaults.standard
     private let mDealService = DealService();
     
-    @Published var isLoggedIn: Bool
-    var userID: String
-    var colorScheme: String
+    let userDefaults = UserDefaults.standard
     
+    var userID: String
+    
+    @Published var isLoggedIn: Bool
+    @Published var colorScheme: ColorScheme
+
     private init() {
         isLoggedIn = userDefaults.bool(forKey: loggedInKey)
+    
+        let storedColorScheme = userDefaults.string(forKey: colorSchemeKey) ?? "dark"
+        colorScheme = ColorScheme(rawValue: storedColorScheme) ?? .dark
+        userDefaults.set(storedColorScheme, forKey: colorSchemeKey)
+    
         userID = userDefaults.string(forKey: userIDKey) ?? UUID().uuidString
-        colorScheme = userDefaults.string(forKey: colorSchemeKey) ?? "DARK"
         userDefaults.set(userID, forKey: userIDKey)
-        userDefaults.set(colorScheme, forKey: colorSchemeKey)
     }
     
     func checkLoginStatus() -> Bool {
         print("CLS: \(isLoggedIn)")
         return isLoggedIn
+    }
+    
+    func setColorScheme(_ colorScheme: ColorScheme) {
+        self.colorScheme = colorScheme
+        userDefaults.set(colorScheme.rawValue, forKey: colorSchemeKey)
     }
     
     func login(email: String) {

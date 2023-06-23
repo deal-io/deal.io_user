@@ -18,7 +18,7 @@ struct Everydays: View {
                 .frame(width: 200, height: 80)
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Deal_ioColor.onBackground)
+                    .fill(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme))
                     .frame(width: 225, height: 45)
                 Text("Everyday Deals")
                     .font(.title)
@@ -33,7 +33,7 @@ struct Everydays: View {
                 }
             }
             Rectangle()
-                .foregroundColor(Deal_ioColor.background)
+                .foregroundColor(Deal_ioColor.background(for: UserManager.shared.colorScheme))
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: 200, height: 5) 
         }

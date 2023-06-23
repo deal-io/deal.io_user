@@ -23,11 +23,6 @@ class UserViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
     @Published var nameMap = [String: String]()
     @Published var locationMap = [String: String]()
-    @Published var colorScheme: ColorScheme {
-        didSet {
-            UserDefaults.standard.set(colorScheme.rawValue, forKey: "colorScheme")
-        }
-    }
     @Published var loading: Bool = false {
         didSet {
             if oldValue == false && loading == true {
@@ -41,11 +36,6 @@ class UserViewModel: ObservableObject {
     private let mDealService = DealService();
     
     init() {
-        if let colorScheme = UserDefaults.standard.string(forKey: "colorScheme") {
-            self.colorScheme = ColorScheme(rawValue: colorScheme) ?? .light
-        } else {
-            self.colorScheme = .light
-        }
         self.getAllActiveDeals()
         self.getAllRestaurants()
     }

@@ -51,7 +51,7 @@ struct Welcome: View {
                 .padding(16)
                 .font(.footnote)
         }
-        .background(Deal_ioColor.background)
+        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
         .alert(isPresented: $showInvalidAlert) {
             Alert(title: Text("Invalid Login"), message: Text("Please enter an @mines.edu email"), dismissButton: .default(Text("OK")))
         }
@@ -71,8 +71,8 @@ struct EmailTextField: View {
             .background()
             .padding(12)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .shadow(color: Deal_ioColor.darkShadow, radius: 1, x: 2, y: 2)
-            .shadow(color: Deal_ioColor.lightShadow, radius: 1, x: -2, y: -2)
+            .shadow(color: Deal_ioColor.darkShadow(for: UserManager.shared.colorScheme), radius: 1, x: 2, y: 2)
+            .shadow(color: Deal_ioColor.lightShadow(for: UserManager.shared.colorScheme), radius: 1, x: -2, y: -2)
     }
 }
 

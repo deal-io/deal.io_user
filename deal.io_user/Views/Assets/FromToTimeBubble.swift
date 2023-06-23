@@ -17,7 +17,7 @@ struct FromToTimeBubble: View {
                 Text("From: ")
                 Text("\(DateUtil().checkMilitaryTime(timeString: deal.dealAttributes.startTime))")
                     .padding(8)
-                    .background(Deal_ioColor.fromToBubble)
+                    .background(Deal_ioColor.fromToBubble(for: UserManager.shared.colorScheme))
                     .foregroundColor(Color.white)
                     .cornerRadius(10)
             }
@@ -27,7 +27,7 @@ struct FromToTimeBubble: View {
                 Text("To: ")
                 Text("\(DateUtil().checkMilitaryTime(timeString: deal.dealAttributes.endTime))")
                     .padding(8)
-                    .background(Deal_ioColor.fromToBubble)
+                    .background(Deal_ioColor.fromToBubble(for: UserManager.shared.colorScheme))
                     .foregroundColor(Color.white)
                     .cornerRadius(10)
             }
