@@ -17,7 +17,7 @@ struct Welcome: View {
     var body: some View {
         VStack {
             Spacer()
-            Image("dealio_white_on_bg")
+            Image(Deal_ioColor.dealio_logo(for: userManager.colorScheme))
                 .resizable()
                 .frame(width: 350, height: 150)
             Spacer()

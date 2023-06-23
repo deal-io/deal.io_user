@@ -149,6 +149,30 @@ struct Deal_ioColor {
             return Color(red: 30/255, green: 30/255, blue: 30/255)
         }
     }
+    static func text(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 0/255, green: 0/255, blue: 0/255)
+        case .dark:
+            return Color(red: 255/255, green: 255/255, blue: 255/255)
+        }
+    }
+    static func restaurantText(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 25/255, green: 25/255, blue: 25/255)
+        case .dark:
+            return Color(red: 230/255, green: 230/255, blue: 230/255)
+        }
+    }
+    static func dealio_logo(for colorScheme: ColorScheme) -> String {
+        switch colorScheme {
+        case .light:
+            return "dealio_light"
+        case .dark:
+            return "dealio_dark"
+        }
+    }
 }
 
 enum ColorScheme: String {

@@ -19,6 +19,7 @@ struct UpcomingButton: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.selected(for: userManager.colorScheme))
                     .frame(width: 145, height: 45)
+                    .shadow(radius: 10)
             } else {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.onBackground(for: userManager.colorScheme))

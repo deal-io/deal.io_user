@@ -26,7 +26,7 @@ struct FeedSwitch: View {
     
     var body: some View {
         VStack {
-            Image("dealio_white_on_bg")
+            Image(Deal_ioColor.dealio_logo(for: userManager.colorScheme))
                 .resizable()
                 .frame(width: 200, height: 80)
             VStack {
@@ -42,7 +42,7 @@ struct FeedSwitch: View {
                         UpcomingButton(viewModel: viewModel)
                             .onTapGesture {
                                 viewModel.currentFeed = .UPCOMING
-                            }.shadow(radius: 10)
+                            }
                     }.background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme)).cornerRadius(10)
                     Spacer()
                 }
