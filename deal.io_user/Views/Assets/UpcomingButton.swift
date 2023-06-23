@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct UpcomingButton: View {
-    @State var fillColor: Color
+    @ObservedObject var userManager = UserManager.shared
+    @ObservedObject var viewModel: UserViewModel
+    init(viewModel: UserViewModel) {
+        self.viewModel = viewModel
+    }
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(fillColor)
-                .frame(width: 145, height: 45)
+            if viewModel.currentFeed == .UPCOMING {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Deal_ioColor.selected(for: userManager.colorScheme))
+                    .frame(width: 145, height: 45)
+            } else {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Deal_ioColor.onBackground(for: userManager.colorScheme))
+                    .frame(width: 145, height: 45)
+            }
             Text("Upcoming")
                 .font(.title)
                 .foregroundColor(.white)

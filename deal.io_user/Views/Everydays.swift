@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Everydays: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     let deals: [Deal]
     

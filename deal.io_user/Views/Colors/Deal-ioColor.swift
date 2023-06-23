@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Deal_ioColor {
-    
+    @ObservedObject var userManager = UserManager.shared
     /*
     static var accent = Color(red: 25/255, green: 25/255, blue: 25/255)
     static var background = Color(red: 30/255, green: 30/255, blue: 30/255)
@@ -32,7 +32,7 @@ struct Deal_ioColor {
     static func accent(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 25/255, green: 25/255, blue: 25/255)
+            return Color(red: 230/255, green: 230/255, blue: 230/255)
         case .dark:
             return Color(red: 25/255, green: 25/255, blue: 25/255)
         }
@@ -40,7 +40,7 @@ struct Deal_ioColor {
     static func background(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 30/255, green: 30/255, blue: 30/255)
+            return Color(red: 225/255, green: 225/255, blue: 225/255)
         case .dark:
             return Color(red: 30/255, green: 30/255, blue: 30/255)
         }
@@ -48,7 +48,7 @@ struct Deal_ioColor {
     static func fromToBubble(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 35/255, green: 35/255, blue: 35/255)
+            return Color(red: 220/255, green: 220/255, blue: 220/255)
         case .dark:
             return Color(red: 35/255, green: 35/255, blue: 35/255)
         }
@@ -56,7 +56,7 @@ struct Deal_ioColor {
     static func contractedDeal(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 40/255, green: 40/255, blue: 40/255)
+            return Color(red: 215/255, green: 215/255, blue: 215/255)
         case .dark:
             return Color(red: 40/255, green: 40/255, blue: 40/255)
         }
@@ -64,7 +64,7 @@ struct Deal_ioColor {
     static func expandedDeal(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 45/255, green: 45/255, blue: 45/255)
+            return Color(red: 210/255, green: 210/255, blue: 210/255)
         case .dark:
             return Color(red: 45/255, green: 45/255, blue: 45/255)
         }
@@ -72,7 +72,7 @@ struct Deal_ioColor {
     static func onBackground(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 50/255, green: 50/255, blue: 50/255)
+            return Color(red: 205/255, green: 205/255, blue: 205/255)
         case .dark:
             return Color(red: 50/255, green: 50/255, blue: 50/255)
         }
@@ -88,7 +88,7 @@ struct Deal_ioColor {
     static func selected(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 85/255, green: 85/255, blue: 85/255)
+            return Color(red: 170/255, green: 170/255, blue: 170/255)
         case .dark:
             return Color(red: 85/255, green: 85/255, blue: 85/255)
         }
@@ -144,7 +144,7 @@ struct Deal_ioColor {
     static func tabColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 30/255, green: 30/255, blue: 30/255)
+            return Color(red: 225/255, green: 225/255, blue: 225/255)
         case .dark:
             return Color(red: 30/255, green: 30/255, blue: 30/255)
         }

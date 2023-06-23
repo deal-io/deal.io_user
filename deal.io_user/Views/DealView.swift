@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct DealView: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     @State private var expanded = false
     var deal: Deal

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Welcome: View {
     @ObservedObject var viewModel: UserViewModel
+    @ObservedObject var userManager = UserManager.shared
     @State private var email = ""
     @State private var showInvalidAlert = false
     var onLogin: () -> Void // new closure parameter

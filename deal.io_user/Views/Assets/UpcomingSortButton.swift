@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct UpcomingSortButton: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     
     @State private var isFiltering = false

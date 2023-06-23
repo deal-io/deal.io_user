@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HelpButton: View {
+    @ObservedObject var userManager = UserManager.shared
     @State private var showingPopup = false
     
     var body: some View {

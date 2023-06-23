@@ -8,8 +8,10 @@
 import Foundation
 import FirebaseAnalytics
 import FirebaseMessaging
+import SwiftUI
 
 class UserViewModel: ObservableObject {
+    @ObservedObject var userManager = UserManager.shared
     // created synthetic data to figure out view functionality
     // TODO: replace with JSON objects that pull from Firestore using the API
     // TODO: figure out what format the dates will be sent in, completely changes functionality

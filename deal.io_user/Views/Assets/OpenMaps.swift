@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct OpenMaps: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     var action: () -> Void = {}

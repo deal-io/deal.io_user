@@ -10,7 +10,7 @@ import SwiftUI
 import FirebaseMessaging
 
 class UserManager: ObservableObject {
-    static let shared = UserManager()
+    @ObservedObject static var shared = UserManager()
     
     var currentUser: User?
     
@@ -26,7 +26,11 @@ class UserManager: ObservableObject {
     var userID: String
     
     @Published var isLoggedIn: Bool
-    @Published var colorScheme: ColorScheme
+    @Published var colorScheme: ColorScheme {
+        didSet {
+            userDefaults.set(colorScheme.rawValue, forKey: colorSchemeKey)
+        }
+    }
 
     private init() {
         isLoggedIn = userDefaults.bool(forKey: loggedInKey)

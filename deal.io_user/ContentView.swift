@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAnalytics
 
 struct ContentView: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel = UserViewModel()
     @State var isLoggedIn = UserManager.shared.isLoggedIn
     

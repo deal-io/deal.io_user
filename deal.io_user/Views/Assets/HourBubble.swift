@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HourBubble: View {
     let LOG_TAG = "HOUR_VIEW: "
-    
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     var upcoming: Bool

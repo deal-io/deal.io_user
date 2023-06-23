@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     let deals: [Deal]
     let upcoming: Bool

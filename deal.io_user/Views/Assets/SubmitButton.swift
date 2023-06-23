@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct SubmitButton: View {
+    @ObservedObject var userManager = UserManager.shared
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)

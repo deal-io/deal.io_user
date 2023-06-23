@@ -11,7 +11,7 @@ import NotificationCenter
 import FirebaseMessaging
 
 struct Favorites: View {
-    
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     
     init(viewModel: UserViewModel) {

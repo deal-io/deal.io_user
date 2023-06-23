@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExpandedDeal: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     var deal: Deal
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StarButton: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     @State var favorited: Bool
     var deal: Deal

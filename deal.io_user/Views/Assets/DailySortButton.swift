@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 struct DailySortButton: View {
+    @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     
     @State private var selectedSortType: DailySortType
