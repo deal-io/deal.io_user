@@ -7,15 +7,30 @@
 
 import Foundation
 import SwiftUI
+import WebKit
+
+struct WebView: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.load(URLRequest(url: url))
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        // This function intentionally left blank.
+    }
+}
 
 struct HelpButton: View {
     @ObservedObject var userManager = UserManager.shared
-    @State private var showingPopup = false
+    @State private var showingFeedbackForm = false
     
     var body: some View {
         VStack {
             Button(action: {
-                self.showingPopup = true
+                self.showingFeedbackForm = true
             }) {
                 Image(systemName: "questionmark.circle")
                     .foregroundColor(Deal_ioColor.symbol(for: userManager.colorScheme))
@@ -23,8 +38,8 @@ struct HelpButton: View {
                     .padding(15)
             }.padding(15)
         }
-        .alert(isPresented: $showingPopup) {
-            Alert(title: Text("Need help or want to submit feedback?"), message: Text("Email us at deal.io.help@gmail.com"), dismissButton: .default(Text("OK")))
+        .sheet(isPresented: $showingFeedbackForm) {
+            WebView(url: URL(string: "https://forms.gle/gwmEXtZbodYMkAzS9")!)
         }
     }
 }
