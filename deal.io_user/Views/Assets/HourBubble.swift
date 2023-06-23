@@ -46,7 +46,7 @@ struct HourBubble: View {
                         .font(.title2)
                         .padding(8)
                         .background(Deal_ioColor.upcomingColor(for: UserManager.shared.colorScheme))
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                         .cornerRadius(10)
                 } else {
                     if endHourDifference < 0 {
@@ -54,28 +54,28 @@ struct HourBubble: View {
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                     } else if endHourDifference <= 1 {
                         Text("< 1 hr left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.oneHourColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                     } else if endHourDifference <= 2 {
                         Text("\(Int(ceil(endHourDifference))) hrs left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.twoHourColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                     } else if endHourDifference > 2 {
                         Text("\(Int(ceil(endHourDifference))) hrs left")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.fourHourColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                     }
                 }
@@ -85,14 +85,14 @@ struct HourBubble: View {
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.upcomingColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                         
                         Text("\(DateUtil().checkMilitaryTime(timeString: startTime))")
                             .font(.title2)
                             .padding(8)
                             .background(Deal_ioColor.upcomingColor(for: UserManager.shared.colorScheme))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .cornerRadius(10)
                     }.padding(8)
                 

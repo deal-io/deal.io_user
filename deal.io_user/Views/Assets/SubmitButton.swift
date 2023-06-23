@@ -18,7 +18,7 @@ struct SubmitButton: View {
                 .frame(width: 160, height: 80)
             Text("Submit")
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
         }
     }
 }

@@ -29,7 +29,7 @@ struct Favorites: View {
                     .frame(width: 145, height: 45)
                 Text("Favorites")
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                     .fontWeight(.bold)
             }
             FeedView(viewModel: viewModel, deals: viewModel.getFavoriteDeals(), upcoming: false)

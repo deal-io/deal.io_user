@@ -27,12 +27,12 @@ struct ContractedDeal: View {
                 VStack(alignment: .leading) {
                     Text(deal.dealAttributes.dealName)
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                         .multilineTextAlignment(.leading)
                     
                     Text(viewModel.nameMap[deal.restaurantID] ?? "Returned nil")
                         .font(.title2)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(Deal_ioColor.restaurantText(for: userManager.colorScheme))
                         
                 }
                 Spacer()
@@ -48,7 +48,7 @@ struct ContractedDeal: View {
                 .padding(.horizontal, 5)
                 .padding(.vertical, 2)
         )
-        .foregroundColor(.white)
+        .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
     }
 }
 

@@ -80,7 +80,7 @@ struct Deal_ioColor {
     static func star(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red:252/255, green:194/255, blue:0/255)
+            return Color(red:126/255, green:97/255, blue:0/255)
         case .dark:
             return Color(red:252/255, green:194/255, blue:0/255)
         }
@@ -96,7 +96,7 @@ struct Deal_ioColor {
     static func oneHourColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 133/255, green: 7/255, blue: 0/255)
+            return Color(red: 255/255, green: 153/255, blue: 148/255)
         case .dark:
             return Color(red: 133/255, green: 7/255, blue: 0/255)
         }
@@ -104,7 +104,7 @@ struct Deal_ioColor {
     static func twoHourColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 77/255, green: 64/255, blue: 0/255)
+            return Color(red: 214/255, green: 179/255, blue: 0/255)
         case .dark:
             return Color(red: 77/255, green: 64/255, blue: 0/255)
         }
@@ -112,7 +112,7 @@ struct Deal_ioColor {
     static func fourHourColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 16/255, green: 76/255, blue: 26/255)
+            return Color(red: 44/255, green: 206/255, blue: 71/255)
         case .dark:
             return Color(red: 16/255, green: 76/255, blue: 26/255)
         }
@@ -120,7 +120,7 @@ struct Deal_ioColor {
     static func upcomingColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
-            return Color(red: 6/255, green: 57/255, blue: 152/255)
+            return Color(red: 142/255, green: 180/255, blue: 250/255)
         case .dark:
             return Color(red: 6/255, green: 57/255, blue: 152/255)
         }
@@ -150,6 +150,14 @@ struct Deal_ioColor {
         }
     }
     static func text(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 0/255, green: 0/255, blue: 0/255)
+        case .dark:
+            return Color(red: 255/255, green: 255/255, blue: 255/255)
+        }
+    }
+    static func symbol(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
             return Color(red: 0/255, green: 0/255, blue: 0/255)

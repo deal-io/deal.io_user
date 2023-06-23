@@ -27,7 +27,7 @@ struct DailyButton: View {
             }
             Text("Daily")
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                 .fontWeight(.bold)
         }
     }

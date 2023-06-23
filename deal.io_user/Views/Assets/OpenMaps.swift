@@ -24,7 +24,7 @@ struct OpenMaps: View {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }) {
             Text("Get Directions")
-                .foregroundColor(.white)
+                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                 .padding(7)
                 .background(
                     RoundedRectangle(cornerRadius: 8)

@@ -23,7 +23,7 @@ struct Everydays: View {
                     .frame(width: 225, height: 45)
                 Text("Everyday Deals")
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                     .fontWeight(.bold)
             }
             RefreshableScroll(refreshing: self.$viewModel.loading) {

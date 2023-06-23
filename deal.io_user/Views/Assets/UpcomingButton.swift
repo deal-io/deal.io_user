@@ -19,7 +19,7 @@ struct UpcomingButton: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.selected(for: userManager.colorScheme))
                     .frame(width: 145, height: 45)
-                    .shadow(radius: 10)
+                    .shadow(radius: 5)
             } else {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.onBackground(for: userManager.colorScheme))
@@ -27,7 +27,7 @@ struct UpcomingButton: View {
             }
             Text("Upcoming")
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                 .fontWeight(.bold)
         }
     }

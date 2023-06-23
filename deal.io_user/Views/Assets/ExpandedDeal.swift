@@ -18,7 +18,7 @@ struct ExpandedDeal: View {
             
             Text(deal.dealAttributes.dealName)
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                 .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
             
@@ -46,7 +46,7 @@ struct ExpandedDeal: View {
                 .padding(.horizontal, 2)
                 .padding(.vertical, 2)
         )
-        .foregroundColor(.white)
+        .foregroundColor(Deal_ioColor.symbol(for: userManager.colorScheme))
         .overlay(
             HStack{
                 StarButton(viewModel: viewModel, deal: deal)
@@ -61,7 +61,7 @@ struct ExpandedDeal: View {
                     logDealShareEvent(viewModel: viewModel, deal: deal)
                 }) {
                     Image(systemName: "square.and.arrow.up")
-                        .foregroundColor(.white)
+                        .foregroundColor(Deal_ioColor.symbol(for: userManager.colorScheme))
                         .padding(.trailing, 25)
                         .padding(.top, 20)
                 }

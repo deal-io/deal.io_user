@@ -11,7 +11,10 @@ struct EverydayButton: View {
     @ObservedObject var userManager = UserManager.shared
 
     var body: some View {
-        Image(systemName: "questionmark.circle").foregroundColor(.white).font(.system(size: 22)).padding(15)
+        Image(systemName: "questionmark.circle")
+            .foregroundColor(Deal_ioColor.symbol(for: userManager.colorScheme))
+            .font(.system(size: 22))
+            .padding(15)
     }
 }
 
