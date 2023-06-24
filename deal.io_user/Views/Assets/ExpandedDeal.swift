@@ -10,6 +10,9 @@ import SwiftUI
 struct ExpandedDeal: View {
     @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
+    
+    @State private var yelpBusiness: Business?
+
     var deal: Deal
     
     var body: some View {
@@ -35,8 +38,35 @@ struct ExpandedDeal: View {
             
             Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
                 .font(.title2)
+            
+            if let yelpBusiness = yelpBusiness {
+                AsyncImage(url: URL(string: yelpBusiness.imageUrl)) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 300, height: 200)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(RoundedRectangle(cornerRadius: 10)) // If you want rounded corners
+                Text("Rating: \(String(format: "%.1f", yelpBusiness.rating)) | \(yelpBusiness.reviewCount) reviews | Price range: \(yelpBusiness.price)")
+            }
                 
             Spacer()
+        }
+        .onAppear {
+            Task {
+                do {
+                    let businesses = try await YelpAPI.searchBusinesses(name: viewModel.nameMap[deal.restaurantID] ?? "", address: viewModel.locationMap[deal.restaurantID] ?? "")
+                    // Assuming the Yelp search API returns multiple businesses for a given address,
+                    // you might want to select the most relevant one here. For simplicity, we're just
+                    // taking the first one.
+                    if let firstBusiness = businesses.first {
+                        self.yelpBusiness = firstBusiness
+                    }
+                } catch {
+                    print("Failed to fetch Yelp business info: \(error)")
+                }
+            }
         }
         .padding(.vertical, 10)
         .background(
