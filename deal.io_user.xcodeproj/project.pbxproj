@@ -56,7 +56,8 @@
 		ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */; };
 		ADD3190029B15AC700800A46 /* test in Resources */ = {isa = PBXBuildFile; fileRef = ADD318FF29B15AC700800A46 /* test */; };
 		ADD3BFC22A4631E100CDD43D /* LightDarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */; };
-		ADD3BFC42A465D3400CDD43D /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC32A465D3400CDD43D /* YelpAPI.swift */; };
+		ADD3BFC42A465D3400CDD43D /* YelpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */; };
+		ADD3BFC62A477C0E00CDD43D /* HapticUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */; };
 		ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */; };
 		ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */; };
 		ADF0BBF229AAEC1800FF24F6 /* Deal-ioColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */; };
@@ -105,7 +106,8 @@
 		ADC4D495299807E700B7BD24 /* deal_io_customer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deal_io_customer.xcdatamodel; sourceTree = "<group>"; };
 		ADD318FF29B15AC700800A46 /* test */ = {isa = PBXFileReference; lastKnownFileType = text; path = test; sourceTree = "<group>"; };
 		ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkModeButton.swift; sourceTree = "<group>"; };
-		ADD3BFC32A465D3400CDD43D /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpUtil.swift; sourceTree = "<group>"; };
+		ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticUtil.swift; sourceTree = "<group>"; };
 		ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
 		ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDeal.swift; sourceTree = "<group>"; };
 		ADF0BBF129AAEC1800FF24F6 /* Deal-ioColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal-ioColor.swift"; sourceTree = "<group>"; };
@@ -249,7 +251,8 @@
 			children = (
 				ADA633D629B930240032EF44 /* DateUtil.swift */,
 				AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */,
-				ADD3BFC32A465D3400CDD43D /* YelpAPI.swift */,
+				ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */,
+				ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -399,9 +402,10 @@
 			files = (
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				FBBEEAEB29E894F200489A4C /* HelpButton.swift in Sources */,
+				ADD3BFC62A477C0E00CDD43D /* HapticUtil.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
-				ADD3BFC42A465D3400CDD43D /* YelpAPI.swift in Sources */,
+				ADD3BFC42A465D3400CDD43D /* YelpUtil.swift in Sources */,
 				AD2A739929D246B0002EC0D3 /* OpenMaps.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,

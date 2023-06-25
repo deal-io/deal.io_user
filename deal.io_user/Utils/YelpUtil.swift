@@ -16,7 +16,7 @@ struct Business: Codable {
     let reviewCount: Int
     let rating: Double
     let imageUrl: String
-    let price: String
+    let price: String?
 
     enum CodingKeys: String, CodingKey {
         case name

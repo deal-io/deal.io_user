@@ -28,6 +28,7 @@ struct DealView: View {
             }
         }
         .onTapGesture {
+            generateHapticFeedback()
             withAnimation {
                 expanded.toggle()
             }

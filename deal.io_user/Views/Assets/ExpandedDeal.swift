@@ -48,7 +48,7 @@ struct ExpandedDeal: View {
                 .frame(width: 300, height: 200)
                 .aspectRatio(contentMode: .fill)
                 .clipShape(RoundedRectangle(cornerRadius: 10)) // If you want rounded corners
-                Text("Rating: \(String(format: "%.1f", yelpBusiness.rating)) | \(yelpBusiness.reviewCount) reviews | Price range: \(yelpBusiness.price)")
+                Text("Rating: \(String(format: "%.1f", yelpBusiness.rating)) | \(yelpBusiness.reviewCount) reviews" + (yelpBusiness.price != nil ? " | Price range: \(yelpBusiness.price!)" : ""))
             }
                 
             Spacer()
