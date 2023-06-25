@@ -39,7 +39,27 @@ struct HelpButton: View {
             }.padding(15)
         }
         .sheet(isPresented: $showingFeedbackForm) {
-            WebView(url: URL(string: "https://forms.gle/gwmEXtZbodYMkAzS9")!)
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        self.showingFeedbackForm = false
+                    }) {
+                        Circle()
+                            .fill(Deal_ioColor.onBackground(for: userManager.colorScheme))
+                            .frame(width: 30, height: 30)
+                            .overlay(
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 15, weight: .bold, design: .rounded)) // This should be less than the frame of the circle
+                                    .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
+                            )
+                    }
+                    .padding(.top, 10)
+                    .padding(.trailing, 10)
+                }
+                Spacer()
+                WebView(url: URL(string: "https://forms.gle/gwmEXtZbodYMkAzS9")!)
+            }
         }
     }
 }
