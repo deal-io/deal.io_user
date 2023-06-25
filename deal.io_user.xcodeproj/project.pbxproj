@@ -116,7 +116,6 @@
 		ADF687A329AEDB7500E86022 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		ADF687A929AEF31900E86022 /* ContractedDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractedDeal.swift; sourceTree = "<group>"; };
 		ADF687FA29B001C800E86022 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FB34210329DD0F3A00648DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../deal.io_producer/deal.io_producer/Auth/DevPlist/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB353CD729DDF68A00AC0240 /* DailySortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySortButton.swift; sourceTree = "<group>"; };
 		FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingSortButton.swift; sourceTree = "<group>"; };
 		FB353CDE29DE795C00AC0240 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
@@ -260,7 +259,6 @@
 		ADC4D47D299807E500B7BD24 = {
 			isa = PBXGroup;
 			children = (
-				FB34210329DD0F3A00648DF8 /* GoogleService-Info.plist */,
 				AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */,
 				ADC4D488299807E500B7BD24 /* deal.io_user */,
 				ADC4D487299807E500B7BD24 /* Products */,
