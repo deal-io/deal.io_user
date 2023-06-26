@@ -11,7 +11,7 @@
 		AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00901C29A58C8300FDB1D3 /* FeedSwitch.swift */; };
 		AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* UserViewModel.swift */; };
 		AD2A739729D22E99002EC0D3 /* FromToTimeBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */; };
-		AD2A739929D246B0002EC0D3 /* OpenMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMaps.swift */; };
+		AD2A739929D246B0002EC0D3 /* OpenMapsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */; };
 		AD2A739E29D75666002EC0D3 /* RefreshableScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */; };
 		AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73A029D778FC002EC0D3 /* UserManager.swift */; };
 		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
@@ -41,6 +41,9 @@
 		AD2A73E92A2FD57C002EC0D3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73E82A2FD57C002EC0D3 /* FirebaseMessaging */; };
 		AD2A73EB2A2FD57C002EC0D3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73EA2A2FD57C002EC0D3 /* FirebasePerformance */; };
 		AD2A73ED2A2FD57C002EC0D3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73EC2A2FD57C002EC0D3 /* FirebaseStorage */; };
+		AD65A7642A4A58950083D1D2 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7632A4A58950083D1D2 /* SettingsButton.swift */; };
+		AD65A7662A4A5ACB0083D1D2 /* DealInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */; };
+		AD65A7682A4A5ADF0083D1D2 /* RestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButton.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */; };
@@ -78,7 +81,7 @@
 		AD00901C29A58C8300FDB1D3 /* FeedSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSwitch.swift; sourceTree = "<group>"; };
 		AD00902029A58CC600FDB1D3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubble.swift; sourceTree = "<group>"; };
-		AD2A739829D246B0002EC0D3 /* OpenMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMaps.swift; sourceTree = "<group>"; };
+		AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsButton.swift; sourceTree = "<group>"; };
 		AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScroll.swift; sourceTree = "<group>"; };
 		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deal.io_user/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		AD2A73C12A2434D5002EC0D3 /* Everydays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Everydays.swift; sourceTree = "<group>"; };
 		AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		AD2A73C52A2D863E002EC0D3 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		AD65A7632A4A58950083D1D2 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealInfo.swift; sourceTree = "<group>"; };
+		AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfo.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubble.swift; sourceTree = "<group>"; };
@@ -168,14 +174,14 @@
 		AD00901229A4901600FDB1D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AD76782129D11D03008728BB /* Colors */,
 				AD76782029D11CF8008728BB /* Assets */,
-				AD00901C29A58C8300FDB1D3 /* FeedSwitch.swift */,
+				AD76782129D11D03008728BB /* Colors */,
 				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
-				ADF6879F29AED67600E86022 /* Welcome.swift */,
-				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
-				FB353CDE29DE795C00AC0240 /* Favorites.swift */,
 				AD2A73C12A2434D5002EC0D3 /* Everydays.swift */,
+				FB353CDE29DE795C00AC0240 /* Favorites.swift */,
+				AD00901C29A58C8300FDB1D3 /* FeedSwitch.swift */,
+				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
+				ADF6879F29AED67600E86022 /* Welcome.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,25 +204,36 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		AD65A7692A4A5AE40083D1D2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
+				AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */,
+				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
+				AD65A7632A4A58950083D1D2 /* SettingsButton.swift */,
+				AD2A73B529DE38E6002EC0D3 /* StarButton.swift */,
+				AD76782429D141DE008728BB /* SubmitButton.swift */,
+				AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */,
+				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
+				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
+				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
+				ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		AD76782029D11CF8008728BB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
-				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
-				ADA633D029B7FED30032EF44 /* HourBubble.swift */,
+				AD65A7692A4A5AE40083D1D2 /* Buttons */,
+				AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */,
 				ADF687A929AEF31900E86022 /* ContractedDeal.swift */,
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */,
-				AD76782429D141DE008728BB /* SubmitButton.swift */,
-				AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */,
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */,
-				AD2A739829D246B0002EC0D3 /* OpenMaps.swift */,
+				ADA633D029B7FED30032EF44 /* HourBubble.swift */,
 				AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */,
-				AD2A73B529DE38E6002EC0D3 /* StarButton.swift */,
-				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
-				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
-				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
-				AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */,
-				ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */,
+				AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */,
+				AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -259,8 +276,8 @@
 		ADC4D47D299807E500B7BD24 = {
 			isa = PBXGroup;
 			children = (
-				AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */,
 				ADC4D488299807E500B7BD24 /* deal.io_user */,
+				AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */,
 				ADC4D487299807E500B7BD24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -398,13 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD65A7662A4A5ACB0083D1D2 /* DealInfo.swift in Sources */,
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				FBBEEAEB29E894F200489A4C /* HelpButton.swift in Sources */,
 				ADD3BFC62A477C0E00CDD43D /* HapticUtil.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
 				ADD3BFC42A465D3400CDD43D /* YelpUtil.swift in Sources */,
-				AD2A739929D246B0002EC0D3 /* OpenMaps.swift in Sources */,
+				AD2A739929D246B0002EC0D3 /* OpenMapsButton.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
 				ADF687A429AEDB7500E86022 /* WelcomeViewModel.swift in Sources */,
@@ -420,6 +438,7 @@
 				AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */,
 				AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */,
+				AD65A7642A4A58950083D1D2 /* SettingsButton.swift in Sources */,
 				AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButton.swift in Sources */,
 				AD2A73C02A241905002EC0D3 /* EverydayButton.swift in Sources */,
@@ -432,6 +451,7 @@
 				FB353CDA29DE038800AC0240 /* UpcomingSortButton.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
 				AD2A73C62A2D863E002EC0D3 /* Customer.swift in Sources */,
+				AD65A7682A4A5ADF0083D1D2 /* RestaurantInfo.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */,
 				AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */,
 				ADA633D729B930240032EF44 /* DateUtil.swift in Sources */,

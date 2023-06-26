@@ -25,7 +25,7 @@ struct UpcomingButton: View {
                     .fill(Deal_ioColor.onBackground(for: userManager.colorScheme))
                     .frame(width: 145, height: 45)
             }
-            Text("Upcoming")
+            Text("Weekly")
                 .font(.title)
                 .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                 .fontWeight(.bold)
