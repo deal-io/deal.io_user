@@ -49,7 +49,6 @@
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
 		ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C029B2F4000032EF44 /* DailyButton.swift */; };
 		ADA633C329B2F40C0032EF44 /* UpcomingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */; };
-		ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */; };
 		ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* HourBubble.swift */; };
 		ADA633D729B930240032EF44 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D629B930240032EF44 /* DateUtil.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
@@ -96,7 +95,6 @@
 		AD96AC252A38C44600992AE1 /* deal.io_user.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = deal.io_user.entitlements; sourceTree = "<group>"; };
 		ADA633C029B2F4000032EF44 /* DailyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButton.swift; sourceTree = "<group>"; };
 		ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingButton.swift; sourceTree = "<group>"; };
-		ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDealResponse.swift; sourceTree = "<group>"; };
 		ADA633D029B7FED30032EF44 /* HourBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourBubble.swift; sourceTree = "<group>"; };
 		ADA633D629B930240032EF44 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				AD00901429A490D100FDB1D3 /* Deal.swift */,
-				ADA633CC29B6AA4A0032EF44 /* CreateDealResponse.swift */,
 				AD76782229D12380008728BB /* Restaurant.swift */,
 				AD2A73C52A2D863E002EC0D3 /* Customer.swift */,
 			);
@@ -427,7 +424,6 @@
 				ADF687A029AED67600E86022 /* Welcome.swift in Sources */,
 				FB353CDF29DE795C00AC0240 /* Favorites.swift in Sources */,
 				ADF687AA29AEF31900E86022 /* ContractedDeal.swift in Sources */,
-				ADA633CD29B6AA4A0032EF44 /* CreateDealResponse.swift in Sources */,
 				AD00901529A490D100FDB1D3 /* Deal.swift in Sources */,
 				FB353CDA29DE038800AC0240 /* UpcomingSortButton.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
