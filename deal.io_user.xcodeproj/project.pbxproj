@@ -18,7 +18,6 @@
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
 		AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B529DE38E6002EC0D3 /* StarButton.swift */; };
 		AD2A73BE29EFA7AA002EC0D3 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73BD29EFA7AA002EC0D3 /* Siren */; };
-		AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C12A2434D5002EC0D3 /* Everydays.swift */; };
 		AD2A73C42A243F82002EC0D3 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */; };
 		AD2A73C62A2D863E002EC0D3 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73C52A2D863E002EC0D3 /* Customer.swift */; };
 		AD2A73C92A2FD57C002EC0D3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73C82A2FD57C002EC0D3 /* FirebaseAnalytics */; };
@@ -77,7 +76,6 @@
 		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		AD2A73B329DE13BA002EC0D3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AD2A73B529DE38E6002EC0D3 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
-		AD2A73C12A2434D5002EC0D3 /* Everydays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Everydays.swift; sourceTree = "<group>"; };
 		AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		AD2A73C52A2D863E002EC0D3 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		AD65A7632A4A58950083D1D2 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				AD76782029D11CF8008728BB /* Assets */,
 				AD76782129D11D03008728BB /* Colors */,
 				ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */,
-				AD2A73C12A2434D5002EC0D3 /* Everydays.swift */,
 				FB353CDE29DE795C00AC0240 /* Favorites.swift */,
 				AD00901C29A58C8300FDB1D3 /* FeedSwitch.swift */,
 				AD2A73B329DE13BA002EC0D3 /* FeedView.swift */,
@@ -397,7 +394,6 @@
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */,
-				AD2A73C22A2434D5002EC0D3 /* Everydays.swift in Sources */,
 				AD65A7642A4A58950083D1D2 /* SettingsButton.swift in Sources */,
 				AD2A73B629DE38E6002EC0D3 /* StarButton.swift in Sources */,
 				AD76782529D141DE008728BB /* SubmitButton.swift in Sources */,
