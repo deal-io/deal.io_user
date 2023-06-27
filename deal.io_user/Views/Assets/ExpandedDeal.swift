@@ -12,8 +12,10 @@ struct ExpandedDeal: View {
     @ObservedObject var viewModel: UserViewModel
     
     @State private var yelpBusiness: Business?
-
+    @State private var selection: Int = 0
     var deal: Deal
+    @Binding var isPickerTapped: Bool
+
     
     var body: some View {
         VStack{
@@ -21,34 +23,42 @@ struct ExpandedDeal: View {
             
             Text(deal.dealAttributes.dealName)
                 .font(.title)
-                .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
-                .padding(.horizontal, 4.5)
                 .multilineTextAlignment(.center)
             
-            FromToTimeBubble(viewModel: viewModel, deal: deal)
-                .padding(.bottom, 10)
-            
-            ActiveDaysBubble(viewModel: viewModel, deal: deal)
-            
-            Text(deal.dealAttributes.description)
-                .padding(10)
-                .multilineTextAlignment(.center)
-            
-            OpenMaps(viewModel: viewModel, deal: deal)
-            
-            Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
-                .font(.title2)
-            
-            if let yelpBusiness = yelpBusiness {
-                AsyncImage(url: URL(string: yelpBusiness.imageUrl)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
+            HStack {
+                Button(action: { selection = 0 }) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(selection == 0 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.onBackground(for: userManager.colorScheme))
+                            .frame(width: 80, height: 30)
+                        Text("Deal Info")
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
+                            .padding(5)
+                    }
                 }
-                .frame(width: 300, height: 200)
-                .aspectRatio(contentMode: .fill)
-                .clipShape(RoundedRectangle(cornerRadius: 10)) // If you want rounded corners
-                Text("Rating: \(String(format: "%.1f", yelpBusiness.rating)) | \(yelpBusiness.reviewCount) reviews" + (yelpBusiness.price != nil ? " | Price range: \(yelpBusiness.price!)" : ""))
+                Button(action: { selection = 1 }) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(selection == 1 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.onBackground(for: userManager.colorScheme))
+                            .frame(width: 130, height: 30)
+                        Text("Restaurant Info")
+                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
+                            .padding(5)
+                    }
+                }
+            }
+            .background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme)).cornerRadius(10)
+            .padding(.trailing, 60)
+            .padding(.leading, 60)
+            .padding(.bottom, 10)
+            .onTapGesture {
+                isPickerTapped = true
+            }
+
+            if selection == 0 {
+                DealInfo(viewModel: viewModel, deal: deal)
+            } else if selection == 1 {
+                RestaurantInfo(viewModel: viewModel, deal: deal, yelpBusiness: yelpBusiness)
             }
                 
             Spacer()

@@ -12,14 +12,14 @@ struct DealView: View {
     @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     @State private var expanded = false
+    @State private var isPickerTapped = false
     var deal: Deal
     var upcoming: Bool
 
-    
     var body: some View {
         VStack {
             if expanded {
-                ExpandedDeal(viewModel: viewModel, deal: deal)
+                ExpandedDeal(viewModel: viewModel, deal: deal, isPickerTapped: $isPickerTapped)
                     .onAppear {
                         logDealClickEvent(viewModel: viewModel, deal: deal)
                     }
@@ -27,12 +27,18 @@ struct DealView: View {
                 ContractedDeal(viewModel: viewModel, deal: deal, upcoming: upcoming)
             }
         }
+        .contentShape(Rectangle()) // Important to ensure onTapGesture covers the whole area
         .onTapGesture {
-            generateHapticFeedback()
-            withAnimation {
-                expanded.toggle()
+            if !isPickerTapped {
+                generateHapticFeedback()
+                withAnimation {
+                    expanded.toggle()
+                }
+            } else {
+                isPickerTapped = false
             }
         }
     }
 }
+
 

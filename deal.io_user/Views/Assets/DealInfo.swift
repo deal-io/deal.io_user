@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct DealInfo: View {
+    @ObservedObject var userManager = UserManager.shared
+    @ObservedObject var viewModel: UserViewModel
+    var deal: Deal
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            
+            FromToTimeBubble(viewModel: viewModel, deal: deal)
+                .padding(.bottom, 10)
+            
+            ActiveDaysBubble(viewModel: viewModel, deal: deal)
+            
+            Text(deal.dealAttributes.description)
+                .padding(10)
+                .multilineTextAlignment(.center)
+        }
     }
 }
 

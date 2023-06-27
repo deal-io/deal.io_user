@@ -12,7 +12,7 @@
 		AD00902129A58CC600FDB1D3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00902029A58CC600FDB1D3 /* UserViewModel.swift */; };
 		AD2A739729D22E99002EC0D3 /* FromToTimeBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */; };
 		AD2A739929D246B0002EC0D3 /* OpenMapsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */; };
-		AD2A739E29D75666002EC0D3 /* RefreshableScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */; };
+		AD2A739E29D75666002EC0D3 /* RefreshableScrollUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A739D29D75666002EC0D3 /* RefreshableScrollUtil.swift */; };
 		AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73A029D778FC002EC0D3 /* UserManager.swift */; };
 		AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */; };
 		AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A73B329DE13BA002EC0D3 /* FeedView.swift */; };
@@ -82,7 +82,7 @@
 		AD00902029A58CC600FDB1D3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToTimeBubble.swift; sourceTree = "<group>"; };
 		AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsButton.swift; sourceTree = "<group>"; };
-		AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScroll.swift; sourceTree = "<group>"; };
+		AD2A739D29D75666002EC0D3 /* RefreshableScrollUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollUtil.swift; sourceTree = "<group>"; };
 		AD2A73A029D778FC002EC0D3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD2A73AD29D78B95002EC0D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "deal.io_user/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD2A73AF29D78BCB002EC0D3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
@@ -231,7 +231,6 @@
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */,
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */,
 				ADA633D029B7FED30032EF44 /* HourBubble.swift */,
-				AD2A739D29D75666002EC0D3 /* RefreshableScroll.swift */,
 				AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */,
 				AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */,
 			);
@@ -269,6 +268,7 @@
 				AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */,
 				ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */,
 				ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */,
+				AD2A739D29D75666002EC0D3 /* RefreshableScrollUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -433,7 +433,7 @@
 				AD2A739729D22E99002EC0D3 /* FromToTimeBubble.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
 				ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */,
-				AD2A739E29D75666002EC0D3 /* RefreshableScroll.swift in Sources */,
+				AD2A739E29D75666002EC0D3 /* RefreshableScrollUtil.swift in Sources */,
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */,
 				AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */,
