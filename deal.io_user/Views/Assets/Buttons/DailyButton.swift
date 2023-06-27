@@ -15,7 +15,7 @@ struct DailyButton: View {
     }
     var body: some View {
         ZStack{
-            if viewModel.currentFeed == .DAILY {
+            if viewModel.currentFeed == .Daily {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.selected(for: userManager.colorScheme))
                     .frame(width: 145, height: 45)

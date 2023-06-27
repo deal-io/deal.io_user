@@ -17,6 +17,8 @@ struct FeedSwitch: View {
     let upcomingDeals: [Deal]
     let everydayDeals: [Deal]
     
+    @State private var selectedFeed = FeedType.Daily
+
     init(viewModel: UserViewModel) {
         self.viewModel = viewModel
         self.dailyDeals = viewModel.getDailyDeals()!
@@ -31,25 +33,43 @@ struct FeedSwitch: View {
                 .frame(width: 200, height: 80)
             VStack {
                 HStack(alignment: .center) {
-                    Spacer()
                     UpcomingSortButton(viewModel: viewModel)
+                        .padding(.leading, 30)
                     Spacer()
-                    HStack{
-                        DailyButton(viewModel: viewModel)
-                            .onTapGesture {
-                                viewModel.currentFeed = .DAILY
+                    Menu {
+                        Picker("Feed", selection: $selectedFeed) {
+                            ForEach(FeedType.allCases) { feedType in
+                                Text(feedType.rawValue).tag(feedType)
                             }
-                        UpcomingButton(viewModel: viewModel)
-                            .onTapGesture {
-                                viewModel.currentFeed = .UPCOMING
-                            }
-                    }.background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme)).cornerRadius(10)
-                    Spacer()
+                        }
+                    } label: {
+                        HStack {
+                            Text(selectedFeed.rawValue)
+                                .font(.title)
+                                .bold()
+                                .padding(.vertical, 5)
+                                .padding(.leading, 10)
+                            Image(systemName: "chevron.down")
+                                .padding(.vertical, 5)
+                                .padding(.trailing, 10)
+                        }
+                        .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
+                        .background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme))
+                        .cornerRadius(10)
+                        .fixedSize()
+                    }
+                    .onChange(of: selectedFeed) { newValue in
+                        viewModel.currentFeed = newValue
+                    }
+                    .padding(.trailing, 50)
                 }
-                if (viewModel.currentFeed == .UPCOMING) {
-                    FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
-                } else {
+                switch viewModel.currentFeed {
+                case .Daily:
                     FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
+                case .Weekly:
+                    FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
+                case .Everyday:
+                    FeedView(viewModel: viewModel, deals: self.everydayDeals, upcoming: false)
                 }
                 Rectangle()
                     .foregroundColor(Deal_ioColor.background(for: UserManager.shared.colorScheme))
