@@ -33,8 +33,17 @@ struct FeedSwitch: View {
                 .frame(width: 200, height: 80)
             VStack {
                 HStack(alignment: .center) {
-                    UpcomingSortButton(viewModel: viewModel)
-                        .padding(.leading, 30)
+                    switch viewModel.currentFeed {
+                    case .Daily:
+                        DailySortButton(viewModel: viewModel)
+                            .padding(.leading, 30)
+                    case .Weekly:
+                        UpcomingSortButton(viewModel: viewModel)
+                            .padding(.leading, 30)
+                    case .Everyday:
+                        DailySortButton(viewModel: viewModel)
+                            .padding(.leading, 30)
+                    }
                     Spacer()
                     Menu {
                         Picker("Feed", selection: $selectedFeed) {
