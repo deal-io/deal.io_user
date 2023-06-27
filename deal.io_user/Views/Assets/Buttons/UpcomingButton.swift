@@ -15,7 +15,7 @@ struct UpcomingButton: View {
     }
     var body: some View {
         ZStack {
-            if viewModel.currentFeed == .UPCOMING {
+            if viewModel.currentFeed == .Weekly {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Deal_ioColor.selected(for: userManager.colorScheme))
                     .frame(width: 145, height: 45)

@@ -18,7 +18,7 @@ class UserViewModel: ObservableObject {
     private var LOG_TAG = "LOG: ViewModel"
     @Published var tabSelection: Int = 0
     
-    @Published var currentFeed: FeedType = .DAILY
+    @Published var currentFeed: FeedType = .Daily
     @Published var dailySortType: DailySortType = .NONE
     @Published var upcomingSortType: UpcomingSortType = .DAY_ASC
     @Published var deals: [Deal] = []
@@ -334,11 +334,12 @@ class UserViewModel: ObservableObject {
 
 }
 
-enum FeedType {
-    case DAILY
-    case UPCOMING
-    case FAVORITES
-    case EVERYDAY
+enum FeedType: String, Identifiable, CaseIterable {
+    case Daily
+    case Weekly
+    case Everyday
+
+    var id: String { self.rawValue }
 }
 
 enum DailySortType{

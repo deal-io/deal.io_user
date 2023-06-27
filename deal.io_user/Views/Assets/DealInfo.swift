@@ -15,7 +15,6 @@ struct DealInfo: View {
     var body: some View {
         VStack {
             
-            
             FromToTimeBubble(viewModel: viewModel, deal: deal)
                 .padding(.bottom, 10)
             

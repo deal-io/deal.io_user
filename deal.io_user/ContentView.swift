@@ -34,13 +34,6 @@ struct ContentView: View {
                             Text("Favorites")
                         }
                         .tag(1)
-                    Everydays(viewModel: viewModel, deals: viewModel.getEverydayDeals()!)
-                        .background(Deal_ioColor.background(for: UserManager.shared.colorScheme))
-                        .tabItem {
-                            Image(systemName: "clock.fill")
-                            Text("Everyday Deals")
-                        }
-                        .tag(2)
                 }
                 .preferredColorScheme(userManager.colorScheme == .light ? .light : .dark)
                 .overlay(HelpButton(), alignment: .topTrailing)
