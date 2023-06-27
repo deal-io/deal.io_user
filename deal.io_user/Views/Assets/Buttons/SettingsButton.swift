@@ -45,7 +45,7 @@ struct SettingsView: View {
                         Image(systemName: "envelope")
                         Text("Email")
                         Spacer()
-                        Text(userManager.currentUser?.email ?? "N/A")
+                        Text(userManager.userDefaults.string(forKey: "userEmail") ?? "N/A")
                     }
                 }
                 
@@ -55,29 +55,51 @@ struct SettingsView: View {
                         Text("Color Scheme")
                         Spacer()
                         Picker("", selection: $userManager.colorScheme) {
-                            Text("Dark").tag(0)
-                            Text("Light").tag(1)
+                            ForEach(ColorScheme.allCases, id: \.self) { value in
+                                Text("\(value == .dark ? "Dark" : "Light")").tag(value)
+                            }
                         }
-                        .pickerStyle(SegmentedPickerStyle())
+                        .padding()
                     }
                 }
                 
                 Section(header: Text("ABOUT")) {
-                    Button(action: {}) {
+                    Button(action: {
+                        guard let url = URL(string: "https://forms.gle/gwmEXtZbodYMkAzS9") else {
+                            return
+                        }
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
                         HStack {
                             Image(systemName: "questionmark.circle")
                             Text("Feedback Form")
                         }
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        guard let url = URL(string: "https://raw.githubusercontent.com/NathanHowland0623/deal.io-Privacy-Policy/main/deal.ioPrivacyPolicy-Student") else {
+                            return
+                        }
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
                         HStack {
                             Image(systemName: "doc.plaintext")
                             Text("Terms of Use")
                         }
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        guard let url = URL(string: "https://raw.githubusercontent.com/NathanHowland0623/deal.io-Privacy-Policy/main/deal.ioPrivacyPolicy-Student") else {
+                            return
+                        }
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
                         HStack {
                             Image(systemName: "lock.shield")
                             Text("Privacy Policy")
@@ -96,6 +118,20 @@ struct SettingsView: View {
             .navigationBarItems(trailing: Button("Done") {
                 isShowing = false
             })
+        }
+        .onReceive(userManager.$colorScheme) { (value) in  // Corrected here
+            switch value {
+            case .dark:
+                // UserManager.shared.setColorScheme(.dark)
+                isShowing = false
+                isShowing = true
+                print("Dark")
+            case .light:
+                // UserManager.shared.setColorScheme(.light)
+                isShowing = false
+                isShowing = true
+                print("Light")
+            }
         }
     }
 }

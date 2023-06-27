@@ -191,7 +191,8 @@ struct Deal_ioColor {
     }
 }
 
-enum ColorScheme: String {
-    case light
+enum ColorScheme: String, CaseIterable {
     case dark
+    case light
 }
+

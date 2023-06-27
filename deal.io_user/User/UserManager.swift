@@ -12,8 +12,6 @@ import FirebaseMessaging
 class UserManager: ObservableObject {
     @ObservedObject static var shared = UserManager()
     
-    var currentUser: User?
-    
     private let emailKey = "userEmail"
     private let loggedInKey = "userLoggedIn"
     private let favoritesKey = "userFavorites"
@@ -24,6 +22,7 @@ class UserManager: ObservableObject {
     let userDefaults = UserDefaults.standard
     
     var userID: String
+    var userEmail: String
     
     @Published var isLoggedIn: Bool
     @Published var colorScheme: ColorScheme {
@@ -41,6 +40,9 @@ class UserManager: ObservableObject {
     
         userID = userDefaults.string(forKey: userIDKey) ?? UUID().uuidString
         userDefaults.set(userID, forKey: userIDKey)
+        
+        userEmail = userDefaults.string(forKey: emailKey) ?? "N/A"
+        userDefaults.set(userEmail, forKey: emailKey)
     }
     
     func checkLoginStatus() -> Bool {
@@ -54,7 +56,6 @@ class UserManager: ObservableObject {
     }
     
     func login(email: String) {
-        currentUser = User(email: email)
         userDefaults.set(email, forKey: emailKey)
         userDefaults.set(true, forKey: loggedInKey)
         isLoggedIn = true
@@ -62,7 +63,6 @@ class UserManager: ObservableObject {
     }
     
     func logout() {
-        currentUser = nil
         userDefaults.set(false, forKey: loggedInKey)
         isLoggedIn = false
         print("UM: \(userDefaults.bool(forKey: loggedInKey))")
