@@ -29,8 +29,8 @@ struct ExpandedDeal: View {
                 Button(action: { selection = 0 }) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(selection == 0 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.onBackground(for: userManager.colorScheme))
-                            .frame(width: 80, height: 30)
+                            .fill(selection == 0 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.unselected(for: userManager.colorScheme))
+                            .frame(width: 90, height: 30)
                         Text("Deal Info")
                             .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
                             .padding(5)
@@ -39,7 +39,7 @@ struct ExpandedDeal: View {
                 Button(action: { selection = 1 }) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(selection == 1 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.onBackground(for: userManager.colorScheme))
+                            .fill(selection == 1 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.unselected(for: userManager.colorScheme))
                             .frame(width: 130, height: 30)
                         Text("Restaurant Info")
                             .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
@@ -47,7 +47,7 @@ struct ExpandedDeal: View {
                     }
                 }
             }
-            .background(Deal_ioColor.onBackground(for: UserManager.shared.colorScheme)).cornerRadius(10)
+            .background(Deal_ioColor.unselected(for: UserManager.shared.colorScheme)).cornerRadius(10)
             .padding(.trailing, 60)
             .padding(.leading, 60)
             .padding(.bottom, 10)

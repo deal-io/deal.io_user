@@ -53,6 +53,14 @@ struct Deal_ioColor {
             return Color(red: 35/255, green: 35/255, blue: 35/255)
         }
     }
+    static func unselected(for colorScheme: ColorScheme) -> Color {
+        switch colorScheme {
+        case .light:
+            return Color(red: 220/255, green: 220/255, blue: 220/255)
+        case .dark:
+            return Color(red: 35/255, green: 35/255, blue: 35/255)
+        }
+    }
     static func contractedDeal(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .light:
