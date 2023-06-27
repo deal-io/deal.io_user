@@ -42,8 +42,6 @@
 		AD2A73EB2A2FD57C002EC0D3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73EA2A2FD57C002EC0D3 /* FirebasePerformance */; };
 		AD2A73ED2A2FD57C002EC0D3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD2A73EC2A2FD57C002EC0D3 /* FirebaseStorage */; };
 		AD65A7642A4A58950083D1D2 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7632A4A58950083D1D2 /* SettingsButton.swift */; };
-		AD65A7662A4A5ACB0083D1D2 /* DealInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */; };
-		AD65A7682A4A5ADF0083D1D2 /* RestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */; };
 		AD76782329D12380008728BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782229D12380008728BB /* Restaurant.swift */; };
 		AD76782529D141DE008728BB /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782429D141DE008728BB /* SubmitButton.swift */; };
 		AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */; };
@@ -59,7 +57,6 @@
 		ADC4D496299807E700B7BD24 /* deal_io_user.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC4D494299807E700B7BD24 /* deal_io_user.xcdatamodeld */; };
 		ADD3190029B15AC700800A46 /* test in Resources */ = {isa = PBXBuildFile; fileRef = ADD318FF29B15AC700800A46 /* test */; };
 		ADD3BFC22A4631E100CDD43D /* LightDarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */; };
-		ADD3BFC42A465D3400CDD43D /* YelpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */; };
 		ADD3BFC62A477C0E00CDD43D /* HapticUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */; };
 		ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */; };
 		ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */; };
@@ -93,8 +90,6 @@
 		AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		AD2A73C52A2D863E002EC0D3 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		AD65A7632A4A58950083D1D2 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
-		AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealInfo.swift; sourceTree = "<group>"; };
-		AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfo.swift; sourceTree = "<group>"; };
 		AD76782229D12380008728BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AD76782429D141DE008728BB /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDaysBubble.swift; sourceTree = "<group>"; };
@@ -112,7 +107,6 @@
 		ADC4D495299807E700B7BD24 /* deal_io_customer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deal_io_customer.xcdatamodel; sourceTree = "<group>"; };
 		ADD318FF29B15AC700800A46 /* test */ = {isa = PBXFileReference; lastKnownFileType = text; path = test; sourceTree = "<group>"; };
 		ADD3BFC12A4631E100CDD43D /* LightDarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkModeButton.swift; sourceTree = "<group>"; };
-		ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpUtil.swift; sourceTree = "<group>"; };
 		ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticUtil.swift; sourceTree = "<group>"; };
 		ADF0BBEB29A9F6F400FF24F6 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
 		ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDeal.swift; sourceTree = "<group>"; };
@@ -231,8 +225,6 @@
 				ADF0BBED29A9FE0200FF24F6 /* ExpandedDeal.swift */,
 				AD2A739629D22E99002EC0D3 /* FromToTimeBubble.swift */,
 				ADA633D029B7FED30032EF44 /* HourBubble.swift */,
-				AD65A7652A4A5ACB0083D1D2 /* DealInfo.swift */,
-				AD65A7672A4A5ADF0083D1D2 /* RestaurantInfo.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -266,7 +258,6 @@
 			children = (
 				ADA633D629B930240032EF44 /* DateUtil.swift */,
 				AD2A73C32A243F82002EC0D3 /* NotificationUtil.swift */,
-				ADD3BFC32A465D3400CDD43D /* YelpUtil.swift */,
 				ADD3BFC52A477C0E00CDD43D /* HapticUtil.swift */,
 				AD2A739D29D75666002EC0D3 /* RefreshableScrollUtil.swift */,
 			);
@@ -415,13 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD65A7662A4A5ACB0083D1D2 /* DealInfo.swift in Sources */,
 				ADF687A229AEDB5600E86022 /* User.swift in Sources */,
 				FBBEEAEB29E894F200489A4C /* HelpButton.swift in Sources */,
 				ADD3BFC62A477C0E00CDD43D /* HapticUtil.swift in Sources */,
 				ADC4D493299807E700B7BD24 /* Persistence.swift in Sources */,
 				ADF0BBEC29A9F6F400FF24F6 /* DealView.swift in Sources */,
-				ADD3BFC42A465D3400CDD43D /* YelpUtil.swift in Sources */,
 				AD2A739929D246B0002EC0D3 /* OpenMapsButton.swift in Sources */,
 				ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */,
 				AD2A73B029D78BCB002EC0D3 /* Analytics.swift in Sources */,
@@ -451,7 +440,6 @@
 				FB353CDA29DE038800AC0240 /* UpcomingSortButton.swift in Sources */,
 				ADF687FB29B001C800E86022 /* ContentView.swift in Sources */,
 				AD2A73C62A2D863E002EC0D3 /* Customer.swift in Sources */,
-				AD65A7682A4A5ADF0083D1D2 /* RestaurantInfo.swift in Sources */,
 				ADF0BBEE29A9FE0200FF24F6 /* ExpandedDeal.swift in Sources */,
 				AD2A73B429DE13BA002EC0D3 /* FeedView.swift in Sources */,
 				ADA633D729B930240032EF44 /* DateUtil.swift in Sources */,

@@ -11,7 +11,6 @@ struct ExpandedDeal: View {
     @ObservedObject var userManager = UserManager.shared
     @ObservedObject var viewModel: UserViewModel
     
-    @State private var yelpBusiness: Business?
     @State private var selection: Int = 0
     var deal: Deal
     @Binding var isPickerTapped: Bool
@@ -25,58 +24,21 @@ struct ExpandedDeal: View {
                 .font(.title)
                 .multilineTextAlignment(.center)
             
-            HStack {
-                Button(action: { selection = 0 }) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(selection == 0 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.unselected(for: userManager.colorScheme))
-                            .frame(width: 90, height: 30)
-                        Text("Deal Info")
-                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
-                            .padding(5)
-                    }
-                }
-                Button(action: { selection = 1 }) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(selection == 1 ? Deal_ioColor.selected(for: userManager.colorScheme): Deal_ioColor.unselected(for: userManager.colorScheme))
-                            .frame(width: 130, height: 30)
-                        Text("Restaurant Info")
-                            .foregroundColor(Deal_ioColor.text(for: userManager.colorScheme))
-                            .padding(5)
-                    }
-                }
-            }
-            .background(Deal_ioColor.unselected(for: UserManager.shared.colorScheme)).cornerRadius(10)
-            .padding(.trailing, 60)
-            .padding(.leading, 60)
-            .padding(.bottom, 10)
-            .onTapGesture {
-                isPickerTapped = true
-            }
-
-            if selection == 0 {
-                DealInfo(viewModel: viewModel, deal: deal)
-            } else if selection == 1 {
-                RestaurantInfo(viewModel: viewModel, deal: deal, yelpBusiness: yelpBusiness)
-            }
+            FromToTimeBubble(viewModel: viewModel, deal: deal)
+                .padding(.bottom, 10)
+            
+            ActiveDaysBubble(viewModel: viewModel, deal: deal)
+            
+            Text(deal.dealAttributes.description)
+                .padding(10)
+                .multilineTextAlignment(.center)
+            
+            Text(viewModel.nameMap[deal.restaurantID] ?? "Nil name")
+                .font(.title2)
+            
+            OpenMaps(viewModel: viewModel, deal: deal)
                 
             Spacer()
-        }
-        .onAppear {
-            Task {
-                do {
-                    let businesses = try await YelpAPI.searchBusinesses(name: viewModel.nameMap[deal.restaurantID] ?? "", address: viewModel.locationMap[deal.restaurantID] ?? "")
-                    // Assuming the Yelp search API returns multiple businesses for a given address,
-                    // you might want to select the most relevant one here. For simplicity, we're just
-                    // taking the first one.
-                    if let firstBusiness = businesses.first {
-                        self.yelpBusiness = firstBusiness
-                    }
-                } catch {
-                    print("Failed to fetch Yelp business info: \(error)")
-                }
-            }
         }
         .padding(.vertical, 10)
         .background(
