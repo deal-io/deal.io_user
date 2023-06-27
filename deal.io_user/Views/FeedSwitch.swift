@@ -65,11 +65,11 @@ struct FeedSwitch: View {
                 }
                 switch viewModel.currentFeed {
                 case .Daily:
-                    FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: true)
+                    FeedView(viewModel: viewModel, deals: self.dailyDeals, upcoming: false)
                 case .Weekly:
                     FeedView(viewModel: viewModel, deals: self.upcomingDeals, upcoming: true)
                 case .Everyday:
-                    FeedView(viewModel: viewModel, deals: self.everydayDeals, upcoming: true)
+                    FeedView(viewModel: viewModel, deals: self.everydayDeals, upcoming: false)
                 }
                 Rectangle()
                     .foregroundColor(Deal_ioColor.background(for: UserManager.shared.colorScheme))
