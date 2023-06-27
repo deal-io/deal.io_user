@@ -48,7 +48,6 @@
 		AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioApp.swift */; };
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
 		ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C029B2F4000032EF44 /* DailyButton.swift */; };
-		ADA633C329B2F40C0032EF44 /* UpcomingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */; };
 		ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* HourBubble.swift */; };
 		ADA633D729B930240032EF44 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D629B930240032EF44 /* DateUtil.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
@@ -93,7 +92,6 @@
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
 		AD96AC252A38C44600992AE1 /* deal.io_user.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = deal.io_user.entitlements; sourceTree = "<group>"; };
 		ADA633C029B2F4000032EF44 /* DailyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButton.swift; sourceTree = "<group>"; };
-		ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingButton.swift; sourceTree = "<group>"; };
 		ADA633D029B7FED30032EF44 /* HourBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourBubble.swift; sourceTree = "<group>"; };
 		ADA633D629B930240032EF44 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +196,6 @@
 				AD76782429D141DE008728BB /* SubmitButton.swift */,
 				AD2A739829D246B0002EC0D3 /* OpenMapsButton.swift */,
 				FBBEEAEA29E894F200489A4C /* HelpButton.swift */,
-				ADA633C229B2F40C0032EF44 /* UpcomingButton.swift */,
 				FB353CD929DE038800AC0240 /* UpcomingSortButton.swift */,
 			);
 			path = Buttons;
@@ -404,7 +401,6 @@
 				AD2A73C42A243F82002EC0D3 /* NotificationUtil.swift in Sources */,
 				AD2A73A129D778FC002EC0D3 /* UserManager.swift in Sources */,
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
-				ADA633C329B2F40C0032EF44 /* UpcomingButton.swift in Sources */,
 				AD2A739729D22E99002EC0D3 /* FromToTimeBubble.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
 				ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */,
