@@ -47,7 +47,6 @@
 		AD76782F29D2221E008728BB /* ActiveDaysBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76782E29D2221E008728BB /* ActiveDaysBubble.swift */; };
 		AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80720729A8855C007E263D /* Deal_ioApp.swift */; };
 		AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */; };
-		ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633C029B2F4000032EF44 /* DailyButton.swift */; };
 		ADA633D129B7FED30032EF44 /* HourBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D029B7FED30032EF44 /* HourBubble.swift */; };
 		ADA633D729B930240032EF44 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA633D629B930240032EF44 /* DateUtil.swift */; };
 		ADC4D48E299807E700B7BD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC4D48D299807E700B7BD24 /* Assets.xcassets */; };
@@ -91,7 +90,6 @@
 		AD80720729A8855C007E263D /* Deal_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal_ioApp.swift; sourceTree = "<group>"; };
 		AD8F1DBB29AD93AA001DBAC1 /* DealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealService.swift; sourceTree = "<group>"; };
 		AD96AC252A38C44600992AE1 /* deal.io_user.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = deal.io_user.entitlements; sourceTree = "<group>"; };
-		ADA633C029B2F4000032EF44 /* DailyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyButton.swift; sourceTree = "<group>"; };
 		ADA633D029B7FED30032EF44 /* HourBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourBubble.swift; sourceTree = "<group>"; };
 		ADA633D629B930240032EF44 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		ADC4D486299807E500B7BD24 /* deal.io_user.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deal.io_user.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +186,6 @@
 		AD65A7692A4A5AE40083D1D2 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				ADA633C029B2F4000032EF44 /* DailyButton.swift */,
 				AD2A73BF2A241905002EC0D3 /* EverydayButton.swift */,
 				FB353CD729DDF68A00AC0240 /* DailySortButton.swift */,
 				AD65A7632A4A58950083D1D2 /* SettingsButton.swift */,
@@ -403,7 +400,6 @@
 				AD80720829A8855C007E263D /* Deal_ioApp.swift in Sources */,
 				AD2A739729D22E99002EC0D3 /* FromToTimeBubble.swift in Sources */,
 				AD8F1DBC29AD93AA001DBAC1 /* DealService.swift in Sources */,
-				ADA633C129B2F4010032EF44 /* DailyButton.swift in Sources */,
 				AD2A739E29D75666002EC0D3 /* RefreshableScrollUtil.swift in Sources */,
 				AD76782329D12380008728BB /* Restaurant.swift in Sources */,
 				AD00901D29A58C8300FDB1D3 /* FeedSwitch.swift in Sources */,
