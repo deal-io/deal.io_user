@@ -18,7 +18,7 @@ struct SettingsButton: View {
             Button(action: {
                 isShowingSettings = true
             }) {
-                Image(systemName: "gearshape.fill")
+                Image(systemName: "wave.3.forward.circle")
                     .foregroundColor(Deal_ioColor.symbol(for: userManager.colorScheme))
                     .font(.system(size: 22))
                     .padding(25)
